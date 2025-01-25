@@ -1,0 +1,585 @@
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.2
+-------------------------------------------------------------------------------
+count time : 2018-10-09 13:02:24
+count workspace : c:\skydesk\git_client
+total files : 558
+total code lines : 155668
+total comment lines : 57658
+total blank lines : 16568
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |            .md|             70|             16|             55|  0.045|
+   |               |            140|             69|             18|  0.090|
+   |          .json|          34024|              0|            113|     22|
+   |            .js|         110867|          56345|          14002|     71|
+   |          .html|           1845|            131|            152|    1.2|
+   |            .ts|           5133|            900|           1298|    3.3|
+   |           .css|           2675|            193|            778|    1.7|
+   |           .txt|            465|              4|            115|   0.30|
+   |           .map|             18|              0|              0|  0.012|
+   |           .xlf|            284|              0|              0|   0.18|
+   |          .scss|            147|              0|             37|  0.094|
+   -------------------------------------------------------------------------
+.gitignore, code is 2, comment is 0, blank is 0.
+customer-app\.editorconfig, code is 11, comment is 1, blank is 2.
+customer-app\.gitignore, code is 17, comment is 20, blank is 4.
+customer-app\angular.json, code is 115, comment is 0, blank is 7.
+customer-app\e2e\protractor.conf.js, code is 23, comment is 2, blank is 3.
+customer-app\e2e\src\app.e2e-spec.ts, code is 11, comment is 0, blank is 3.
+customer-app\e2e\src\app.po.ts, code is 9, comment is 0, blank is 2.
+customer-app\e2e\tsconfig.e2e.json, code is 12, comment is 0, blank is 1.
+customer-app\package-lock.json, code is 10601, comment is 0, blank is 0.
+customer-app\package.json, code is 48, comment is 0, blank is 0.
+customer-app\README.md, code is 14, comment is 5, blank is 13.
+customer-app\src\app\app-routing.module.ts, code is 26, comment is 0, blank is 2.
+customer-app\src\app\app.component.css, code is 0, comment is 0, blank is 0.
+customer-app\src\app\app.component.html, code is 8, comment is 0, blank is 2.
+customer-app\src\app\app.component.ts, code is 9, comment is 0, blank is 1.
+customer-app\src\app\app.module.ts, code is 16, comment is 0, blank is 2.
+customer-app\src\app\customers\customer-list\customer-list.component.css, code is 0, comment is 0, blank is 0.
+customer-app\src\app\customers\customer-list\customer-list.component.html, code is 3, comment is 0, blank is 0.
+customer-app\src\app\customers\customer-list\customer-list.component.ts, code is 11, comment is 0, blank is 4.
+customer-app\src\app\customers\customers-routing.module.ts, code is 14, comment is 0, blank is 4.
+customer-app\src\app\customers\customers.module.ts, code is 12, comment is 0, blank is 2.
+customer-app\src\app\orders\order-list\order-list.component.css, code is 0, comment is 0, blank is 0.
+customer-app\src\app\orders\order-list\order-list.component.html, code is 3, comment is 0, blank is 0.
+customer-app\src\app\orders\order-list\order-list.component.ts, code is 11, comment is 0, blank is 4.
+customer-app\src\app\orders\orders-routing.module.ts, code is 14, comment is 0, blank is 2.
+customer-app\src\app\orders\orders.module.ts, code is 12, comment is 0, blank is 2.
+customer-app\src\assets\.gitkeep, code is 0, comment is 0, blank is 0.
+customer-app\src\browserslist, code is 9, comment is 1, blank is 0.
+customer-app\src\environments\environment.prod.ts, code is 3, comment is 0, blank is 0.
+customer-app\src\environments\environment.ts, code is 3, comment is 10, blank is 2.
+customer-app\src\favicon.ico, it is a binary file.
+customer-app\src\index.html, code is 13, comment is 0, blank is 1.
+customer-app\src\karma.conf.js, code is 28, comment is 3, blank is 1.
+customer-app\src\main.ts, code is 9, comment is 0, blank is 3.
+customer-app\src\polyfills.ts, code is 2, comment is 64, blank is 15.
+customer-app\src\styles.css, code is 0, comment is 1, blank is 0.
+customer-app\src\sub\orders\order-list\order-list.component.css, code is 0, comment is 0, blank is 0.
+customer-app\src\sub\orders\order-list\order-list.component.html, code is 3, comment is 0, blank is 0.
+customer-app\src\sub\orders\order-list\order-list.component.ts, code is 11, comment is 0, blank is 4.
+customer-app\src\sub\orders\orders-routing.module.ts, code is 14, comment is 0, blank is 2.
+customer-app\src\sub\orders\orders.module.ts, code is 12, comment is 0, blank is 2.
+customer-app\src\test.ts, code is 13, comment is 4, blank is 3.
+customer-app\src\tsconfig.app.json, code is 11, comment is 0, blank is 1.
+customer-app\src\tsconfig.spec.json, code is 16, comment is 0, blank is 3.
+customer-app\src\tslint.json, code is 15, comment is 0, blank is 2.
+customer-app\tsconfig.json, code is 18, comment is 0, blank is 2.
+customer-app\tslint.json, code is 118, comment is 0, blank is 12.
+groupbuy\.editorconfig, code is 11, comment is 1, blank is 2.
+groupbuy\.gitignore, code is 17, comment is 20, blank is 4.
+groupbuy\angular.json, code is 115, comment is 0, blank is 7.
+groupbuy\e2e\protractor.conf.js, code is 23, comment is 2, blank is 3.
+groupbuy\e2e\src\app.e2e-spec.ts, code is 11, comment is 0, blank is 3.
+groupbuy\e2e\src\app.po.ts, code is 9, comment is 0, blank is 2.
+groupbuy\e2e\tsconfig.e2e.json, code is 12, comment is 0, blank is 1.
+groupbuy\package-lock.json, code is 10335, comment is 0, blank is 0.
+groupbuy\package.json, code is 48, comment is 0, blank is 0.
+groupbuy\README.md, code is 14, comment is 5, blank is 13.
+groupbuy\src\app\app.component.css, code is 0, comment is 0, blank is 0.
+groupbuy\src\app\app.component.html, code is 18, comment is 1, blank is 1.
+groupbuy\src\app\app.component.ts, code is 9, comment is 0, blank is 1.
+groupbuy\src\app\app.module.ts, code is 14, comment is 0, blank is 2.
+groupbuy\src\assets\.gitkeep, code is 0, comment is 0, blank is 0.
+groupbuy\src\browserslist, code is 9, comment is 1, blank is 0.
+groupbuy\src\environments\environment.prod.ts, code is 3, comment is 0, blank is 0.
+groupbuy\src\environments\environment.ts, code is 3, comment is 10, blank is 2.
+groupbuy\src\favicon.ico, it is a binary file.
+groupbuy\src\index.html, code is 13, comment is 0, blank is 1.
+groupbuy\src\karma.conf.js, code is 28, comment is 3, blank is 1.
+groupbuy\src\main.ts, code is 9, comment is 0, blank is 3.
+groupbuy\src\polyfills.ts, code is 2, comment is 64, blank is 15.
+groupbuy\src\styles.css, code is 0, comment is 1, blank is 0.
+groupbuy\src\test.ts, code is 13, comment is 4, blank is 3.
+groupbuy\src\tsconfig.app.json, code is 11, comment is 0, blank is 1.
+groupbuy\src\tsconfig.spec.json, code is 16, comment is 0, blank is 3.
+groupbuy\src\tslint.json, code is 15, comment is 0, blank is 2.
+groupbuy\tsconfig.json, code is 18, comment is 0, blank is 2.
+groupbuy\tslint.json, code is 118, comment is 0, blank is 12.
+README.cmp.md, code is 15, comment is 1, blank is 11.
+README.demo.md, code is 10, comment is 0, blank is 4.
+README.md, code is 3, comment is 0, blank is 1.
+web\.editorconfig, code is 11, comment is 1, blank is 2.
+web\.gitignore, code is 17, comment is 20, blank is 4.
+web\angular.json, code is 235, comment is 0, blank is 14.
+web\dist\ami\ami.component.d.ts, code is 5, comment is 0, blank is 0.
+web\dist\ami\ami.d.ts, code is 1, comment is 3, blank is 0.
+web\dist\ami\ami.metadata.json, code is 1, comment is 0, blank is 0.
+web\dist\ami\ami.module.d.ts, code is 2, comment is 0, blank is 0.
+web\dist\ami\ami.service.d.ts, code is 4, comment is 0, blank is 0.
+web\dist\ami\bundles\ami.umd.js, code is 474, comment is 278, blank is 13.
+web\dist\ami\bundles\ami.umd.js.map, code is 1, comment is 0, blank is 0.
+web\dist\ami\bundles\ami.umd.min.js, code is 1, comment is 1, blank is 0.
+web\dist\ami\bundles\ami.umd.min.js.map, code is 1, comment is 0, blank is 0.
+web\dist\ami\cmp\scaner.component.d.ts, code is 14, comment is 0, blank is 0.
+web\dist\ami\esm2015\ami.component.js, code is 18, comment is 9, blank is 1.
+web\dist\ami\esm2015\ami.js, code is 1, comment is 8, blank is 1.
+web\dist\ami\esm2015\ami.module.js, code is 15, comment is 6, blank is 1.
+web\dist\ami\esm2015\ami.service.js, code is 15, comment is 10, blank is 1.
+web\dist\ami\esm2015\cmp\scaner.component.js, code is 54, comment is 43, blank is 1.
+web\dist\ami\esm2015\lib\ami.component.js, code is 18, comment is 9, blank is 1.
+web\dist\ami\esm2015\lib\ami.module.js, code is 14, comment is 5, blank is 1.
+web\dist\ami\esm2015\lib\ami.service.js, code is 15, comment is 10, blank is 1.
+web\dist\ami\esm2015\lib\authentication.service.js, code is 15, comment is 10, blank is 1.
+web\dist\ami\esm2015\lib\authentication\authentication.service.js, code is 178, comment is 94, blank is 1.
+web\dist\ami\esm2015\lib\common\util.js, code is 60, comment is 8, blank is 1.
+web\dist\ami\esm2015\lib\http\http.interface.js, code is 6, comment is 11, blank is 1.
+web\dist\ami\esm2015\lib\http\json.service.js, code is 110, comment is 75, blank is 1.
+web\dist\ami\esm2015\public_api.js, code is 7, comment is 8, blank is 1.
+web\dist\ami\esm5\ami.component.js, code is 18, comment is 11, blank is 1.
+web\dist\ami\esm5\ami.js, code is 1, comment is 8, blank is 1.
+web\dist\ami\esm5\ami.module.js, code is 19, comment is 6, blank is 1.
+web\dist\ami\esm5\ami.service.js, code is 19, comment is 12, blank is 1.
+web\dist\ami\esm5\cmp\scaner.component.js, code is 56, comment is 48, blank is 1.
+web\dist\ami\esm5\lib\ami.component.js, code is 18, comment is 11, blank is 1.
+web\dist\ami\esm5\lib\ami.module.js, code is 18, comment is 5, blank is 1.
+web\dist\ami\esm5\lib\ami.service.js, code is 19, comment is 12, blank is 1.
+web\dist\ami\esm5\lib\authentication.service.js, code is 19, comment is 12, blank is 1.
+web\dist\ami\esm5\lib\authentication\authentication.service.js, code is 228, comment is 114, blank is 1.
+web\dist\ami\esm5\lib\common\util.js, code is 61, comment is 8, blank is 1.
+web\dist\ami\esm5\lib\http\http.interface.js, code is 6, comment is 11, blank is 1.
+web\dist\ami\esm5\lib\http\json.service.js, code is 123, comment is 113, blank is 1.
+web\dist\ami\esm5\public_api.js, code is 7, comment is 8, blank is 1.
+web\dist\ami\fesm2015\ami.js, code is 390, comment is 211, blank is 11.
+web\dist\ami\fesm2015\ami.js.map, code is 1, comment is 0, blank is 0.
+web\dist\ami\fesm5\ami.js, code is 453, comment is 278, blank is 11.
+web\dist\ami\fesm5\ami.js.map, code is 1, comment is 0, blank is 0.
+web\dist\ami\jsQR.d.ts, code is 5, comment is 0, blank is 0.
+web\dist\ami\lib\ami.component.d.ts, code is 5, comment is 0, blank is 0.
+web\dist\ami\lib\ami.module.d.ts, code is 2, comment is 0, blank is 0.
+web\dist\ami\lib\ami.service.d.ts, code is 4, comment is 0, blank is 0.
+web\dist\ami\lib\authentication\authentication.service.d.ts, code is 59, comment is 0, blank is 0.
+web\dist\ami\lib\common\util.d.ts, code is 9, comment is 3, blank is 0.
+web\dist\ami\lib\http\http.interface.d.ts, code is 5, comment is 0, blank is 0.
+web\dist\ami\lib\http\json.service.d.ts, code is 17, comment is 6, blank is 0.
+web\dist\ami\package.json, code is 21, comment is 0, blank is 0.
+web\dist\ami\public_api.d.ts, code is 8, comment is 0, blank is 0.
+web\dist\restaurant\3rdpartylicenses.txt, code is 238, comment is 3, blank is 69.
+web\dist\restaurant\assets\css\deeppurple-amber.css, code is 1, comment is 0, blank is 0.
+web\dist\restaurant\assets\css\indigo-pink.css, code is 1080, comment is 73, blank is 343.
+web\dist\restaurant\assets\css\indigo-pink.min.css, code is 1, comment is 0, blank is 0.
+web\dist\restaurant\assets\css\pink-bluegrey.css, code is 1, comment is 0, blank is 0.
+web\dist\restaurant\assets\css\purple-green.css, code is 1, comment is 0, blank is 0.
+web\dist\restaurant\assets\images\alipay.png, it is a binary file.
+web\dist\restaurant\assets\images\barcode.png, it is a binary file.
+web\dist\restaurant\assets\images\cred.jpg, it is a binary file.
+web\dist\restaurant\assets\images\en.png, it is a binary file.
+web\dist\restaurant\assets\images\ja.png, it is a binary file.
+web\dist\restaurant\assets\images\menu\000001.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\000002.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\000003.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\000004.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\000006.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\000007.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\000008.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\000009.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\000010.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\000011.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\000012.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\000013.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\000014.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\000015.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\000016.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\000017.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\000018.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\tab1.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\tab2.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\tab3.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\tab4.jpg, it is a binary file.
+web\dist\restaurant\assets\images\menu\tab5.jpg, it is a binary file.
+web\dist\restaurant\assets\images\suica.png, it is a binary file.
+web\dist\restaurant\assets\images\wechatpay.png, it is a binary file.
+web\dist\restaurant\assets\images\yinlian.png, it is a binary file.
+web\dist\restaurant\assets\images\zh.png, it is a binary file.
+web\dist\restaurant\assets\js\pixijs\pixi-extra-filters.js, code is 189, comment is 128, blank is 45.
+web\dist\restaurant\assets\js\pixijs\pixi-extra-filters.js.map, code is 1, comment is 0, blank is 0.
+web\dist\restaurant\assets\js\pixijs\pixi-extra-filters.min.js, code is 1, comment is 8, blank is 0.
+web\dist\restaurant\assets\js\pixijs\pixi-extra-filters.min.js.map, code is 1, comment is 0, blank is 0.
+web\dist\restaurant\assets\js\pixijs\pixi.js, code is 10792, comment is 6589, blank is 4609.
+web\dist\restaurant\assets\js\pixijs\pixi.min.js, code is 7, comment is 9, blank is 0.
+web\dist\restaurant\favicon.ico, it is a binary file.
+web\dist\restaurant\index.html, code is 13, comment is 3, blank is 4.
+web\dist\restaurant\main.js, code is 261, comment is 120, blank is 18.
+web\dist\restaurant\main.js.map, code is 1, comment is 0, blank is 0.
+web\dist\restaurant\MaterialIcons-Regular.eot, it is a binary file.
+web\dist\restaurant\MaterialIcons-Regular.ttf, it is a binary file.
+web\dist\restaurant\MaterialIcons-Regular.woff, it is a binary file.
+web\dist\restaurant\MaterialIcons-Regular.woff2, it is a binary file.
+web\dist\restaurant\polyfills.js, code is 13, comment is 4, blank is 4.
+web\dist\restaurant\polyfills.js.map, code is 1, comment is 0, blank is 0.
+web\dist\restaurant\runtime.js, code is 44, comment is 58, blank is 9.
+web\dist\restaurant\runtime.js.map, code is 1, comment is 0, blank is 0.
+web\dist\restaurant\styles.js, code is 129, comment is 55, blank is 44.
+web\dist\restaurant\styles.js.map, code is 1, comment is 0, blank is 0.
+web\dist\restaurant\vendor.js, code is 53724, comment is 32833, blank is 4226.
+web\dist\restaurant\vendor.js.map, code is 1, comment is 0, blank is 0.
+web\dist\web\3rdpartylicenses.txt, code is 227, comment is 1, blank is 46.
+web\dist\web\favicon.ico, it is a binary file.
+web\dist\web\index.html, code is 13, comment is 0, blank is 1.
+web\dist\web\main.js, code is 4, comment is 3, blank is 3.
+web\dist\web\main.js.map, code is 1, comment is 0, blank is 0.
+web\dist\web\polyfills.js, code is 13, comment is 4, blank is 4.
+web\dist\web\polyfills.js.map, code is 1, comment is 0, blank is 0.
+web\dist\web\runtime.js, code is 44, comment is 58, blank is 9.
+web\dist\web\runtime.js.map, code is 1, comment is 0, blank is 0.
+web\dist\web\styles.js, code is 125, comment is 51, blank is 40.
+web\dist\web\styles.js.map, code is 1, comment is 0, blank is 0.
+web\dist\web\vendor.js, code is 31833, comment is 8207, blank is 261.
+web\dist\web\vendor.js.map, code is 1, comment is 0, blank is 0.
+web\package-lock.json, code is 11708, comment is 0, blank is 0.
+web\package.json, code is 62, comment is 0, blank is 0.
+web\projects\ami\karma.conf.js, code is 28, comment is 3, blank is 1.
+web\projects\ami\ng-package.json, code is 8, comment is 0, blank is 0.
+web\projects\ami\ng-package.prod.json, code is 7, comment is 0, blank is 0.
+web\projects\ami\package.json, code is 8, comment is 0, blank is 0.
+web\projects\ami\src\ami.component.ts, code is 15, comment is 0, blank is 4.
+web\projects\ami\src\ami.module.ts, code is 12, comment is 1, blank is 2.
+web\projects\ami\src\ami.service.ts, code is 10, comment is 0, blank is 3.
+web\projects\ami\src\cmp\jsQR.d.ts, code is 5, comment is 0, blank is 0.
+web\projects\ami\src\cmp\scaner.component.css, code is 0, comment is 0, blank is 0.
+web\projects\ami\src\cmp\scaner.component.html, code is 4, comment is 1, blank is 0.
+web\projects\ami\src\cmp\scaner.component.ts, code is 36, comment is 18, blank is 12.
+web\projects\ami\src\lib\authentication\authentication.service.ts, code is 138, comment is 10, blank is 35.
+web\projects\ami\src\lib\common\util.ts, code is 58, comment is 3, blank is 20.
+web\projects\ami\src\lib\http\http.interface.ts, code is 5, comment is 0, blank is 0.
+web\projects\ami\src\lib\http\json.service.ts, code is 111, comment is 33, blank is 23.
+web\projects\ami\src\public_api.ts, code is 8, comment is 3, blank is 1.
+web\projects\ami\src\test.ts, code is 15, comment is 4, blank is 3.
+web\projects\ami\tsconfig.lib.json, code is 31, comment is 0, blank is 2.
+web\projects\ami\tsconfig.spec.json, code is 14, comment is 0, blank is 3.
+web\projects\ami\tslint.json, code is 15, comment is 0, blank is 2.
+web\projects\guest\browserslist, code is 9, comment is 1, blank is 0.
+web\projects\guest\karma.conf.js, code is 28, comment is 3, blank is 1.
+web\projects\guest\src\app\ami\authentication.service.ts, code is 82, comment is 9, blank is 26.
+web\projects\guest\src\app\ami\json.service.ts, code is 65, comment is 20, blank is 17.
+web\projects\guest\src\app\ami\util.ts, code is 48, comment is 3, blank is 20.
+web\projects\guest\src\app\app.component.css, code is 0, comment is 0, blank is 0.
+web\projects\guest\src\app\app.component.html, code is 63, comment is 1, blank is 4.
+web\projects\guest\src\app\app.component.ts, code is 55, comment is 1, blank is 12.
+web\projects\guest\src\app\app.module.ts, code is 57, comment is 0, blank is 3.
+web\projects\guest\src\app\cmp\pop-menu\pop-menu.component.css, code is 0, comment is 0, blank is 0.
+web\projects\guest\src\app\cmp\pop-menu\pop-menu.component.html, code is 3, comment is 0, blank is 0.
+web\projects\guest\src\app\cmp\pop-menu\pop-menu.component.ts, code is 17, comment is 0, blank is 6.
+web\projects\guest\src\app\cmp\pop-menu\pop-menu.service.ts, code is 12, comment is 1, blank is 4.
+web\projects\guest\src\app\cmp\sel-counter\sel-counter.component.css, code is 12, comment is 0, blank is 1.
+web\projects\guest\src\app\cmp\sel-counter\sel-counter.component.html, code is 3, comment is 13, blank is 1.
+web\projects\guest\src\app\cmp\sel-counter\sel-counter.component.ts, code is 12, comment is 0, blank is 5.
+web\projects\guest\src\app\home\home.component.css, code is 9, comment is 0, blank is 0.
+web\projects\guest\src\app\home\home.component.html, code is 33, comment is 0, blank is 4.
+web\projects\guest\src\app\home\home.component.ts, code is 56, comment is 1, blank is 11.
+web\projects\guest\src\app\login\login.component.css, code is 12, comment is 0, blank is 2.
+web\projects\guest\src\app\login\login.component.html, code is 25, comment is 0, blank is 3.
+web\projects\guest\src\app\login\login.component.ts, code is 19, comment is 4, blank is 7.
+web\projects\guest\src\app\login\quickin.component.css, code is 0, comment is 0, blank is 0.
+web\projects\guest\src\app\login\quickin.component.html, code is 17, comment is 0, blank is 2.
+web\projects\guest\src\app\login\quickin.component.ts, code is 14, comment is 0, blank is 7.
+web\projects\guest\src\app\menu\detail\detail.component.css, code is 0, comment is 0, blank is 0.
+web\projects\guest\src\app\menu\detail\detail.component.html, code is 18, comment is 0, blank is 2.
+web\projects\guest\src\app\menu\detail\detail.component.ts, code is 22, comment is 0, blank is 11.
+web\projects\guest\src\app\menu\menu.component.css, code is 0, comment is 0, blank is 0.
+web\projects\guest\src\app\menu\menu.component.html, code is 55, comment is 2, blank is 1.
+web\projects\guest\src\app\menu\menu.component.ts, code is 54, comment is 0, blank is 7.
+web\projects\guest\src\app\order\order.component.css, code is 0, comment is 0, blank is 0.
+web\projects\guest\src\app\order\order.component.html, code is 87, comment is 0, blank is 5.
+web\projects\guest\src\app\order\order.component.ts, code is 28, comment is 0, blank is 9.
+web\projects\guest\src\app\order\order.service.ts, code is 7, comment is 0, blank is 2.
+web\projects\guest\src\app\reservation\reservation.component.css, code is 0, comment is 0, blank is 0.
+web\projects\guest\src\app\reservation\reservation.component.html, code is 120, comment is 0, blank is 13.
+web\projects\guest\src\app\reservation\reservation.component.ts, code is 23, comment is 0, blank is 6.
+web\projects\guest\src\app\setting\setting.component.css, code is 0, comment is 0, blank is 0.
+web\projects\guest\src\app\setting\setting.component.html, code is 3, comment is 0, blank is 0.
+web\projects\guest\src\app\setting\setting.component.ts, code is 11, comment is 0, blank is 4.
+web\projects\guest\src\assets\.gitkeep, code is 0, comment is 0, blank is 0.
+web\projects\guest\src\assets\images\barcode.png, it is a binary file.
+web\projects\guest\src\assets\images\menu\000001.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\000002.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\000003.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\000004.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\000006.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\000007.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\000008.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\000009.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\000010.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\000011.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\000012.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\000013.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\000014.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\000015.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\000016.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\000017.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\000018.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\tab1.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\tab2.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\tab3.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\tab4.jpg, it is a binary file.
+web\projects\guest\src\assets\images\menu\tab5.jpg, it is a binary file.
+web\projects\guest\src\browserslist, code is 9, comment is 1, blank is 0.
+web\projects\guest\src\environments\environment.prod.ts, code is 3, comment is 0, blank is 0.
+web\projects\guest\src\environments\environment.ts, code is 4, comment is 10, blank is 2.
+web\projects\guest\src\favicon.ico, it is a binary file.
+web\projects\guest\src\index.html, code is 13, comment is 0, blank is 4.
+web\projects\guest\src\karma.conf.js, code is 28, comment is 3, blank is 1.
+web\projects\guest\src\main.ts, code is 9, comment is 0, blank is 3.
+web\projects\guest\src\polyfills.ts, code is 2, comment is 64, blank is 15.
+web\projects\guest\src\styles.css, code is 47, comment is 1, blank is 9.
+web\projects\guest\src\test.ts, code is 13, comment is 4, blank is 3.
+web\projects\guest\src\tsconfig.app.json, code is 11, comment is 0, blank is 1.
+web\projects\guest\src\tsconfig.spec.json, code is 16, comment is 0, blank is 3.
+web\projects\guest\src\tslint.json, code is 15, comment is 0, blank is 2.
+web\projects\guest\tsconfig.app.json, code is 11, comment is 0, blank is 1.
+web\projects\guest\tsconfig.spec.json, code is 16, comment is 0, blank is 3.
+web\projects\guest\tslint.json, code is 15, comment is 0, blank is 2.
+web\projects\restaurant\browserslist, code is 9, comment is 1, blank is 0.
+web\projects\restaurant\karma.conf.js, code is 28, comment is 3, blank is 1.
+web\projects\restaurant\src\app\app.component.css, code is 0, comment is 0, blank is 0.
+web\projects\restaurant\src\app\app.component.html, code is 1, comment is 0, blank is 0.
+web\projects\restaurant\src\app\app.component.ts, code is 55, comment is 9, blank is 12.
+web\projects\restaurant\src\app\app.module.ts, code is 200, comment is 11, blank is 12.
+web\projects\restaurant\src\app\app.routing.ts, code is 39, comment is 0, blank is 4.
+web\projects\restaurant\src\app\cmp\ami-table\ami-header.directive.ts, code is 89, comment is 13, blank is 22.
+web\projects\restaurant\src\app\cmp\ami-table\ami-table.component.css, code is 42, comment is 2, blank is 8.
+web\projects\restaurant\src\app\cmp\ami-table\ami-table.component.html, code is 36, comment is 4, blank is 9.
+web\projects\restaurant\src\app\cmp\ami-table\ami-table.component.ts, code is 97, comment is 76, blank is 31.
+web\projects\restaurant\src\app\cmp\ami-theme-select\ami-theme-select.component.css, code is 13, comment is 1, blank is 1.
+web\projects\restaurant\src\app\cmp\ami-theme-select\ami-theme-select.component.html, code is 22, comment is 0, blank is 0.
+web\projects\restaurant\src\app\cmp\ami-theme-select\ami-theme-select.component.ts, code is 57, comment is 2, blank is 11.
+web\projects\restaurant\src\app\cmp\ami-theme-select\theme.directive.ts, code is 21, comment is 0, blank is 10.
+web\projects\restaurant\src\app\cmp\ami-theme-select\theme.service.ts, code is 17, comment is 5, blank is 8.
+web\projects\restaurant\src\app\cmp\animation\toggle-bar\toggle-bar.component.css, code is 0, comment is 0, blank is 0.
+web\projects\restaurant\src\app\cmp\animation\toggle-bar\toggle-bar.component.html, code is 1, comment is 0, blank is 0.
+web\projects\restaurant\src\app\cmp\animation\toggle-bar\toggle-bar.component.ts, code is 68, comment is 1, blank is 12.
+web\projects\restaurant\src\app\cmp\cmp.module.ts, code is 126, comment is 2, blank is 7.
+web\projects\restaurant\src\app\cmp\cmp.service.ts, code is 56, comment is 0, blank is 18.
+web\projects\restaurant\src\app\cmp\dialog\ami-confirm.component.css, code is 0, comment is 0, blank is 0.
+web\projects\restaurant\src\app\cmp\dialog\ami-confirm.component.html, code is 11, comment is 0, blank is 1.
+web\projects\restaurant\src\app\cmp\dialog\ami-confirm.component.ts, code is 18, comment is 0, blank is 5.
+web\projects\restaurant\src\app\cmp\dialog\ami-loading.component.css, code is 0, comment is 0, blank is 0.
+web\projects\restaurant\src\app\cmp\dialog\ami-loading.component.html, code is 4, comment is 0, blank is 0.
+web\projects\restaurant\src\app\cmp\dialog\ami-loading.component.ts, code is 15, comment is 0, blank is 2.
+web\projects\restaurant\src\app\cmp\dialog\ami-pop.component.css, code is 0, comment is 0, blank is 0.
+web\projects\restaurant\src\app\cmp\dialog\ami-pop.component.html, code is 3, comment is 0, blank is 1.
+web\projects\restaurant\src\app\cmp\dialog\ami-pop.component.ts, code is 10, comment is 0, blank is 2.
+web\projects\restaurant\src\app\cmp\dialog\ami-selecter.component.css, code is 0, comment is 0, blank is 0.
+web\projects\restaurant\src\app\cmp\dialog\ami-selecter.component.html, code is 18, comment is 0, blank is 0.
+web\projects\restaurant\src\app\cmp\dialog\ami-selecter.component.ts, code is 31, comment is 0, blank is 12.
+web\projects\restaurant\src\app\cmp\input\number-selecter\number-selecter.component.css, code is 0, comment is 0, blank is 0.
+web\projects\restaurant\src\app\cmp\input\number-selecter\number-selecter.component.html, code is 9, comment is 0, blank is 0.
+web\projects\restaurant\src\app\cmp\input\number-selecter\number-selecter.component.ts, code is 43, comment is 2, blank is 11.
+web\projects\restaurant\src\app\counter\counter.component.css, code is 21, comment is 0, blank is 4.
+web\projects\restaurant\src\app\counter\counter.component.html, code is 243, comment is 9, blank is 21.
+web\projects\restaurant\src\app\counter\counter.component.ts, code is 136, comment is 17, blank is 31.
+web\projects\restaurant\src\app\counter\monitor\monitor.component.css, code is 0, comment is 0, blank is 0.
+web\projects\restaurant\src\app\counter\monitor\monitor.component.html, code is 3, comment is 0, blank is 0.
+web\projects\restaurant\src\app\counter\monitor\monitor.component.ts, code is 11, comment is 0, blank is 4.
+web\projects\restaurant\src\app\home\home.component.css, code is 19, comment is 0, blank is 4.
+web\projects\restaurant\src\app\home\home.component.html, code is 61, comment is 11, blank is 6.
+web\projects\restaurant\src\app\home\home.component.ts, code is 103, comment is 15, blank is 32.
+web\projects\restaurant\src\app\home\home.service.ts, code is 22, comment is 6, blank is 6.
+web\projects\restaurant\src\app\home\login\login.component.css, code is 10, comment is 0, blank is 1.
+web\projects\restaurant\src\app\home\login\login.component.html, code is 26, comment is 0, blank is 0.
+web\projects\restaurant\src\app\home\login\login.component.ts, code is 31, comment is 0, blank is 5.
+web\projects\restaurant\src\app\kitchen\kitchen-setting\kitchen-setting.component.css, code is 0, comment is 0, blank is 0.
+web\projects\restaurant\src\app\kitchen\kitchen-setting\kitchen-setting.component.html, code is 16, comment is 0, blank is 0.
+web\projects\restaurant\src\app\kitchen\kitchen-setting\kitchen-setting.component.ts, code is 62, comment is 2, blank is 12.
+web\projects\restaurant\src\app\kitchen\kitchen.component.css, code is 34, comment is 0, blank is 4.
+web\projects\restaurant\src\app\kitchen\kitchen.component.html, code is 131, comment is 6, blank is 5.
+web\projects\restaurant\src\app\kitchen\kitchen.component.ts, code is 236, comment is 10, blank is 47.
+web\projects\restaurant\src\app\kitchen\kitchen.interface.ts, code is 63, comment is 6, blank is 12.
+web\projects\restaurant\src\app\kitchen\kitchen.service.ts, code is 74, comment is 11, blank is 23.
+web\projects\restaurant\src\app\kitchen\task\task.component.css, code is 20, comment is 0, blank is 5.
+web\projects\restaurant\src\app\kitchen\task\task.component.html, code is 18, comment is 10, blank is 2.
+web\projects\restaurant\src\app\kitchen\task\task.component.ts, code is 33, comment is 0, blank is 10.
+web\projects\restaurant\src\app\manager\manager.component.css, code is 44, comment is 11, blank is 15.
+web\projects\restaurant\src\app\manager\manager.component.html, code is 33, comment is 0, blank is 2.
+web\projects\restaurant\src\app\manager\manager.component.ts, code is 51, comment is 4, blank is 12.
+web\projects\restaurant\src\app\manager\manager.service.ts, code is 22, comment is 6, blank is 9.
+web\projects\restaurant\src\app\manager\menu-category\menu-category.component.css, code is 8, comment is 0, blank is 0.
+web\projects\restaurant\src\app\manager\menu-category\menu-category.component.html, code is 81, comment is 0, blank is 6.
+web\projects\restaurant\src\app\manager\menu-category\menu-category.component.ts, code is 194, comment is 8, blank is 70.
+web\projects\restaurant\src\app\manager\menu-preview\menu-preview.component.css, code is 0, comment is 0, blank is 0.
+web\projects\restaurant\src\app\manager\menu-preview\menu-preview.component.html, code is 1, comment is 0, blank is 0.
+web\projects\restaurant\src\app\manager\menu-preview\menu-preview.component.ts, code is 31, comment is 4, blank is 14.
+web\projects\restaurant\src\app\menu\menu-image\menu-image.component.css, code is 30, comment is 0, blank is 3.
+web\projects\restaurant\src\app\menu\menu-image\menu-image.component.html, code is 15, comment is 1, blank is 1.
+web\projects\restaurant\src\app\menu\menu-image\menu-image.component.ts, code is 41, comment is 1, blank is 13.
+web\projects\restaurant\src\app\menu\menu-list\menu-list.component.css, code is 0, comment is 0, blank is 0.
+web\projects\restaurant\src\app\menu\menu-list\menu-list.component.html, code is 5, comment is 0, blank is 0.
+web\projects\restaurant\src\app\menu\menu-list\menu-list.component.ts, code is 150, comment is 29, blank is 47.
+web\projects\restaurant\src\app\menu\menu-page\menu-page.component.css, code is 14, comment is 1, blank is 2.
+web\projects\restaurant\src\app\menu\menu-page\menu-page.component.html, code is 30, comment is 8, blank is 0.
+web\projects\restaurant\src\app\menu\menu-page\menu-page.component.ts, code is 89, comment is 6, blank is 18.
+web\projects\restaurant\src\app\menu\menu-tab\menu-tab.component.css, code is 5, comment is 0, blank is 0.
+web\projects\restaurant\src\app\menu\menu-tab\menu-tab.component.html, code is 17, comment is 0, blank is 1.
+web\projects\restaurant\src\app\menu\menu-tab\menu-tab.component.ts, code is 79, comment is 3, blank is 22.
+web\projects\restaurant\src\app\menu\menu-view\menu-view.component.css, code is 0, comment is 0, blank is 0.
+web\projects\restaurant\src\app\menu\menu-view\menu-view.component.html, code is 29, comment is 1, blank is 0.
+web\projects\restaurant\src\app\menu\menu-view\menu-view.component.ts, code is 32, comment is 0, blank is 7.
+web\projects\restaurant\src\app\menu\menu.component.css, code is 58, comment is 11, blank is 13.
+web\projects\restaurant\src\app\menu\menu.component.html, code is 77, comment is 3, blank is 2.
+web\projects\restaurant\src\app\menu\menu.component.ts, code is 156, comment is 20, blank is 42.
+web\projects\restaurant\src\app\menu\menu.interface.ts, code is 76, comment is 11, blank is 15.
+web\projects\restaurant\src\app\menu\menu.service.ts, code is 87, comment is 31, blank is 30.
+web\projects\restaurant\src\app\menu\menufree\menufree.component.css, code is 8, comment is 0, blank is 0.
+web\projects\restaurant\src\app\menu\menufree\menufree.component.html, code is 29, comment is 2, blank is 4.
+web\projects\restaurant\src\app\menu\menufree\menufree.component.ts, code is 95, comment is 8, blank is 20.
+web\projects\restaurant\src\app\order\order-card-menufree\order-card-menufree.component.css, code is 0, comment is 0, blank is 0.
+web\projects\restaurant\src\app\order\order-card-menufree\order-card-menufree.component.html, code is 27, comment is 4, blank is 2.
+web\projects\restaurant\src\app\order\order-card-menufree\order-card-menufree.component.ts, code is 38, comment is 7, blank is 9.
+web\projects\restaurant\src\app\order\order-card\order-card.component.css, code is 0, comment is 0, blank is 0.
+web\projects\restaurant\src\app\order\order-card\order-card.component.html, code is 24, comment is 4, blank is 2.
+web\projects\restaurant\src\app\order\order-card\order-card.component.ts, code is 42, comment is 13, blank is 14.
+web\projects\restaurant\src\app\order\order-history\order-history.component.css, code is 6, comment is 2, blank is 1.
+web\projects\restaurant\src\app\order\order-history\order-history.component.html, code is 15, comment is 0, blank is 2.
+web\projects\restaurant\src\app\order\order-history\order-history.component.ts, code is 49, comment is 11, blank is 12.
+web\projects\restaurant\src\app\order\order.component.css, code is 6, comment is 2, blank is 1.
+web\projects\restaurant\src\app\order\order.component.html, code is 40, comment is 0, blank is 0.
+web\projects\restaurant\src\app\order\order.component.ts, code is 64, comment is 24, blank is 23.
+web\projects\restaurant\src\app\order\order.interface.ts, code is 64, comment is 11, blank is 12.
+web\projects\restaurant\src\app\reservation\reservation.component.css, code is 0, comment is 0, blank is 0.
+web\projects\restaurant\src\app\reservation\reservation.component.html, code is 7, comment is 0, blank is 1.
+web\projects\restaurant\src\app\reservation\reservation.component.ts, code is 11, comment is 0, blank is 4.
+web\projects\restaurant\src\app\seat-view\seat-view.component.css, code is 22, comment is 0, blank is 3.
+web\projects\restaurant\src\app\seat-view\seat-view.component.html, code is 0, comment is 20, blank is 0.
+web\projects\restaurant\src\app\seat-view\seat-view.component.ts, code is 23, comment is 0, blank is 9.
+web\projects\restaurant\src\app\seats\seat-list.component.css, code is 0, comment is 0, blank is 0.
+web\projects\restaurant\src\app\seats\seat-list.component.html, code is 50, comment is 6, blank is 9.
+web\projects\restaurant\src\app\seats\seat-list.component.ts, code is 71, comment is 5, blank is 19.
+web\projects\restaurant\src\app\seats\seat.interface.ts, code is 26, comment is 0, blank is 1.
+web\projects\restaurant\src\app\seats\seat.service.ts, code is 65, comment is 8, blank is 24.
+web\projects\restaurant\src\app\seats\seats.component.css, code is 28, comment is 1, blank is 6.
+web\projects\restaurant\src\app\seats\seats.component.html, code is 143, comment is 15, blank is 16.
+web\projects\restaurant\src\app\seats\seats.component.ts, code is 214, comment is 34, blank is 51.
+web\projects\restaurant\src\app\settings\settings.component.css, code is 7, comment is 0, blank is 1.
+web\projects\restaurant\src\app\settings\settings.component.html, code is 58, comment is 0, blank is 4.
+web\projects\restaurant\src\app\settings\settings.component.ts, code is 46, comment is 3, blank is 13.
+web\projects\restaurant\src\app\shared\master.interface.ts, code is 16, comment is 0, blank is 2.
+web\projects\restaurant\src\app\shared\style.manager.ts, code is 29, comment is 12, blank is 7.
+web\projects\restaurant\src\app\shared\web.interceptor.ts, code is 31, comment is 3, blank is 6.
+web\projects\restaurant\src\app\temp\dialog-overview-example-dialog.html, code is 3, comment is 0, blank is 0.
+web\projects\restaurant\src\app\temp\dialog-overview-example.css, code is 0, comment is 0, blank is 0.
+web\projects\restaurant\src\app\temp\dialog-overview-example.html, code is 14, comment is 3, blank is 2.
+web\projects\restaurant\src\app\temp\dialog-overview-example.ts, code is 33, comment is 7, blank is 12.
+web\projects\restaurant\src\assets\.gitkeep, code is 0, comment is 0, blank is 0.
+web\projects\restaurant\src\assets\css\deeppurple-amber.css, code is 1, comment is 0, blank is 0.
+web\projects\restaurant\src\assets\css\indigo-pink.css, code is 1080, comment is 73, blank is 343.
+web\projects\restaurant\src\assets\css\indigo-pink.min.css, code is 1, comment is 0, blank is 0.
+web\projects\restaurant\src\assets\css\pink-bluegrey.css, code is 1, comment is 0, blank is 0.
+web\projects\restaurant\src\assets\css\purple-green.css, code is 1, comment is 0, blank is 0.
+web\projects\restaurant\src\assets\images\alipay.png, it is a binary file.
+web\projects\restaurant\src\assets\images\barcode.png, it is a binary file.
+web\projects\restaurant\src\assets\images\cred.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\en.png, it is a binary file.
+web\projects\restaurant\src\assets\images\ja.png, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\0.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\000001.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\000002.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\000003.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\000004.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\000006.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\000007.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\000008.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\000009.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\000010.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\000011.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\000012.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\000013.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\000014.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\000015.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\000016.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\000017.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\000018.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\10.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\101.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\102.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\103.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\104.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\105.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\106.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\107.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\108.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\109.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\11.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\110.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\111.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\112.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\113.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\114.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\115.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\116.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\117.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\118.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\12.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\13.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\14.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\15.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\16.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\17.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\18.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\19.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\2.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\20.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\201.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\202.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\203.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\204.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\205.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\206.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\207.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\208.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\209.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\21.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\210.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\211.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\212.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\213.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\214.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\3.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\4.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\5.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\6.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\7.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\8.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\9.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\tab1.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\tab2.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\tab3.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\tab4.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\menu\tab5.jpg, it is a binary file.
+web\projects\restaurant\src\assets\images\suica.png, it is a binary file.
+web\projects\restaurant\src\assets\images\wechatpay.png, it is a binary file.
+web\projects\restaurant\src\assets\images\yinlian.png, it is a binary file.
+web\projects\restaurant\src\assets\images\zh.png, it is a binary file.
+web\projects\restaurant\src\assets\js\hammer.min.js, code is 1, comment is 6, blank is 0.
+web\projects\restaurant\src\assets\js\pixijs\pixi-extra-filters.js, code is 189, comment is 128, blank is 45.
+web\projects\restaurant\src\assets\js\pixijs\pixi-extra-filters.js.map, code is 1, comment is 0, blank is 0.
+web\projects\restaurant\src\assets\js\pixijs\pixi-extra-filters.min.js, code is 1, comment is 8, blank is 0.
+web\projects\restaurant\src\assets\js\pixijs\pixi-extra-filters.min.js.map, code is 1, comment is 0, blank is 0.
+web\projects\restaurant\src\assets\js\pixijs\pixi.js, code is 10792, comment is 6589, blank is 4609.
+web\projects\restaurant\src\assets\js\pixijs\pixi.min.js, code is 7, comment is 9, blank is 0.
+web\projects\restaurant\src\browserslist, code is 9, comment is 1, blank is 0.
+web\projects\restaurant\src\environments\environment.prod.ts, code is 8, comment is 4, blank is 2.
+web\projects\restaurant\src\environments\environment.ts, code is 12, comment is 14, blank is 2.
+web\projects\restaurant\src\favicon.ico, it is a binary file.
+web\projects\restaurant\src\index.html, code is 13, comment is 3, blank is 4.
+web\projects\restaurant\src\karma.conf.js, code is 28, comment is 3, blank is 1.
+web\projects\restaurant\src\locale\messages.en.xlf, code is 73, comment is 0, blank is 0.
+web\projects\restaurant\src\locale\messages.ja.xlf, code is 73, comment is 0, blank is 0.
+web\projects\restaurant\src\locale\messages.zh.xlf, code is 73, comment is 0, blank is 0.
+web\projects\restaurant\src\main.ts, code is 9, comment is 0, blank is 5.
+web\projects\restaurant\src\messages.xlf, code is 65, comment is 0, blank is 0.
+web\projects\restaurant\src\polyfills.ts, code is 2, comment is 64, blank is 15.
+web\projects\restaurant\src\styles.css, code is 32, comment is 13, blank is 8.
+web\projects\restaurant\src\test.ts, code is 13, comment is 4, blank is 3.
+web\projects\restaurant\src\theme.scss, code is 147, comment is 0, blank is 37.
+web\projects\restaurant\tsconfig.app.json, code is 11, comment is 0, blank is 1.
+web\projects\restaurant\tsconfig.spec.json, code is 16, comment is 0, blank is 3.
+web\projects\restaurant\tslint.json, code is 15, comment is 0, blank is 2.
+web\README.md, code is 14, comment is 5, blank is 13.
+web\tsconfig.json, code is 28, comment is 0, blank is 6.
+web\tslint.json, code is 118, comment is 0, blank is 12.
+===============================================================================

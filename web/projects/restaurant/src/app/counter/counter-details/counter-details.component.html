@@ -1,0 +1,124 @@
+<div theme style="overflow-y: auto">
+  <div fxLayout="column" style="height:100%">
+    <mat-toolbar>
+
+
+      <span>会計明細</span>
+      <button type="button" mat-icon-button (click)="ngOnInit()">
+        <mat-icon color="primary">refresh</mat-icon>
+      </button>
+      
+      <button type="button" mat-icon-button *ngIf="counterSrv.isPad()" (click)="counterSrv.open_cash_box()">
+        <mat-icon color="primary">local_atm</mat-icon>
+      </button>
+      
+      <span class="toolbar-spacer"></span>
+      <!-- <mat-slide-toggle #slideToggle [(ngModel)]="onlyToday" style="padding-right:10px;" *ngIf="!data.counter_id" (change)="change($event)">
+        今日
+      </mat-slide-toggle> -->
+      <mat-form-field>
+        <input matInput [matDatepicker]="dp" placeholder="" [formControl]="date" (dateChange)="change($event)" style="text-align: center;">
+        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp
+                        panelClass="example-month-picker">
+        </mat-datepicker>
+      </mat-form-field>
+      <button type="button" mat-mini-fab (click)="closeEmpty()" style="margin-left: 10px;">
+        <mat-icon color="primary">close</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-accordion>
+      <ng-container *ngFor="let counter of counters;let iCounter = index;">
+        <mat-expansion-panel hideToggle style="margin:10px;" [expanded]="iCounter === 0">
+          <mat-expansion-panel-header [expandedHeight]="'auto'" [collapsedHeight]="'auto'">
+            <mat-panel-title class="bgcolor-primary" fxLayout="row" fxLayoutAlign="start center" style="padding:5px 5px;width:100%;margin: 5px 0 5px 0;border-radius: 4px; ">
+              <div style="margin-left: 5px">［種別：{{payname(counter)}}］</div>
+              <div style="margin-left: 5px">{{counter.create_time | date:'d日 HH:mm'}}</div>
+              <div style="margin-left: 20px;padding:5px" *ngIf="!counter.is_completed" class="bgcolor-accent">支払未完成</div>
+              <div style="margin-left: 20px;padding:5px" *ngIf="counter.delete" class="bgcolor-accent">削除済み</div>
+              <div style="margin-left: 5px; max-width:200px;" fxFlex fxLayoutAlign="center">
+                <span style="max-width:200px;text-overflow:ellipsis;white-space: nowrap;overflow: hidden;">
+                  <ng-container *ngFor="let seat of counter.seats;let i = index;">
+                    {{seat.seat_no }}.{{seat.seat_name }}
+                  </ng-container>
+                </span>
+              </div>
+              <div fxFlex fxLayoutAlign="end">
+                <button *ngIf="!counter.delete && checkEdit(counter)" style="margin-left: 10px" mat-raised-button color="base" (click)="close('edit',counter)">
+                  <mat-icon>edit</mat-icon>
+                  支払編集
+                </button>
+                <!--
+                <div style="padding:5px">{{alert_message}}</div>
+                <button *ngIf="!counter.delete && checkAllCancel(counter) " style="margin-left: 10px" mat-raised-button color="accent" (click)="close('cancel',counter)">
+                  一括取消
+                </button>
+                -->
+                <button *ngIf="!counter.delete" style="margin-left: 10px" mat-raised-button color="warn" (click)="delete('delete',counter)">
+                  削除
+                </button>
+                <button *ngIf="counter.delete" style="margin-left: 10px" mat-raised-button color="base" (click)="close('reset',counter)">
+                  回復
+                </button>
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div style="margin:5px 0px" fxLayout="row" fxLayoutAlign="start center">
+            <div style="margin-left: 5px;">({{counter.id}})</div>
+            <div flex="280px" style="margin-left: 20px;">実際支払金額（税込）：{{ counter.pay_price | currency:'￥':'symbol':'1.0-0'}}</div>
+            <div flex="280px" style="margin-left: 20px;">計算金額（減額前、税込）：{{ counter.total_price | currency:'￥':'symbol':'1.0-0'}}</div>            
+            <div flex="280px" style="margin-left: 20px;">税金：{{ counter.tax_price | currency:'￥':'symbol':'1.0-0'}}</div>
+          </div>
+          <ng-container *ngFor="let detail of counter.details;let i = index;">
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <span class="bgcolor-primary" style="padding:5px;margin-left:5px">{{i+1}}</span>
+              <button *ngIf="!counter.delete && !detail.canceled" mat-raised-button color="accent" (click)="close('cancel', counter, detail)" style="margin-left:20px">
+                取消
+              </button>
+              <span *ngIf="!counter.delete && detail.canceled" style="margin-left:20px">（取消しました）</span>
+              <div fxLayout="column" style="margin-left: 20px">
+                <div> 【{{detail.create_time | date:'HH:mm'}}】 </div>
+                <div>［{{detail.display_name}}］</div>
+              </div>
+              <div fxLayout="column" style="margin-left: 20px; text-align: right">
+                <div>計算金額（減額前、税込）：{{detail.amounts_payable | currency:'￥':'symbol':'1.0-0'}}</div>
+                <div>実際支払金額（税込）：<span>{{ detail.amounts_actually | currency:'￥':'symbol':'1.0-0'}}</span></div>
+              </div>
+              <div fxLayout="column" style="margin-left: 25px" fxLayoutAlign="center end">
+                <div>割引({{detail.cut}}%)　{{detail.cut_value | currency:'￥':'symbol':'1.0-0'}}</div>
+                <div>減額　<span>{{ detail.reduce | currency:'￥':'symbol':'1.0-0'}}</span></div>
+              </div>
+              <div fxLayout="column" style="margin-left: 25px" fxLayoutAlign="center end">
+                <div>預り　{{detail.pay | currency:'￥':'symbol':'1.0-0'}}</div>
+                <div>お釣　<span>{{ detail.change | currency:'￥':'symbol':'1.0-0'}}</span></div>
+              </div>
+              <div fxLayout="column" style="margin-left: 25px">
+                <div style="margin: 5px" [ngClass]="{'bgcolor-accent' : data['detail_id'] && data['detail_id'] === detail.id }">
+                  ［{{detail.no}}]
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start center">
+                  <button [disabled]="counter.delete || detail.canceled" color="primary" mat-raised-button (click)="printDetail(counter, detail)" style="margin-left: 10px">
+                    <mat-icon>print</mat-icon>
+                    明細
+                  </button>
+                  <button [disabled]="counter.delete || detail.canceled" color="primary" mat-raised-button (click)="printCounter(counter, detail)" style="margin-left: 10px">
+                    <mat-icon>attach_money</mat-icon>
+                    領収書<div class="print-count" *ngIf="detail.print_count>0">{{detail.print_count}}</div>
+                  </button>
+                </div>
+              </div>
+              <!-- <div fxFlex fxLayoutAlign="end">
+                <button *ngIf="!counter.delete " mat-raised-button color="accent" (click)="close('cancel', counter, detail)"
+                  style="margin-right:30px">
+                  取消
+                </button>
+              </div> -->
+            </div>
+            <mat-divider *ngIf=" i < counter.details.length-1" style="margin-top:5px;margin-bottom:5px"></mat-divider>
+          </ng-container>
+        </mat-expansion-panel>
+      </ng-container>
+    </mat-accordion>
+  </div>
+
+</div>

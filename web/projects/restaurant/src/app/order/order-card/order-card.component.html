@@ -1,0 +1,70 @@
+<mat-card style="margin-top:10px;padding:10px">
+
+  <mat-card-content>
+    <!-- <div [ngClass]="(!order.over)? 'bgcolor-accent':'bgcolor-primary'" style="padding:10px 10px 10px 0px" fxLayout="row" fxLayoutAlign="space-between center">
+      <div *ngIf="authSrv.isRole('admin')">
+        <span>【{{order.user_name}}】</span>
+      </div>
+      <div>
+        <span>【{{ order.order_time | date:'HH:mm' }} 注文】</span>
+      </div>
+      <div>
+        <span style="padding-right: 15px;"> {{ order.over ? 'すべて料理済み':'料理中あり' }}</span>
+      </div>
+    </div>
+     -->
+        <!-- <button *ngIf="authSrv.isRole('admin')" mat-raised-button color="primary" (click)="menuSrv.changeOrderSeat(order)">
+          席修正
+        </button> -->
+    <ng-container *ngFor="let detail of order.details">
+      <div fxLayout="row" fxLayoutAlign="space-between center" style="padding:10px;" [ngClass]="{'warn':order.over!=true, 'cancel': detail.status_code=='-1', 'over':detail.status_code=='999'}">
+        <div fxFlex="25%">
+          <div *ngIf="authSrv.isRole('admin')">
+            <!-- [{{detail.menu_no}}] -->
+            [{{ order.order_time | date:'HH:mm' }} 注文]
+          </div>
+          <div>
+            {{detail.menu_name}} <br />
+            <ng-container *ngFor="let menu_option of detail.menu_option | keyvalue">
+              {{menu_option.value.select_name}} 
+            </ng-container>
+            <br />
+            <ng-container *ngFor="let option of detail.option | keyvalue">
+              {{option.value.name}} 
+            </ng-container>
+          </div>
+        </div>
+        <div fxFlex="15%">
+          <div>個数：　{{detail.count}}　</div>
+          <div>単価：　{{appService.zekomi(detail.price, detail.menu_tax_in) | currency:'￥':'symbol':'1.0-0'}} </div>
+        </div>
+        <div fxFlex="15%">
+          合計(税込)：{{countDetail(detail) | currency:'￥':'symbol':'1.0-0'}}
+        </div>
+
+        <!-- <span fxAlign="start">[{{detail.menu_no}}]{{ detail.menu_name }}</span> -->
+        <span style="text-align: right" *ngIf="!isMenufree && isGuest">[{{ detail.status_name }}]</span>
+        
+        <div class="btn-list">
+          <!-- <button *ngIf="detail.status_code !== -1" mat-raised-button color="primary" (click)="cancel($event, detail)">
+            数量変更
+          </button>
+          <number-selecter [(count)]="detail.count" style="padding-right:40px;padding-left:15px"></number-selecter> -->
+          
+          <button *ngIf="detail.status_code === -1 && isGuest==false" mat-stroked-button color="warn" (click)="delete($event, detail)">
+            {{'削除' | language:menuSrv.lang}}
+          </button>
+          <button *ngIf="detail.status_code !== -1 && isGuest==false" style="color:black" mat-stroked-button (click)="cancel($event, detail)">
+            {{'取消' | language:menuSrv.lang}}
+          </button>
+          <button *ngIf="detail.status_code !== -1 && detail.status_code !== 999 && isGuest==false" mat-stroked-button color="primary" (click)="ok($event, detail)" style="margin-left: 8px;">
+            {{'完成' | language:menuSrv.lang}}
+          </button>
+          <button *ngIf="detail.status_code !== -1 && isGuest" mat-raised-button color="primary" (click)="reOrder($event, detail)">
+            {{'おかわり' | language:menuSrv.lang}}
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </mat-card-content>
+</mat-card>

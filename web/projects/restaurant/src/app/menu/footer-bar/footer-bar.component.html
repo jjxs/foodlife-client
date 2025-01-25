@@ -1,0 +1,11 @@
+<div class="footer-bar">
+    <button [ngClass]="{btn:1, primary: menu=='top'}" (click)="btnClick('top');" >{{ 'Top' | language:menuSrv.lang }}</button>
+    <!-- <button [ngClass]="{btn:1, primary: menu=='toriaezu'}" (click)="btnClick('toriaezu');">とりあえず</button> -->
+    <button [ngClass]="{btn:1, primary: menu=='menu'}" (click)="btnClick('menu');">{{ '注文' | language:menuSrv.lang }}</button>
+    <button [ngClass]="{btn:1, primary: menu=='history'}" (click)="btnClick('history');">{{ 'りれき' | language:menuSrv.lang }}</button>
+    <button [ngClass]="{btn:1, primary: menu=='accouting'}" (click)="btnClick('accouting');">{{ '会計' | language:menuSrv.lang }}</button>
+    <button [ngClass]="{btn:1}" (click)="language()">
+    <mat-icon class="example-icon">translate</mat-icon>
+    {{ '言語' | language:menuSrv.lang }}</button>
+    <button *ngIf="show_call_staff" [ngClass]="{btn:1,primary: menu=='calling'}" (click)="callStaff();">{{ '店員呼出' | language:menuSrv.lang }}</button>
+  </div>

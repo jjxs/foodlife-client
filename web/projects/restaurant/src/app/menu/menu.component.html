@@ -1,0 +1,36 @@
+<div *ngIf="seatSrv.SeatId && seatStatus.security_key" class="content-container" style="position: relative;">
+
+  <restaurant-menu-list #menuList [show]="showMenu=='menu'" [enableOrder]="enableOrder"></restaurant-menu-list>
+  <restaurant-top [show]="showMenu=='top'" *ngIf="top_theme=='top1'" [editMode]='false'></restaurant-top>
+  <restaurant-top2 [show]="showMenu=='top'" *ngIf="top_theme=='top2'" [editMode]='false'></restaurant-top2>
+  <restaurant-accounting [show]="showMenu=='accouting'"></restaurant-accounting>
+  <restaurant-order-history [show]="showMenu=='history'" [seatId]="seatSrv.SeatId" [isGuest]="true"></restaurant-order-history>
+  <restaurant-theme-toriaezu [show]="showMenu=='toriaezu'" style="height:92%;"></restaurant-theme-toriaezu>
+
+  <restaurant-footer-bar [menu]="showMenu" [seat]="seat"></restaurant-footer-bar>
+
+</div>
+<div *ngIf="!seatSrv.SeatId" class="content-container" style="padding:20px">
+  <div style="text-align: center;margin-top:30px">
+    <label>{{authSrv.nickname}}</label>
+  </div>
+  <div style="text-align: center;margin-top:30px">
+    <label>{{'スキャンしてテーブルを指定してください、' | language:menuSrv.lang}}<br>{{'または近くのスタッフに声掛けてください。' | language:menuSrv.lang}}</label>
+  </div>
+  <ami-scaner (changed)="onScan($event)"></ami-scaner>
+</div>
+<div *ngIf="!seatStatus.security_key" class="content-container" style="padding:0px;">
+  <div style="text-align: center;padding-top:30px">
+    <label>{{'テーブル' | language:menuSrv.lang}}({{seat["seat_no"]}}・{{seat["name"]}}){{'まだ利用できません、しばらくお待ちください。' | language:menuSrv.lang}}<br>{{'または近くのスタッフに声掛けてください。' | language:menuSrv.lang}}</label>
+  </div>
+  <div style="text-align: center;padding-top:30px">
+    <button mat-mini-fab (click)="refresh()">
+      <mat-icon class="example-icon">refresh</mat-icon>
+    </button>
+  </div>
+</div>
+<div *ngIf="!seatStatus.security_key || !seatSrv.SeatId">
+  <button *ngIf="authSrv.Authenticated===true" mat-mini-fab (click)="logout()">
+    <mat-icon class="example-icon">exit_to_app</mat-icon>
+  </button>
+</div>

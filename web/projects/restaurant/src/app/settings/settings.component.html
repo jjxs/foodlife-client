@@ -1,0 +1,123 @@
+<div *ngIf="!authSrv.isRole('guest')" fxLayout="row">
+  <div fxFlex="33%">
+    <mat-card class="example-card bgcolor-primary">
+      <mat-card-header>
+        <mat-card-title>テーブル指定</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div style="padding-left:16px;margin-top:5px;">
+          <button mat-raised-button color="accent" style="width:120px" (click)="selectSeat($event)">
+            <span style="padding-left:5px">選択</span>
+          </button>
+          <div style="margin-top:5px;">{{ seatData['group_name'] }}・{{ seatData['name'] }}</div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+  <div *ngIf="!authSrv.isRole('guest')" fxFlex="33%">
+    <mat-card class="example-card bgcolor-primary">
+      <mat-card-header>
+        <mat-card-title>言語</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div style="padding-left:16px;margin-top:5px;">
+          <button mat-raised-button color="accent" style="width:120px">
+            <img src="/assets/images/en.png" width="20px" height="auto" plain>
+            <span style="padding-left:5px">English</span>
+          </button>
+        </div>
+        <div style="padding-left:16px;margin-top:5px;">
+          <button mat-raised-button color="accent" style="width:120px">
+            <img src="/assets/images/ja.png" width="20px" height="auto" plain>
+            <span style="padding-left:5px">日本語</span>
+          </button>
+        </div>
+        <div style="padding-left:16px;margin-top:5px;">
+          <button mat-raised-button color="accent" style="width:120px">
+            <img src="/assets/images/zh.png" width="20px" height="auto" plain>
+            <span style="padding-left:5px">中国语</span>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div *ngIf="!authSrv.isRole('guest')" fxFlex="33%">
+    <mat-card class="example-card bgcolor-primary">
+      <mat-card-header>
+        <mat-card-title>システム調整</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div style="padding-left:16px;margin-top:5px;">
+          <mat-slide-toggle #slideToggle [(ngModel)]="debugModel" (change)="changePanel($event)">
+            DEBUGモード: {{ debugModel ? 'ON' : 'OFF'}}
+          </mat-slide-toggle>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<div *ngIf="!authSrv.isRole('guest')" fxLayout="row">
+  <div fxFlex="33%">
+    <mat-card class="example-card bgcolor-primary">
+      <mat-card-header>
+        <mat-card-title>デバイス設定</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div style="padding-left:16px;margin-top:5px;">
+          <button mat-raised-button color="accent" style="width:120px" (click)="goTable()">
+            <mat-icon>video_label</mat-icon>
+            <span style="padding-left:5px">テーブル</span>
+          </button>
+        </div>
+        <div style="padding-left:16px;margin-top:5px;">
+          <button mat-raised-button color="accent" style="width:120px" (click)="goStaff()">
+            <mat-icon>perm_device_information</mat-icon>
+            <span style="padding-left:5px">スタッフ</span>
+          </button>
+        </div>
+        <div style="padding-left:16px;margin-top:5px;">
+          <button mat-raised-button color="accent" style="width:120px" (click)="goMonitor()">
+            <mat-icon>remove_from_queue</mat-icon>
+            <span style="padding-left:5px">モニター</span>
+          </button>
+        </div>
+        <div *ngIf="showCallStaff" style="padding-left:16px;margin-top:5px;">
+          <button mat-raised-button color="accent" style="width:120px" (click)="goCustomerCall()">
+            <mat-icon>record_voice_over</mat-icon>
+            <span style="padding-left:5px">呼びかけ</span>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+  <div *ngIf="!authSrv.isRole('guest')" fxFlex="33%">
+    <mat-card class="example-card bgcolor-primary">
+      <mat-card-header>
+        <mat-card-title>FullScreenモード</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div style="padding-left:16px;margin-top:5px;">
+          <mat-slide-toggle #slideToggle [(ngModel)]="fullModel" (change)="changeFullModel($event)">
+            モード: {{ debugModel ? 'ON' : 'OFF'}}
+          </mat-slide-toggle>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxFlex="33%">
+    <mat-card class="example-card bgcolor-primary">
+      <mat-card-header>
+      </mat-card-header>
+
+      <mat-card-content>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

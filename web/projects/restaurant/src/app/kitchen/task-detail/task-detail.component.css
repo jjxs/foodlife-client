@@ -1,0 +1,36 @@
+.finished {
+    margin-top: 20px;
+    /* border-radius: 20px; */
+    /* background-color: #c1c1ab; */
+    /* padding: 10px 10px 0 10px; */
+}
+.item {
+    position: relative; 
+    height:50px; 
+    font-size: 22px; 
+    border-bottom-style: groove;
+}
+
+.finished .item:last-child {
+    border-bottom-style: none;
+}
+
+.items .item:last-child {
+    border-bottom-style: none;
+}
+
+
+.items .title{
+    text-align: center; 
+    font-size: 30px; 
+    background-color: #ff4081;
+    color: white; 
+}
+
+.finished .title{
+    text-align: center; 
+    font-size: 30px; 
+    background-color: #3f51b5;
+    color: white; 
+    line-height: 40px;
+}

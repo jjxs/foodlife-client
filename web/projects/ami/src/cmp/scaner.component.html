@@ -1,0 +1,5 @@
+<div style="text-align: center;margin-top:5px">
+  <canvas #canvas width="96" height="96" (click)="scan($event)"></canvas>
+  <input #camera type="file" style="width:0px;height:0px;position: absolute;display: none;" (change)="onChange($event)" accept="image/*" capture="camera">
+  <!-- <img #img src="/assets/images/barcode.png" style="width:64px;height:64px" (click)="scan($event)"> -->
+</div>

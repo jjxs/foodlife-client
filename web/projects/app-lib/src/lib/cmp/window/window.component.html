@@ -1,0 +1,29 @@
+<div fxLayout="column"
+     fxLayoutAlign="start none"
+     fxFlexFill
+     style="height: 100%">
+    <mat-toolbar class="app-mat-toolbar"
+                 color="primary"
+                 cdkDrag
+                 cdkDragRootElement=".cdk-overlay-pane"
+                 cdkDragHandle
+                 cdkDragBoundary=".app-overlay-container"
+                 style="cursor: pointer;">
+        <span>{{title}}</span>
+        <span class="toolbar-spacer"></span>
+        <button style="margin-left:2rem;cursor:default;"
+                mat-raised-button
+                color="warn"
+                (click)="close()">閉じる</button>
+        <!-- <button style="margin-left:2rem" mat-raised-button color="warn" (click)="close()">閉じる</button> -->
+    </mat-toolbar>
+    <div fxFlex
+         style="overflow-y: auto;overflow-x:hidden">
+        <ng-template #container></ng-template>
+    </div>
+</div>
+<!-- <mat-spinner *ngIf="showSpinner" style="margin: 10px"></mat-spinner>
+<div [ngStyle]="displayProperty" style="margin: 5px">
+    
+</div> -->
+<!-- <div #container></div> -->

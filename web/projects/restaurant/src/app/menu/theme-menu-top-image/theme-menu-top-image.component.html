@@ -1,0 +1,4 @@
+<div [ngClass]="{'image-free': menu.is_free === true, 'image': menu.is_free === false, 'sale': menu.ori_price>0}"
+(click)="onClick($event)">
+  <img *ngIf="menu.id" class="image-img" src="{{site_image_host}}{{menu.image}}" alt="Norway" (error)="srcError($event)">
+</div>

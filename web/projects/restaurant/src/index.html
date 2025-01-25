@@ -1,0 +1,44 @@
+<!--meta name="viewport" user-scalable=0 阻止双击放大事件-->
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<!--<!doctype html>-->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <!-- <meta name="mobile-web-app-capable" content="yes"> -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=0" /> 
+<!--   <meta name="viewport" content="width=device-width,target-densitydpi=device-dpi,initial-scale=0.6" />-->
+  <base href="/">
+  <title>食生活</title>
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script>
+    const l = (window.location);
+    const url = new URL(l.href);
+    const search = l.search.substring(1)
+    const queryArr = search.split('&')
+    const queryParams = {}
+    for ( var i in queryArr ) {
+      let q = queryArr[i].split('=');
+      queryParams[q[0]] = q[1];
+    }
+    console.info(queryParams);
+    if( typeof queryParams['s']!=='undefined' && typeof queryParams['seat']!=='undefined' && typeof queryParams['sign']!=='undefined' ) {
+      const sid = queryParams['s'];
+      localStorage.setItem('SAAS_ID', sid);
+      console.info(localStorage.getItem('SAAS_ID'))
+      if ( localStorage.getItem('SAAS_ID')!=sid ) {
+        location.reload();
+      }
+      localStorage.removeItem('__top_url__');
+      location.href="/guest/qr/" + queryParams['s'] + '/' + queryParams['seat'] + '/' + queryParams['sign'];
+    }
+
+  </script>
+</head>
+
+<body>
+  <app-root></app-root>
+</body>
+
+</html>

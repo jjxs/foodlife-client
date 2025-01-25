@@ -1,0 +1,41 @@
+<mat-card style="margin-top:10px;padding:10px">
+  <mat-card-content>
+    <div [ngClass]="(!order.menu_free_usable)? 'bgcolor-accent':''" style="padding:10px 10px 10px 0px" fxLayout="row" fxLayoutAlign="space-between center">
+      <div>
+        <span *ngIf="authSrv.isRole('admin')" >【{{order.user_name}}】</span>
+      </div>
+      <div>
+        <span>【{{ order.order_time | date:'HH:mm' }} 注文】</span>
+        <mat-icon color="warn">notification_important</mat-icon>({{order.wait_minutes}}分前)
+      </div>
+      <div>
+        <span style="padding-right: 15px;">{{ order.menu_free_usable ? '利用可能':'確認待ち' }}</span>
+        <button *ngIf="authSrv.isRole('admin')" mat-raised-button color="primary" (click)="menuSrv.changeOrderSeat(order)">
+          席修正
+        </button>
+      </div>
+    </div>
+    <ng-container *ngFor="let detail of order.details">
+      <div fxLayout="row" fxLayoutAlign="space-between center" style="padding:10px;border-top:1px solid grey">
+        <div>
+          <button *ngIf="authSrv.isRole('admin') && order.menu_free_usable === false" style="margin-right:10px" mat-raised-button color="primary" (click)="confirm($event, detail)">
+            注文確定
+          </button>
+          <span fxAlign="start">{{ detail.menu_name }}({{'ID: ' + detail.id}})</span>
+        </div>
+
+        <span style="text-align: right" *ngIf="order.menu_free_usable">{{detail.detail_free_start |
+          date:'HH:mm' }}　～　{{ detail.detail_free_end | date:'HH:mm' }}</span>
+        <div>
+          <!-- <button *ngIf="detail.status_code !== -1" mat-raised-button color="primary" (click)="cancel($event, detail)">
+            数量変更
+          </button>
+          <number-selecter [(count)]="detail.count" style="padding-right:40px;padding-left:15px"></number-selecter> -->
+          <button *ngIf="authSrv.isRole('admin')" mat-raised-button color="warn" (click)="cancel($event, detail)">
+            取消
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </mat-card-content>
+</mat-card>

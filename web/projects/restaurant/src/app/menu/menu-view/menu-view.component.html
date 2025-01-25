@@ -1,0 +1,55 @@
+<div fxLayout="row" style="width:100%;border-radius: 5px;">
+  <div fxFlex fxLayoutAlign="start center">
+    <!-- <mat-icon style="padding-right:10px">restaurant_menu</mat-icon>-->
+    <span>［{{menu.no}}］{{menu["name"] || "　"}}</span>
+  </div>
+  <div fxLayoutAlign="end center">
+    <button style="margin-bottom: 10px;" mat-mini-fab (click)="close()">
+      <mat-icon class="example-icon">clear</mat-icon>
+    </button>
+  </div>
+</div>
+<div [ngClass]="{'image-free': menu.is_free === true, 'image': menu.is_free === false}" fxLayout="row" style="width:100%;padding-top:10px">
+  <img style="width: 100%;height:270px" src="{{site_image_host}}{{menu.image}}" alt="" (error)="srcError($event)">
+</div>
+<div class="image-text" fxLayout="row" fxLayoutAlign="space-between center">
+  <div style="margin: 10px 0px 5px 10px">
+    <span>
+        <span *ngIf="menu.ori_price" style="text-decoration: line-through;font-weight: 600;font-size:small;">
+          {{ appService.zekomi(menu.ori_price, menu.tax_in) | currency:'￥':'symbol':'1.0-0'}}
+        </span>
+        <span *ngIf="menu.ori_price" style="color: red;font-size:large;">{{appService.zekomi( price, menu.tax_in) | currency:'￥':'symbol':'1.0-0'}}</span>
+        <span *ngIf="!menu.ori_price">{{ appService.zekomi(price, menu.tax_in) | currency:'￥':'symbol':'1.0-0'}}</span>
+
+        ({{'税込' | language:menuSrv.lang}})
+    </span>
+  </div>
+  <div>{{showCnTitle(menu)}}</div>
+</div>
+
+<div [innerHtml]="menu.introduction" style="white-space: pre-wrap;"></div>
+<div>
+  <div *ngFor="let group of menu_options">
+    <div class="spec-title"> {{ group.group_name }}： </div>
+    <div class="spec-values">
+      <div *ngFor="let item of group.items" [ngClass]="{'spec-desc': 1, 'spec-desc-on': item['on']==1}" (click)="onSpec(item, group)">
+        {{ item.display_name }}
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="enableOrder" fxLayout="row" style="width:100%">
+  <div fxFlex="33%" fxLayoutAlign="start center">
+    <mat-icon color="warn" style="padding-left:10px">thumb_up</mat-icon>
+  </div>
+  <number-selecter *ngIf="menu.usable && menu.stock_status != no_store" style="margin: 10px 0px 5px 10px" [(count)]="count" fxFlex="33%"></number-selecter>
+  <div style="margin: 10px 0px 5px 10px" fxFlex="33%" fxLayoutAlign="end center">
+    <ng-container *ngIf="menu.usable && menu.stock_status != no_store">
+      <button mat-raised-button *ngIf="onOrder==1" color="primary" [disabled]="count > 0 ? false : true" (click)="order()" cdkFocusInitial>注文</button>
+      <button mat-raised-button *ngIf="onOrder!=1" color="primary" [disabled]="count > 0 ? false : true" (click)="ok()" cdkFocusInitial>確定</button>
+    </ng-container>
+    <div *ngIf="menu.usable && menu.stock_status == no_store" style="padding: 5px 15px 5px 15px;margin:5px;font-size:110%">
+      {{'売り切れ' | language:menuSrv.lang}}
+    </div>
+  </div>
+</div>

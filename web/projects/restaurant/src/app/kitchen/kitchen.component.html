@@ -1,0 +1,227 @@
+<!--TODO:   需要针对能针对当前设备，选择接受何种信息（凉菜，酒水，可按照菜品和分类选择），便于分开管理-->
+<!--TODO: 明細画面開く、細かい制御可能、数量で分けて処理、数量変更、辛さ変更など-->
+<div class="content-container">
+
+  <div fxLayout="row"
+    fxLayoutAlign="space-around center"
+    style="padding: 15px;">
+
+    <button mat-icon-button
+      fxFlexAlign="end"
+      (click)="refresh()">
+      <mat-icon>refresh</mat-icon>
+    </button>
+    <mat-slide-toggle #slideToggle
+      color="warn"
+      [(ngModel)]="deleteModel"
+      style="padding-right:15px;"
+      matBadge="{{this.task_data['-1'].length}}"
+      matBadgeOverlap="false"  class="height40"
+      matBadgeColor="warn">
+      取消
+    </mat-slide-toggle>
+
+    <mat-slide-toggle #slideToggle
+      color="accent"
+      [(ngModel)]="isShowDoingPanel"
+      matBadge="{{this.task_data['100'].length}}"
+      matBadgeOverlap="false"  class="color100 height40 width16vw"
+      matBadgeColor="accent">
+      処理待ち
+    </mat-slide-toggle>
+    <mat-slide-toggle #slideToggle
+      color="primary"
+      [(ngModel)]="isShowDonePanel"
+      matBadge="{{this.task_data['300'].length}}"
+      matBadgeOverlap="false"  class="color300 height40 width16vw"
+      matBadgeColor="primary">
+      調理済み
+    </mat-slide-toggle>
+
+    <mat-slide-toggle #slideToggle
+      color="base"
+      [(ngModel)]="isShowOverPanel"
+      matBadge="{{this.task_data['999'].length}}"
+      matBadgeOverlap="false"  class="height40"
+      matBadgeColor="base">
+      完了分
+    </mat-slide-toggle>
+    <button mat-icon-button
+      fxFlexAlign="end"
+      color="primary"
+      (click)="openKitchenSetting($event)">
+      <mat-icon>settings</mat-icon>
+    </button>
+  </div>
+  <div *ngIf="!svr.isConnecting"
+    fxLayout="row"
+    style="padding:10px">
+    <span>
+      監視システム、接続エラー中。。。　
+    </span>
+    <span *ngIf="!WatchList || WatchList.length==0">
+      (※監視対象が選択していません。）
+    </span>
+    <button mat-raised-button
+      color="primary"
+      (click)="init()">
+      <mat-icon color="warn">error</mat-icon> 試して接続
+    </button>
+  </div>
+
+  <div fxLayout="column"
+    style="width:100%">
+    <div fxLayout="row"
+      fxLayoutAlign="center center">
+
+      <!--取消-->
+      <div *ngIf="deleteModel"
+        fxFlex
+        class="progress-col"
+        [@cancelPanelInOut]="'in'">
+        <div class="progress-header"
+          fxLayout="row"
+          fxLayoutAlign="space-between center">
+          <div style="text-align: center">
+              取消
+          </div>
+        </div>
+        <div class="progress-body">
+          <ng-container *ngFor="let data of task_data['-1']">
+            <restaurant-task style="display: block"
+              (next)="onRestart(data)"
+              (delete)="onDelete($event)"
+              [canDelete]="true" 
+              [backName]="''"
+              [taskData]="data"
+              [siteImgHost]="site_image_host"  
+              [currentStatus]="-1"      
+              [chinese]="chinese"
+              [japan]="japan"
+              [nextName]="'復活'">
+            </restaurant-task>
+          </ng-container>
+          <div style="text-align: center">-- END --</div>
+        </div>
+      </div>
+
+
+      <!--待ち-->
+      <div *ngIf="isShowDoingPanel"
+        fxFlex
+        class="progress-col">
+        <div class="progress-header"
+          fxLayout="row"
+          fxLayoutAlign="space-between none">
+          <!--
+          <div style="text-align: center">
+              処理待ち
+          </div>
+          -->
+        </div>
+        <div class="progress-body"
+          fxLayout="column">
+          <ng-container *ngFor="let data of task_data['100'];let i = index;">
+            <restaurant-task style="display: block"
+              (swiperight)="data.from_code = 100;onNext(data, 300)"
+              (next)="data.from_code = 100;onNext(data, 300)"
+              (cancel)="data.from_code = -1;onCancel(data, -1)"
+              (subDel)="onSubDel($event, data)" 
+              (subNext)="onNext($event, 300)" 
+              (subCancel)="onCancel($event, -1)" 
+              (removeTask)="onRemoveTask(data, i)"
+              [taskData]="data"
+              [@waitInOut]="data.from_code"
+              [deleteModel]="deleteModel"  
+              [currentStatus]="100"
+              [canBack]="false"
+              [multiTask]="true"  
+              [siteImgHost]="site_image_host"    
+              [chinese]="chinese"
+              [japan]="japan"         
+              [nextName]="'完了'">
+            </restaurant-task>
+          </ng-container>
+          <div style="text-align: center">-- END --</div>
+        </div>
+      </div>
+
+      <!--調理済み-->
+      <div *ngIf="isShowDonePanel"
+        fxFlex
+        class="progress-col">
+        <div class="progress-header"
+          fxLayout="row"
+          fxLayoutAlign="space-between none">
+          <!--
+          <div style="text-align: center">
+              調理済み
+          </div>
+          -->
+        </div>
+        <div class="progress-body">
+          <ng-container *ngFor="let data of task_data['300']">
+            <restaurant-task style="display: block"
+              (swipeleft)="data.from_code = 300; onNext(data, 100)"
+              (swiperight)="data.from_code = 999;onNext(data, 999)"
+              (back)="data.from_code = 300; onNext(data, 100)"
+              (next)="data.from_code = 999; onNext(data, 999)"
+              (cancel)="data.from_code = -1;onCancel(data, -1)"
+              [taskData]="data"
+              [@doneInOut]="data.from_code"
+              [deleteModel]="deleteModel"  
+              [currentStatus]="300"
+              [siteImgHost]="site_image_host"    
+              [chinese]="chinese"
+              [japan]="japan"     
+              [nextName]="'完了'">
+            </restaurant-task>
+          </ng-container>
+          <div style="text-align: center">-- END --</div>
+        </div>
+      </div>
+
+      <!--完了-->
+      <div *ngIf="isShowOverPanel"
+        fxFlex
+        class="progress-col"
+        [@overPanelInOut]="'in'">
+        <div class="progress-header"
+          fxLayout="row"
+          fxLayoutAlign="space-between none">
+          <!--
+          <div>
+            <span>
+              完了
+            </span>
+          </div>
+          -->
+          <div style="padding:5px">
+          </div>
+        </div>
+        <div class="progress-body">
+          <ng-container *ngFor="let data of task_data['999']">
+            <restaurant-task style="display: block"
+              (swipeleft)="data.from_code = 999;onNext(data, 300)"
+              (back)="data.from_code = 999;onNext(data, 300)"
+              (delete)="removeTask(data)"
+              [taskData]="data"
+              [@overInOut]
+              [deleteModel]="deleteModel"
+              [canNext]="false"
+              [siteImgHost]="site_image_host"     
+              [currentStatus]="999"      
+              [chinese]="chinese"
+              [japan]="japan"
+              [nextName]="''">
+            </restaurant-task>
+          </ng-container>
+          <div style="text-align: center">-- END --</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div id="audiDiv" style="display: none" #audiDiv (click)="clickPlayAuto()">
+
+</div> -->

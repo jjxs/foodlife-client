@@ -1,0 +1,19 @@
+<div *ngIf="authSrv.Authenticated && authSrv.isShow('/staff')" fxLayout="column" fxLayoutAlign="space-between center" style="height: calc(100vh);width:100vw;overflow-y:hidden;">
+  <!-- <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span style="padding-right:20px;">{{authSrv.nickname}}（{{authSrv.role_name}}）</span>
+      <span class="toolbar-spacer"></span>
+      <mat-icon class="header-icon">exit_to_app</mat-icon>
+    </mat-toolbar-row>
+  </mat-toolbar> -->
+  <router-outlet></router-outlet>
+  <mat-toolbar style="display:none">
+    <mat-toolbar-row class="header" fxLayout="row">
+      <!-- <button class="header-button" mat-raised-button routerLink="/staff/top" color="primary" [disabled]="staffSrv.activeButton === 'top'" style="width: 15%">トップ</button> -->
+      <button class="header-button" mat-raised-button routerLink="/staff/menu" color="primary" [disabled]="staffSrv.activeButton === 'menu'" style="width: 15%">メニュー</button>
+      <!-- <button class="header-button" mat-raised-button routerLink="/staff/order" color="primary" [disabled]="staffSrv.activeButton === 'order'" style="width: 15%">注　文</button> -->
+      <button class="header-button" mat-raised-button routerLink="/staff/counter" color="primary" [disabled]="staffSrv.activeButton === 'counter'" style="width: 15%">レジ</button>
+      <button class="header-button" mat-raised-button routerLink="/staff/setting" color="primary" [disabled]="staffSrv.activeButton === 'setting'" style="width: 15%">設　定</button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>

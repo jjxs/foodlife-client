@@ -1,0 +1,126 @@
+<div class="counter-panel" fxLayout="column">
+  
+    <button type="button" mat-icon-button *ngIf="isPad()" style="top: 0px; right:0px;position: absolute;" (click)="openCashBox()">
+      <mat-icon color="primary">local_atm</mat-icon>
+    </button>
+  <!-- 金額入力パネル -->
+  <div *ngIf="money.price_tax_in<=0" class="pay-count">支払金額（税抜）：{{money.total | currency:'￥':'symbol':'1.0-0'}}</div>
+  <div *ngIf="money.price_tax_in>0"  class="pay-count">税抜メニュー金額（税込）：{{money.price | currency:'￥':'symbol':'1.0-0'}}（税抜：{{money.total | currency:'￥':'symbol':'1.0-0'}}）</div>
+  <div *ngIf="money.price_tax_in>0"  class="pay-count">税込メニュー金額（税込）：{{money.price_tax_in | currency:'￥':'symbol':'1.0-0'}}</div>
+  <div class="pay-amount">
+    
+      <button style="margin-right:25px" color="accent" (click)="clearMoney($event)">
+          <mat-icon class="example-icon">cached</mat-icon>
+          <!-- クリア -->
+        </button>
+        支払金額（税込）：<span style="">{{ money.amounts_actually | currency:'￥':'symbol':'1.0-0'}}</span>
+    
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="space-between center" class="input-model">
+    <mat-form-field fxFlex="45" (click)="shiftInput('cut')" [ngClass]="{'bgcolor-primary input-selected' : inputModel==='cut' }">
+      <input matInput type="number" class="input-item" [ngModel]="money.cut" [readonly]="true">
+      <span matPrefix>割引&nbsp;</span>
+      <span matSuffix>％</span>
+    </mat-form-field>
+    <mat-form-field fxFlex="45" (click)="shiftInput('reduce')" [ngClass]="{'bgcolor-primary input-selected' : inputModel==='reduce' }">
+      <input matInput type="number" class="input-item" [ngModel]="money.reduce" [readonly]="true">
+      <span matPrefix>減額￥&nbsp;</span>
+      <span matSuffix>円</span>
+    </mat-form-field>
+  </div>
+
+  <div fxLayout=" row" fxLayoutAlign="space-between center"  class="input-model">
+    <mat-select fxFlex="20" placeholder="" disableRipple #selectPay style="padding-left:10px" [(value)]="payMethod" (valueChange)="onPayMethodChange($event)">
+      <ng-container *ngFor="let item of payMethodMaster; let i = index;">
+        <mat-option [value]="item.name" style="height: 64px">
+          <div fxLayout="row" fxLayoutAlign="space-around center">
+            <img src="{{site_image_host}}{{item.option['img']}}" width="auto" height="56" plain *ngIf="item.option != null">
+            <span>{{item.display_name}}</span>
+          </div>
+        </mat-option>
+      </ng-container>
+    </mat-select>
+    <img *ngIf="payMethodImage" fxFlex="20" src="{{site_image_host}}{{payMethodImage[selectPay.value]}}" plain>
+    <mat-form-field fxFlex="45" (click)="shiftInput('pay')" [ngClass]="{'bgcolor-primary input-selected' : (inputModel==='pay' && selectPay.value === 'money'), 'input-disabled':selectPay.value !== 'money' }">
+      <input matInput type="number" class="input-item" [ngModel]="money.pay" [readonly]="true">
+      <span matPrefix>預り￥&nbsp;</span>
+      <span matSuffix>円</span>
+    </mat-form-field>
+  </div>
+
+  <div style="padding-top: 10px" fxLayout="row" fxLayoutAlign="start center">
+    <div fxFlex="50">
+      <button class="count-button" mat-raised-button color="accent" (click)="showDetail()" [disabled]="!isStart">明細/確認</button>
+    </div>
+    <div fxFlex="50" style="text-align:right;">お釣り：<span style="color:crimson;font-size:150%">{{ money.change | currency:'￥':'symbol':'1.0-0'}}</span></div>
+  </div>
+  <mat-grid-list fxFlex cols="4" rowHeight="fit" gutterSize="5" style="margin-top:10px;height:60vh">
+
+    <!-- <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button" mat-raised-button color="primary" (click)="clickAction('cancel')" [disabled]="counterId < 0">一括<br>取消</button>
+    </mat-grid-tile> -->
+    <!-- <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button" mat-raised-button color="warn" (click)="shiftInput('cut')" [disabled]="!isStart">割引</button>
+    </mat-grid-tile> -->
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('7')" [disabled]="!isStart">7</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('8')" [disabled]="!isStart">8</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('9')" [disabled]="!isStart">9</button>
+    </mat-grid-tile>
+<!--     
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button" mat-raised-button color="primary" (click)="showDetail()" [disabled]="!isStart">明細/確認</button>
+    </mat-grid-tile> -->
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button" mat-raised-button color="accent" (click)="backspaceInput()" [disabled]="!isStart">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+    </mat-grid-tile>
+    <!-- <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button" mat-raised-button color="warn" (click)="shiftInput('reduce')" [disabled]="!isStart">減額</button>
+    </mat-grid-tile> -->
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('4')" [disabled]="!isStart">4</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('5')" [disabled]="!isStart">5</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('6')" [disabled]="!isStart">6</button>
+    </mat-grid-tile>
+    
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button" mat-raised-button color="accent" (click)="clearInput()" [disabled]="!isStart">C</button>
+    </mat-grid-tile>
+    <!-- <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button" mat-raised-button color="accent" (click)="shiftInput('pay')" [disabled]="!isStart">預<br>り</button>
+    </mat-grid-tile> -->
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('1')" [disabled]="!isStart">1</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('2')" [disabled]="!isStart">2</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('3')" [disabled]="!isStart">3</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2">
+      <button class="count-button" mat-raised-button color="warn" (click)="onPay()" [disabled]="checkOkDisabled()">確<br>定</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('0')" [disabled]="!isStart">0</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('00')" [disabled]="!isStart">00</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button" mat-raised-button color="primary" (click)="onInput('0000')" [disabled]="!isStart">万</button>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>

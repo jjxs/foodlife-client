@@ -1,0 +1,37 @@
+<ons-toolbar>
+  <div class="center">ホーム</div>
+  <div class="right">
+    <app-pop-menu></app-pop-menu>
+  </div>
+</ons-toolbar>
+<div class="content">
+
+  <ons-card>
+    <div style="text-align:center">今日のおすすめ</div>
+    <div style="text-align:center">{{title}}</div>
+    <ons-carousel #carousel swipeable auto-scroll overscrollable style="height:300px">
+      <v-ons-carousel-item *ngFor="let value of items" [ngStyle]="value.style">
+      </v-ons-carousel-item>
+    </ons-carousel>
+    <div class="flex-container" style="padding-top:10px">
+      <ons-toolbar-button class="flex-left" (click)="prev()">
+        <ons-icon icon="md-chevron-left"></ons-icon>
+      </ons-toolbar-button>
+      <ons-button class="flex-center" modifier="outline" style="padding: 0 5px" (click)="order()">今すぐ注文</ons-button>
+      <ons-toolbar-button class="flex-right" (click)="next()">
+        <ons-icon icon="md-chevron-right"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+  </ons-card>
+  <ons-card>
+    <div style="text-align:center">ニュース</div>
+    <ons-list>
+      <ons-list-header>最新状況</ons-list-header>
+      <ons-list-item>ご紹介キャンペーン</ons-list-item>
+      <ons-list-item>店長おすすめ</ons-list-item>
+    </ons-list>
+  </ons-card>
+
+</div>
+
+

@@ -1,0 +1,11 @@
+.mat-form-field-infix {
+  margin: 0px 0px 2px 3px;
+}
+
+:host.example-floating {
+  opacity: 1;
+}
+
+.mat-form-field {
+  min-width: 0;
+}

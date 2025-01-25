@@ -1,0 +1,58 @@
+<!-- must be located just under an outermost box such as body element -->
+<ons-dialog animation="default" cancelable #dialog>
+  <div class="dialog-mask"></div>
+  <div class="dialog" style="width: 80%">
+    <div class="dialog-container" style="height:auto;">
+      <app-detail [menuData]="view_data" [menuId]="selectId"></app-detail>
+      <div class="content">
+        <div style="text-align: center;padding-bottom:5px;">
+          <ons-button (click)="dialog.hide()">閉じる</ons-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ons-dialog>
+
+<ons-toolbar>
+  <div class="left" (click)="actionSheet.show()">
+    <ons-icon class="primary-color" style="font-size:32px;margin-left:20px" icon="ion-navicon, material:md-menud"></ons-icon>
+    <label class="primary-color" style="margin: 0px 3px 0px 3px;padding:5px 10px;">メニュー切替</label>
+  </div>
+  <div class="right" style="text-align: right;padding-right: 5px;">
+    <label class="primary-color">食べ放題</label>
+    <app-pop-menu></app-pop-menu>
+  </div>
+</ons-toolbar>
+<div class="content">
+  <ons-list>
+    <ng-container *ngFor="let menu of menu_data">
+      <ons-list-header>{{menu.type_name}}</ons-list-header>
+      <ons-list-item *ngFor="let menu of menu.datas" tappable>
+        <div class="left" (click)="dialog.show();">
+          <!-- <ons-icon  class="warn-color" style="font-size:32px" icon="md-close-circle" (click)="count = count > 0 ? count - 1 : 0 "></ons-icon> -->
+          <img class="list-item__thumbnail" [src]="menu.url" style="padding-left: 5px;">
+        </div>
+        <div class="center" (click)="dialog.show()">
+          <span class="list-item__title">{{menu.name}}</span>
+          <span class="list-item__subtitle">{{menu.price}}　 /{{menu.unit}}</span>
+        </div>
+        <div class="right">
+          <app-sel-counter class="right" [count]="menu.count"></app-sel-counter>
+        </div>
+      </ons-list-item>
+    </ng-container>
+  </ons-list>
+</div>
+<ons-action-sheet #actionSheet cancelable [attr.animation]="animation">
+  <div class="action-sheet-mask"></div>
+  <div class="action-sheet">
+    <div class="action-sheet-title">分類選択</div>
+    <ons-action-sheet-button icon="md-square-o" (click)="actionSheet.hide()">看板料理</ons-action-sheet-button>
+    <ons-action-sheet-button icon="md-square-o" (click)="actionSheet.hide()">セール</ons-action-sheet-button>
+    <ons-action-sheet-button icon="md-square-o" (click)="actionSheet.hide()">お料理</ons-action-sheet-button>
+    <ons-action-sheet-button icon="md-square-o" (click)="actionSheet.hide()">コース</ons-action-sheet-button>
+    <ons-action-sheet-button icon="md-square-o" (click)="actionSheet.hide()">お飲み物</ons-action-sheet-button>
+    <ons-action-sheet-button icon="md-square-o" (click)="actionSheet.hide()">放題メニュー</ons-action-sheet-button>
+    <ons-action-sheet-button icon="md-close" (click)="actionSheet.hide()">Cancel</ons-action-sheet-button>
+  </div>
+</ons-action-sheet>

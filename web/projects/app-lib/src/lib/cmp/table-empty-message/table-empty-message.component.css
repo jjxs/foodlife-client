@@ -1,0 +1,9 @@
+.no-records {
+    height: 100px;
+    display: flex;
+    color: #757575c9;
+    font-size: 3em !important;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}

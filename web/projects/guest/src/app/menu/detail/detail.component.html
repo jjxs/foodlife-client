@@ -1,0 +1,20 @@
+<ons-card>
+  <div style="text-align:center">{{current.name}}</div>
+  <img [src]="current.url" alt="Onsen UI" style="width:100%;height:auto">
+
+  <div style="text-align:center">
+    <span class="list-item__title">{{current.price}}　 /{{current.unit}}</span>
+  </div>
+
+  <div class="flex-container" style="padding-top:10px;">
+    <ons-toolbar-button [disabled]="!(menuId > 0)" class="flex-left" modifier="outline" (click)="prev()">
+      <ons-icon *ngIf="(menuId > 0)" icon="md-chevron-left"></ons-icon>
+      <span *ngIf="!(menuId > 0)">最前</span>
+    </ons-toolbar-button>
+    <app-sel-counter></app-sel-counter>
+    <ons-toolbar-button [disabled]="(menuId >= this.menuData.length-1)" class="flex-right" modifier="outline" (click)="next()">
+      <ons-icon *ngIf="!(menuId >= this.menuData.length-1)" icon="md-chevron-right"></ons-icon>
+      <span *ngIf="(menuId >= this.menuData.length-1)">最後</span>
+    </ons-toolbar-button>
+  </div>
+</ons-card>

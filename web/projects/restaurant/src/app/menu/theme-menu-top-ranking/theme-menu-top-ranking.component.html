@@ -1,0 +1,10 @@
+<div style="background-color: white;height:100%;overflow: hidden;">
+    <div class="ranking-top" (dblclick)="refresh()">人気ランキング</div>
+    <div class="ranking-item-group">
+        <div class="ranking-item" *ngFor="let menu of menuData; let i = index" (click)="onClick($event,i) ">
+            <div *ngIf="i<3" class="trangle trangle-{{i+1}}" ></div>
+            <div class="title">{{ menu.menu_name | language:menuSrv.lang }}</div>
+            <!-- <img *ngIf="menu.menu_id" class="image-img" [src]="'/assets/images/menu/'+ menu.menu_no +'.jpg'" alt="Norway" (error)="srcError($event)"> -->
+        </div>
+    </div>
+</div>

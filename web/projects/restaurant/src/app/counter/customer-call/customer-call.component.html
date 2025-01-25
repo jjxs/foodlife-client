@@ -1,0 +1,32 @@
+<div class="content-container" fxLayout="column">
+  <div class="wait-box" fxLayout="row">
+    <div fxFlex="6" class="wait-header" (dblclick)="goSettings()">待ちのお客様</div>
+    <div fxFlex="90" style="overflow-x: scroll; margin: 1em;" fxLayout="row">
+      <div *ngFor="let item of callList; let i = index;" class="wait-item" [@flyInOut]="'in'" (click)="onItemClick(i)">
+        <p>
+          {{item.seat_name}} 
+        </p>
+        <p>
+          {{item.seat_no}}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="callBoxDisplay" class="call-box" (click)="onCallClick()">
+    <p class="title">
+      {{seat_name}}
+    </p>
+    <p class="title">
+      {{seat_no}}
+    </p>
+    <p class="del-title">
+      削除
+    </p>
+  </div>
+  <div *ngIf="!callBoxDisplay" class="call-box">
+    なし
+  </div>
+</div>
+
+

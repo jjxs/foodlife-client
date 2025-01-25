@@ -1,0 +1,29 @@
+.footer-bar {
+  height:7%;
+  width:100%;
+  text-align: center;
+  display: flex;
+}
+
+
+.btn {
+  height: 80%;
+  flex:1;
+  margin: 4px 5px 0px 5px;
+  border-radius: 5px;
+  line-height: 1.1;
+  font-size: 30px;
+  max-height: 100%;
+  /* font-weight: bold; */
+  /* background-color: #148a6f; */
+  background-color: #cc6600;
+  color:white;
+  border: none;
+  user-select: none;
+  outline: none;
+  white-space: nowrap;
+}
+.primary {
+  /* background-color: #69ffdd; */
+  background-color: #ffcc99;
+}

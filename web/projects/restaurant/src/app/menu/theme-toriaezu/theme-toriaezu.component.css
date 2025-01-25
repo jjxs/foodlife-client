@@ -1,0 +1,15 @@
+.img {
+  /* border-style: solid; */
+  /* border-color: #cc6600; */
+  background-color: #FFFFFF;
+  margin: 1px;
+  border-radius: 5px;
+}
+
+.hidden {
+  display:none;
+}
+
+img {
+  width: 100%;
+}

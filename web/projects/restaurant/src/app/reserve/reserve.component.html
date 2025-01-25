@@ -1,0 +1,74 @@
+<div class="content-container">
+  <div fxLayout="column" style="height:calc(100vh - 10px);">
+    <div fxLayout="flex" fxLayoutAlign="space-between center">
+      <div>
+        <button color="primary" mat-button (click)="refresh($event)">
+          <mat-icon class="example-icon">refresh</mat-icon>最新情報更新
+        </button>
+      </div>
+      <div style="margin-right: 5px;">
+        <mat-checkbox [(ngModel)]="complete" (change)="refresh($event)">処理済</mat-checkbox>
+      </div>
+
+    </div>
+    <div style="padding:5px;overflow-y:auto; ">
+      <table mat-table [dataSource]="dataSource" matSort class="table" style="height:100%;width:100%">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 名前. </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 電話番号. </th>
+          <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="reserve_date">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 日別. </th>
+          <td mat-cell *matCellDef="let element"> {{element.reserve_date | date:'yyyy/MM/dd HH:mm'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="person">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 人数. </th>
+          <td mat-cell *matCellDef="let element"> {{element.person}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="seat_type">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 席テープ. </th>
+          <td mat-cell *matCellDef="let element"> {{element.seat_type?"個室":"普通席"}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="smoke">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 喫煙. </th>
+          <td mat-cell *matCellDef="let element"> {{element.smoke?"あり":"なし"}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="memo">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 100px; "> メモ. </th>
+          <td mat-cell *matCellDef="let element">
+            <div style="overflow-x: hidden; height: 20px; max-width: 100px;">
+              {{element.memo}}
+            </div>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="control">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="width:auto"> </th>
+          <td mat-cell *matCellDef="let element">
+
+
+            <div *ngIf="element.status === '1'">処理済</div>
+            <button *ngIf="element.status === '0'" color="primary" mat-raised-button
+              (click)="setOver($event, element)">処理済</button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsWithSelect"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsWithSelect;"
+          [style.background]="row.selected===true ? '#42A948': ''"></tr>
+      </table>
+    </div>
+  </div>
+</div>

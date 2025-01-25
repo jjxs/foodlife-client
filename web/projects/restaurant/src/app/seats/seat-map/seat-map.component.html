@@ -1,0 +1,7 @@
+<div class="seat-list">
+  <div *ngFor="let item of seatList" [ngClass]="{seat:1, used:item.use_start}">
+    <div (click)="goTo(item)">No.{{item.seat_no}}</div>
+    <div *ngIf="item.guest_number>0" (click)="goTo(item)">{{item.guest_number}}人 / {{getUtypeName(item['guest_utype'])}}</div>
+    <div *ngIf="item.guest_number==0" (click)="goTo(item)">-</div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div [ngClass]="{'image-free': menu.is_free === true, 'image': menu.is_free === false, 'sale': menu.ori_price>0}"
+  (click)="onClick($event)">
+  <img *ngIf="menu.id" [ngClass]="{'image-img':1, 'bottom10':showIntro, 'gray-style':menu.stock_status==no_store}" src="{{site_image_host}}{{menu.image}}"
+    alt="{{menu.name}}" (error)="srcError($event)">
+  <!-- <img *ngIf="menu.id" class="image-img" [src]="'/assets/images/menu/000001.jpg'" alt="Norway">-->
+
+  <div *ngIf="menu.id" class="image-title" fxLayout="row" fxLayoutAlign="end center">
+    <!-- <button  mat-fab color="primary" >
+    </button> -->
+    <img #image *ngIf="enableOrder && menu.stock_status != no_store" (mouseup)="mouseup($event)" (mousedown)="mousedown($event)"
+      class="image-button" [src]="imageUrl" alt="Norway" (click)="onOrder($event)">
+    <!-- <div *ngIf="!menu.usable" style="padding: 5px 15px 5px 15px;margin:5px;font-size:110%">
+      売り切れ
+    </div> -->
+    <img #image *ngIf="enableOrder && menu.stock_status == no_store" [src]="'/assets/images/saleOut.png'" class="image-button">
+  </div>
+  <div *ngIf="menu.id" class="image-text" fxLayout="column" [ngClass]="{'gray-style':menu.stock_status==no_store}">
+    <div *ngIf="menu.ori_price" style="text-align: left;color: red;font-size:small;">★<span
+        *ngIf="menu.ori_price/2==menu.price">{{'半額' | language:menuSrv.lang}}</span>セール★ </div>
+    <div style="text-align: left; height:24px;">{{menu.name | language:menuSrv.lang}}</div>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <span class="hanzi-font">{{showCnTitle(menu)}}</span>
+      <span style="text-align: right; min-width: 110px;" *ngIf="!menu.is_free" [ngClass]="{bottom10:showIntro}">
+        <ng-container>
+          <span *ngIf="menu.ori_price" style="text-decoration: line-through;font-weight: 600;font-size:small;">
+            {{ zekomi(menu.ori_price, menu.tax_in) | currency:'￥':'symbol':'1.0-0'}}
+          </span>
+          <span *ngIf="menu.ori_price"
+            style="color: red;font-size:large;">{{ zekomi(menu.price, menu.tax_in) | currency:'￥':'symbol':'1.0-0'}}</span>
+          <span *ngIf="!menu.ori_price">{{ zekomi(menu.price, menu.tax_in) | currency:'￥':'symbol':'1.0-0'}}</span>
+          (税込)
+          <!-- <ng-container *ngIf="!menu.tax_in"> (税抜)</ng-container> -->
+        </ng-container>
+      </span>
+      <span style="text-align: left" *ngIf="menu.is_free">
+        <span
+          style="padding-left:10px;text-decoration:line-through">{{zekomi(menu.price, menu.tax_in) | currency:'￥':'symbol':'1.0-0'}}</span>
+        放題
+      </span>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="showIntro">
+      <div [innerHtml]="menu.introduction" style="white-space: pre-wrap;
+      margin-top: 20px;
+      line-height: 30px;
+      max-height:330px;
+      overflow-y: auto;
+      text-align: left;"></div>
+    </div>
+  </div>
+</div>

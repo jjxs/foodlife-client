@@ -1,0 +1,97 @@
+<div class="progress-card" *ngIf="taskData">
+  <mat-expansion-panel hideToggle expanded="true">
+    <mat-expansion-panel-header [ngClass]="{'progress-task-header': 1,color0:currentStatus==999 || currentStatus==-1, color100:currentStatus==100, color300:currentStatus==300}">
+      <mat-panel-title>
+        <div *ngIf="!(multiTask && taskData.sub_data.length > 0)" style="text-align: right;position: absolute;right:0;top:0">
+          <button *ngIf="deleteModel" fxAlign="end" mat-fab (click)="onCancel()" color="warn">{{cancelName}}</button>
+          <button *ngIf=" !deleteModel && nextName !== '' " fxAlign="end" [disabled]="!canNext" mat-fab (click)="onNext()" [ngClass]="{color100:currentStatus==100, color300:currentStatus==300}"
+            color="primary">{{nextName}}</button>
+          <label fxAlign="end" *ngIf="label !== ''">{{label}}</label>
+        </div>
+        
+        <button style="position: absolute;left:0;top:0" *ngIf="canBack && !deleteModel && backName !== ''" [disabled]="!canBack"
+          mat-mini-fab (click)="onBack()" color="base">{{backName}}
+        </button>
+        <button style="position: absolute;left:0;top:0" *ngIf="canDelete" mat-mini-fab (click)="onDelete()" color="warn">削 除</button>
+        <span *ngIf="canBack && !deleteModel && backName !== ''" style="width:25px;" ></span>
+
+        <span style="color: #fff;font-size:30px;" *ngIf="multiTask && taskData.sub_data.length > 0">（※まとめ個数： <span class="bgcolor-accent" style="border-radius:3px; padding: 0px 3px;">{{taskData.getTotal()}}
+            個
+          </span> 
+        </span>
+
+        <div *ngIf="!(multiTask && taskData.sub_data.length > 0)">
+          <span style="font-size:30px;padding:3px 5px 3px 10px;color:yellow;">
+            No.{{taskData.seat_no}}
+          </span>
+          <span class="bgcolor-accent" style="margin-left:8px;border-radius:3px; font-size:30px; padding:0px 3px;">{{taskData.count}} 個 </span>
+        </div>
+      </mat-panel-title>
+      <mat-panel-description style="text-align: right;">
+        <span *ngIf="!(multiTask && taskData.sub_data.length > 0)" style="padding:3px 10px;font-size:25px;color: #fff;line-height: 30px;">{{taskData.order_time
+          | date:'[HH:mm]' }}</span>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div fxLayout="row" fxLayoutAlign="space-between center" style="position: relative;">
+      <div class="task-name" style="font-size: 130%;" fxLayout="row" fxLayoutAlign="space-between center" flex >
+        <img *ngIf="taskData.menu_image" style="width:120px;height:auto" [src]="siteImgHost + taskData.menu_image" alt="">
+        <div class="task-name" flex>
+          <div *ngIf="taskData.menu_note && chinese" class="bold">{{taskData.menu_note}}</div>
+          
+          <div *ngIf="chinese && !japan" [ngClass]="{'bold': 1}">{{taskData.menu_name | language:'zh'}}</div>
+          <div *ngIf="japan && !chinese" [ngClass]="{'bold': 1}">{{taskData.menu_name}}</div>
+          <div *ngIf="japan && chinese" [ngClass]="{'bold': 1}">{{taskData.menu_name}}</div>
+
+          <div *ngFor="let display_name of taskData.menu_display_name" class="menu-title2">{{display_name}}</div>
+          <div class="items" *ngIf="items.length>0">
+            <div class="title" > 処理待ち </div>
+            <ng-container *ngFor="let item of items; let i = index">
+              <div fxLayout="row" class="item" fxLayoutAlign="space-between center" *ngIf="item.status==0">
+                <div fxLayout="row" class="menu-list-name">
+                  {{ item['name'] }} 
+                </div>
+                <button *ngIf="item['status']==0" mat-raised-button color="primary" (click)="ok(item, i)">完成</button>
+              </div>
+            </ng-container>
+          </div>
+          
+          <div class="finished" *ngIf="items.length>0">
+            <div class="title" > 調理済み </div>
+            
+            <ng-container *ngFor="let item of items; let i = index">
+              <div fxLayout="row" class="item" fxLayoutAlign="space-between center" *ngIf="item.status==1">
+                <div fxLayout="row" class="menu-list-name">
+                  {{ item['name'] }} 
+                </div>
+                
+                <button *ngIf="item['status']==1" mat-raised-button color="warn" (click)="modoru(item, i)">戻</button>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="multiTask && taskData.sub_data.length > 0" fxLayout="row wrap" fxLayoutGap="0px" fxLayoutGap.xs="0"
+      fxLayout.xs="column">
+      <ng-container *ngFor="let sub of taskData.sub_data;let i = index;">
+        <div class="sub-progress-card" style="min-width:180px">
+          <div fxLayout="row" fxLayoutAlign="space-around center" class="sub-body" style="font-size:24px;">
+              <div style="padding:3px 5px;color:yellow" class="bgcolor-primary"> No.{{sub.seat_no}}</div>
+            <div style="padding:3px 5px 3px 5px;font-size:80%">{{sub.order_time | date:'[HH:mm]' }}</div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-around center" style="width:100wh;padding:5px;">
+            <button *ngIf="deleteModel" mat-raised-button (click)="onSubCancel(sub, i)" color="warn">{{cancelName}}</button>
+            <!--一時的に利用中止 <button *ngIf="!deleteModel && nextName !== ''" [disabled]="!canNext" mat-raised-button (click)="onSubDel(sub, i)">後で</button> -->
+            <div class="task-count">
+                <span class="bgcolor-accent" style="border-radius:3px; padding:3px 5px;font-size:20px;">{{sub.count}} 個</span>
+              </div>
+            <button color="primary" *ngIf="!deleteModel && nextName !== ''"  [disabled]="!canNext" mat-raised-button [ngClass]="{color100:currentStatus==100, color300:currentStatus==300}"
+              (click)="onSubNext(sub, i)">{{nextName}}</button>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </mat-expansion-panel>
+</div>

@@ -1,0 +1,35 @@
+<div mat-dialog-title style="text-align: center">
+  Welcome
+</div>
+<div mat-dialog-content>
+  <div fxLayout="column">
+    <div fxFlexAlign="center" fxLayout="row" *ngIf="default_saas_id==''">
+      <div>
+        <mat-icon color="primary" style="font-size:32px;margin:15px">account_circle</mat-icon>
+      </div>
+      <mat-form-field>
+        <input matInput placeholder="Shop ID" [(ngModel)]="params.saas_id">
+      </mat-form-field>
+    </div>
+    <div fxFlexAlign="center" fxLayout="row">
+      <div>
+        <mat-icon color="primary" style="font-size:32px;margin:15px">account_circle</mat-icon>
+      </div>
+      <mat-form-field>
+        <input matInput placeholder="username" [(ngModel)]="params.username">
+      </mat-form-field>
+    </div>
+    <div fxFlexAlign="center" fxLayout="row">
+      <div>
+        <mat-icon color="primary" style="font-size:32px;margin:15px">vpn_key</mat-icon>
+      </div>
+      <mat-form-field>
+        <input type="password" matInput placeholder="password" [(ngModel)]="params.password">
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+<div style="text-align: center">  
+  <button mat-raised-button color="accent" [mat-dialog-close]="data.animal" cdkFocusInitial (click)="guestLogin()">ゲストで利用</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="data.animal" (click)="login()" style="margin-left: 20px;">OK</button>
+</div>

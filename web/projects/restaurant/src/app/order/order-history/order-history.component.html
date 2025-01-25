@@ -1,0 +1,51 @@
+<div theme [ngClass]="{'content-container':isGuest, hidden:!show}">
+  <mat-toolbar class="order-history-toolbar">
+    <span>{{title}}</span>
+    <mat-radio-group [(ngModel)]="display_model" color="primary">
+      <mat-radio-button value="time" class="radio" >時間</mat-radio-button>
+      <mat-radio-button value="list" class="radio" >まとめ</mat-radio-button>
+    </mat-radio-group>
+    <span class="toolbar-spacer"></span>
+    <div class="total">合計:{{countPrice | currency:'￥':'symbol':'1.0-0'}} (税込)</div>
+    <button type="button" color="primary" mat-icon-button (click)="ngOnInit()">
+      <mat-icon>refresh</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div *ngIf="display_model==='time'" fxLayout="column" [ngClass]="{'auto-height':isGuest}">
+    <ng-container *ngFor="let order of orders | keyvalue ">
+      <restaurant-order-card *ngIf="!order.value.is_menu_free" [order]="order.value" [isGuest]="isGuest" [parent]="this"></restaurant-order-card>
+      <restaurant-order-card-menufree *ngIf="order.value.is_menu_free" [order]="order.value"></restaurant-order-card-menufree>
+    </ng-container>
+  </div>
+  <div *ngIf="display_model==='list'" [ngClass]="{'auto-height':isGuest}" style="padding:10px;">
+    <ng-container *ngFor="let item of menu_list  | keyvalue">
+      <div fxLayout="row" fxLayoutAlign="space-between center" style="padding:10px;border-top:1px solid grey">
+        <div fxLayout="column" fxFlex="25%">
+          <!-- <div>[{{item.value.no}}]</div> -->
+          <div>{{item.value.name}}</div>
+        </div>
+        <div fxFlex="15%">
+          <div>完成：{{item.value.over}}　</div>
+          <div>調理中：{{item.value.wait}}</div>
+        </div>
+        <!--
+        <div fxFlex="15%">
+          <span>単価：{{item.value.price | currency:'￥':'symbol':'1.0-0'}}</span>
+        </div>
+        <div fxFlex="10%">
+          <span *ngIf="!item.value.tax_in">税抜</span>
+          <span *ngIf="item.value.tax_in">☆税込</span>
+        </div>
+        <div fxFlex="20%">
+          <span>合計：{{item.value.price * (item.value.over + item.value.wait) | currency:'￥':'symbol':'1.0-0'}}</span>          
+        </div>
+        -->
+        <div fxFlex="" *ngIf="isGuest" style="text-align: right;">
+          <button mat-raised-button color="primary" (click)="reOrder($event, item.key)">
+            おかわり
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

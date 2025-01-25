@@ -1,0 +1,25 @@
+.seat {
+    float: left;
+    width: calc(100vw/5 - 8px);
+    height: 100px;
+    background-color: #d9d2cb;
+    margin: 3px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 100px;
+}
+.used {
+    background-color: #ffcc99;
+}
+.seat-list {
+    width: calc(100vw - 10px);
+    height: calc(100vh - 10px);
+    padding: 5px;
+    overflow-y: scroll;
+}
+
+@media (max-width: 800px) {
+    .seat {
+        width: calc(100vw/3 - 10px);
+    }
+}

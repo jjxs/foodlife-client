@@ -1,0 +1,25 @@
+.callout{
+    position: relative;
+    width: 6.5em;
+    font-size: 90%;
+    line-height: 1.5;
+    padding: .3em;
+    border-radius: .2em;
+    border: 1px solid #8B242E;
+    margin-top: -44px;
+    background: #FFD6D9;
+    left: 274px;
+    color: #757575;
+}
+.callout:before{/*给提示框描画出箭头*/
+    content: "";
+    position: absolute;
+    top: 0.59em;
+    left: -7px;
+    padding: .35em;
+    background: inherit;
+    border: inherit;
+    border-right: 0;
+    border-bottom: 0;
+    transform: rotate(-40deg);
+}

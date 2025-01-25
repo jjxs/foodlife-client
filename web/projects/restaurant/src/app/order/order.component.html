@@ -1,0 +1,52 @@
+<div class="content-container">
+  <mat-accordion>
+    <ng-container *ngFor="let seat of seats">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title class="bgcolor-primary" style="padding:10px">{{displayTitle(seat)}}</mat-panel-title>
+        </mat-expansion-panel-header>
+        <restaurant-order-history [seatId]="seat.seat" [show]="true" [title]="seat.start | date:'利用開始：　HH:mm ～ '"></restaurant-order-history>
+      </mat-expansion-panel>
+    </ng-container>
+  </mat-accordion>
+  <!-- <mat-toolbar>
+    <button type="button" mat-icon-button (click)="ngOnInit()">
+      <mat-icon color="primary">refresh</mat-icon>
+    </button>
+    <span>注文管理</span>
+    <span class="toolbar-spacer"></span>
+    <span style="padding-right:20px;"></span>
+    <span style="padding-right:20px;"></span>
+  </mat-toolbar>
+  <div fxLayout="column" style="height:100%">
+    <mat-accordion>
+      <ng-container *ngFor="let seat of seats | keyvalue">
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title class="order-header bgcolor-primary" fxLayout="row" fxLayoutAlign="space-between end"
+              style="padding-top:5px;padding-bottom:5px ">
+              <span fxFlex="30%">
+                <span style="padding-left: 10px">{{seat.value.seat_group_name + '・' + seat.value.seat_name}}</span>
+              </span>
+              <span fxFlex="40%" *ngIf="seat.value.hasWaitData">
+                <mat-icon color="warn">warning</mat-icon>
+                <span style="padding-left: 10px">確認待ちあり</span>
+              </span>
+              <div fxLayout="row" fxLayoutAlign="end center">
+                <span style="padding-right: 15px">{{ seat.value.start | date:'HH:mm ～' }}</span>
+                <span style="width: 35px;">
+                  <mat-icon color="warn" *ngIf="seat.value.orders.length>0" matBadge="{{seat.value.orders.length}}"
+                    matBadgeOverlap="false" matBadgeColor="accent">shopping_cart</mat-icon>
+                  <mat-icon>map</mat-icon>
+                </span> </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ng-container *ngFor="let order of seat.value.orders | keyvalue">
+            <restaurant-order-card *ngIf="!order.value.is_menu_free" [order]="order.value"></restaurant-order-card>
+            <restaurant-order-card-menufree *ngIf="order.value.is_menu_free" [order]="order.value"></restaurant-order-card-menufree>
+          </ng-container>
+        </mat-expansion-panel>
+      </ng-container>
+    </mat-accordion>
+  </div> -->
+</div>

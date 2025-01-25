@@ -1,0 +1,18 @@
+.alert {
+  font-size: 90%;
+  position: relative;
+  padding: 0.25rem 0.25rem;
+  margin: 0.15rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+
+  width: 85%;
+}
+
+.container {
+  margin: 5px;
+}

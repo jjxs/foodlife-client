@@ -1,0 +1,10 @@
+<app-home *ngIf="usable"></app-home>
+<div *ngIf="!usable">
+  APIVersion:{{app.Version}}<br>
+  ClientVersion:{{client_version}}<br>
+  <h1>最新バージョンあります、アプリを再起動してください！</h1>
+  <button mat-raised-button color="accent" (click)="refresh()">リフレッシュ</button>
+</div>
+
+<iframe id="iframe_receipt" style="display: none" src="/assets/print/receipt.component.html"></iframe>
+<iframe id="iframe_details" style="display: none" src="/assets/print/details.component.html"></iframe>

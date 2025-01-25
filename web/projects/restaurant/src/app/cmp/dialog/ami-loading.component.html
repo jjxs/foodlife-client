@@ -1,0 +1,4 @@
+<h1 mat-dialog-title>{{data.title !== undefined ? data.title : 'Loding...' }}</h1>
+<div mat-dialog-content>
+    <mat-progress-bar [mode]="data.model || 'indeterminate'"></mat-progress-bar>
+</div>

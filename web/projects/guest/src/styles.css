@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+
+.flex-container {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.flex-left {
+  justify-content: flex-start;
+}
+
+.flex-right {
+  justify-content: flex-end;
+}
+
+.gray-bgcolor {
+  background-color: #f1f1f1;  
+}
+
+.success-bgcolor {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+
+.warn-bgcolor {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+.warn-color {
+  color: #f44336;
+}
+
+.primary-color {
+  color: rgba(24, 103, 194, .81);
+}
+
+.flex-ul {
+  margin: 0px;
+  -webkit-box-pack: start !important;
+  -ms-flex-pack: start !important;
+  justify-content: flex-start !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+}

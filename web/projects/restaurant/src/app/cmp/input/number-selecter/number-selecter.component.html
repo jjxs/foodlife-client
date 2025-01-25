@@ -1,0 +1,11 @@
+<div class="number-div" fxLayout="row" fxLayoutAlign="space-between center">
+  <button mat-mini-fab color="primary" (click)="remove()" (touchstart)="mousedown($event, false)" (touchend)="mouseup($event)" (dblclick)="dblclck($event)" [disabled]="(count>0) ? false : true">
+    <mat-icon class="example-icon">remove</mat-icon>
+  </button>
+  <span style="font-size: 120%;" [@changecount]="count">{{count}}</span>
+  <button mat-mini-fab color="primary" (click)="add()"  (dblclick)="dblclck($event)" [disabled]="(count<max) ? false : true">
+    <mat-icon class="example-icon">add</mat-icon>
+  </button>
+</div>
+
+<!-- デバイス問題あり、取消 (touchstart)="mousedown($event, true)" (touchend)="mouseup($event)" -->

@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <span>席変更</span>
+  <span class="toolbar-spacer"></span>
+  <span> No.{{selectedSeat.seat_no}} {{selectedSeat.name}}</span>
+</mat-toolbar>
+<div theme fxLayout="column" style="padding:5px;width:100%">
+  <div fxLayout="row" fxLayoutAlign="space-between center" style="padding:15px;width:100%">
+    <div fxLayout="column">      
+      <div>席：</div>
+    </div>
+    <div flex style="width:60%;">
+      <mat-select class="select"
+        placeholder="席選択" 
+          [(ngModel)]="seat_id">
+          <mat-option *ngFor="let item of seatList"
+            [value]="item.id">
+              No.{{item.seat_no}} {{item.name}}
+        </mat-option>
+      </mat-select>
+    </div>
+  </div>
+</div>
+
+<mat-toolbar color="base">
+  <span class="toolbar-spacer"></span>
+  <button mat-raised-button color="primary" [disabled]="seat_id==0 || seat_id==selectedSeat.id" (click)="ok()" cdkFocusInitial>OK</button>
+</mat-toolbar>

@@ -1,0 +1,61 @@
+<div [formGroup]="editForm" fxLayout="column" fxLayoutAlign="start center">
+    <div fxLayout="row" style="width: 80%;margin-top: 2rem;">
+        <mat-form-field fxFlex=100>
+            <input matInput placeholder="NO." autocomplete="off" formControlName="seat_no" required>
+        </mat-form-field>
+    </div>
+    <span [hidden]="editForm.get('seat_no').valid || editForm.get('seat_no').untouched">
+        <div class="callout">
+            必須項目です
+        </div>
+    </span>
+    <div fxLayout="row" style="width: 80%;">
+        <mat-form-field fxFlex=100>
+            <input matInput placeholder="名称" autocomplete="off" formControlName="name" required>
+        </mat-form-field>
+    </div>
+    <span [hidden]="editForm.get('name').valid || editForm.get('name').untouched">
+        <div class="callout">
+            必須項目です
+        </div>
+    </span>
+    <div fxLayout="row" style="width: 80%;">
+        <mat-form-field fxFlex=100>
+            <mat-select placeholder="エリア名称" formControlName="group_id">
+                <mat-option *ngFor="let cat of grouptype" [value]="cat.id">
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>{{cat.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div fxLayout="row" style="width: 80%;">
+        <mat-form-field fxFlex=100>
+            <mat-select placeholder="タイプ" formControlName="seat_type_id">
+                <mat-option *ngFor="let cat of typegroup" [value]="cat.id">
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>{{cat.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div fxLayout="row" style="width: 80%;">
+        <mat-form-field fxFlex=100>
+            <mat-select placeholder="禁煙" formControlName="seat_smoke_type_id">
+                <mat-option *ngFor="let cat of smokegroup" [value]="cat.id">
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>{{cat.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div fxLayout="row" style="width: 80%;">
+        <mat-form-field fxFlex=100>
+            <input matInput placeholder="人数" formControlName="number">
+        </mat-form-field>
+    </div>
+    <div fxLayout="row" style="width: 80%;margin-bottom: 12px">
+        <mat-checkbox formControlName="takeout_type">是否外卖坐席</mat-checkbox>
+    </div>
+    <div fxLayout="row" style="width: 80%;margin-top: 2em;" fxLayoutAlign="end none">
+        <button mat-raised-button color="primary" (click)="onCancel()">取消</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button mat-raised-button color="primary" (click)="onSave()">保存</button>
+    </div>
+</div>

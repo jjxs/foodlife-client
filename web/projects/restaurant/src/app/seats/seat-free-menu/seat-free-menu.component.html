@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <span>放題メニュー設定</span>
+  <span class="toolbar-spacer"></span>
+  <span> No.{{data.value.seat_no}} {{data.value.name}}</span>
+</mat-toolbar>
+<div theme fxLayout="column" style="padding:5px;width:100%">
+  <div fxLayout="row" fxLayoutAlign="space-between center" style="padding:15px;width:100%">
+    <div fxLayout="column">      
+      <div>放題メニュー：</div>
+    </div>
+    <div flex style="width:60%;">
+      <mat-select class="select"
+        placeholder="放題メニュー選択" 
+          [(ngModel)]="menu_id">
+          <mat-option *ngFor="let item of menuFreeData"
+            [value]="item.menu_id">
+              {{item.menu_name}}
+        </mat-option>
+      </mat-select>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between center" style="padding:15px;width:100%">
+    <div fxLayout="column">
+      <div>数量：</div>
+      <div>(注文済み {{current_orders}} 個)</div>
+    </div>
+    <div flex>
+      <number-selecter [(count)]="order_number"></number-selecter>
+    </div>
+  </div>
+</div>
+
+<mat-toolbar color="base">
+  <span class="toolbar-spacer"></span>
+  <button mat-raised-button color="primary" [disabled]="menu_id==0 || order_number==0" (click)="ok()" cdkFocusInitial>OK</button>
+</mat-toolbar>

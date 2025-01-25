@@ -1,0 +1,30 @@
+<div theme style="overflow-y:auto;height:95%;width:100%; ">
+  <mat-list class="box-border">
+    <!--放題タイプ-->
+    <ng-container *ngFor="let item of list">
+      <div class="bgcolor-primary" style="padding:10px; font-size:110%">
+        <span class="">{{item.name}}{{ item.hasOrder ? '(同じ放題しか注文できない)': ''}}</span>
+      </div>
+
+      <!--放題タイプ別　明細-->
+      <ng-container *ngFor="let data of item.list">
+        <mat-list-item *ngIf="!item.hasOrder || (item.hasOrder && data.count_over >0)" style="">
+          <button [ngClass]="(item.value===data.id)? 'mat-raised-button mat-accent': 'mat-stroked-button mat-primary'" (click)="item.value=data.id">
+            {{data.menu_name}}({{data.usable_time}}{{'分' | language:menuSrv.lang}})
+          </button>
+          <span style="padding-left:10px">{{data.count_over > 0 ? '注文済み：' + (data.count_over) + ' 個' : ''}}</span>
+          <span class="toolbar-spacer"></span>
+          <number-selecter *ngIf="item.value===data.id" [(count)]="data.count" style="padding-right:20px"></number-selecter>
+          <button *ngIf="item.value===data.id" mat-raised-button color="primary" [disabled]="data.count > 0 ? false : true" (click)="order($event,data)">
+            <mat-icon style="margin-right:5px">check_circle_outline</mat-icon> {{ data.count_over > 0 ? '追加': '注文' }}
+          </button>
+        </mat-list-item>
+      </ng-container>
+
+    </ng-container>
+  </mat-list>
+
+  <div fxLayout="row" fxLayoutAlign="end" style="width:100%;padding-top:10px">
+    <button mat-raised-button color="primary" style="margin-left:20px" (click)="onClose()">{{'閉じる' | language:menuSrv.lang}}</button>
+  </div>
+</div>

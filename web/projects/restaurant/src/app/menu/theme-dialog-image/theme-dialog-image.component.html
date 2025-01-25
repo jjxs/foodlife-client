@@ -1,0 +1,11 @@
+<div style="height:calc(75vh);">
+  <img src="{{site_image_host}}{{current_image}}" class="img" (swiperight)="preClick($event)" (swipeleft)="nextClick($event)" />
+</div>
+<div style="text-align: center;font-size: 20px;">
+  {{current_index + 1}} / {{image_list.length}} <br />
+  <button mat-raised-button style="width: 200px;
+      height: 80px;
+      font-size: 20px;"
+    color="primary"
+    (click)="close()">{{'关闭' | language:menuSrv.lang}}</button>
+</div>

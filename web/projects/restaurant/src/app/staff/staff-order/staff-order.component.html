@@ -1,0 +1,14 @@
+<div class="staff-menu" fxLayout="column" fxLayoutAlign="start center" style="height: calc(100vh - 80px);width:100vw;padding:5px 10px;">
+
+  <mat-accordion style="overflow-y: auto;">
+    <ng-container *ngFor="let seat of seats">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title class="bgcolor-primary" style="padding:10px">{{displayTitle(seat)}}</mat-panel-title>
+        </mat-expansion-panel-header>
+        <restaurant-order-history [seatId]="seat.seat" [title]="seat.start | date:'利用開始：　HH:mm ～ '" [show]="true" [isGuest]="false"></restaurant-order-history>
+      </mat-expansion-panel>
+    </ng-container>
+  </mat-accordion>
+</div>
+

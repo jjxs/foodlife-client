@@ -1,0 +1,8 @@
+.example-card {
+  margin: 10px;
+  height: 200px;
+}
+
+.mat-card-title {
+    font-size: 120%
+}

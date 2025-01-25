@@ -1,0 +1,53 @@
+.content-container {
+    height: 92%;
+    /* padding: 5px; */
+}
+
+.mat-expanded .order-header {
+    /* パネル　展開するタイミング*/
+    /*font-size: 120%*/
+}
+
+.hidden {
+    display: none;
+}
+
+.auto-height {
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+.radio {
+    margin-left: 15px;
+}
+
+.total {
+    margin-right: 20px;
+}
+
+@media (max-aspect-ratio:3/4) {
+    span, div {
+        font-size: 14px;
+        font-weight: 300;
+    }
+    @media (max-width: 500px) {
+        span, div {
+            font-size: 12px;
+            font-weight: 100;
+        }
+        .order-history-toolbar {
+            font-size: 14px;
+        }
+        .radio {
+            margin-left: 10px;
+        }
+        .total {
+            margin-right: 5px;
+        }
+    }
+    @media (max-width: 400px) {
+        .order-history-toolbar {
+            font-size: 12px;
+        }
+    }
+}

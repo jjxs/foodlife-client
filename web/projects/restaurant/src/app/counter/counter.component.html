@@ -1,0 +1,198 @@
+<div [ngClass]="{'content-container':1, 'content-container-showheader':showHeader}" (swiperight)="goto('seats')" (swipeleft)="goto('seats')">
+  <div fxLayout="row" style="height:100%">
+    <div fxFlex="60" fxLayout="column" style="height: 100%;">
+
+
+      <mat-toolbar>
+        <mat-toolbar-row style="padding: 0px;">
+          <button *ngIf="inputSeat==null" mat-raised-button color="primary" (click)="selectSeat($event)" [disabled]="counterId >= 0">
+            <mat-icon>add_shopping_cart</mat-icon>
+            追加(+)
+          </button>
+          <!-- 一旦会計明細が発行した後、クリアの利用はできなくなります。 -->
+          <button mat-raised-button color="primary" (click)="clearCounter($event)" *ngIf="counterId > 0">
+            <mat-icon>power_settings_new</mat-icon> クリア
+          </button>
+
+          <span style="margin-left:10px">{{select_seats.toString()}}</span>
+          <span class="toolbar-spacer"></span>
+          <button *ngIf="showHistory" mat-raised-button (click)="openHistory()">
+            <mat-icon class="example-icon">list_alt</mat-icon>
+            会計履歴
+          </button>
+          <button *ngIf="showCounterSearch" mat-raised-button (click)="openCounterSearch()">
+            <mat-icon class="example-icon">exposure</mat-icon>
+            売上集計
+          </button>
+          <button mat-raised-button  [matMenuTriggerFor]="menu" [disabled]="counter_detail.length > 0" class="selected-paytype">
+            <mat-icon>attach_money</mat-icon>{{ payTypeTitle }}
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="payTypeChange($event, 'pay')" [ngClass]="{'selected-paytype': payType=='pay', 'ptype':1}"><mat-icon>attach_money</mat-icon>支払</button>
+            <button mat-menu-item (click)="payTypeChange($event, 'split')" [ngClass]="{'selected-paytype': payType=='split', 'ptype':1}"><mat-icon>unfold_more</mat-icon>分割</button>
+          </mat-menu>
+          <!--
+          <mat-button-toggle-group #action="matButtonToggleGroup" [(value)]="payType" style="" [disabled]="counter_detail.length > 0" (change)="payTypeChange($event)">
+            <mat-button-toggle class="ami-toggle-button counter-toggle-button" value="pay">
+              <mat-icon>attach_money</mat-icon>支払
+            </mat-button-toggle>
+            <mat-button-toggle class="ami-toggle-button counter-toggle-button" value="split">
+              <mat-icon>unfold_more</mat-icon>分割
+            </mat-button-toggle>
+            <mat-button-toggle class="ami-toggle-button counter-toggle-button" value="average">
+              <mat-icon>apps</mat-icon>平均
+            </mat-button-toggle>
+            <mat-button-toggle class="ami-toggle-button counter-toggle-button" value="input">
+              <mat-icon>group</mat-icon>手動
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+          -->
+          <mat-slide-toggle class="example-margin" [(ngModel)]="edit_model" [disabled]="counter_detail.length > 0" style="padding-left: 5px">
+            編集
+          </mat-slide-toggle>
+
+        </mat-toolbar-row>
+      </mat-toolbar>
+
+      <!-- 注文メニュー明細グリッド -->
+      <restaurant-counter-orders-detail-panel style="overflow-y:auto;" (godown)="onGodown($event)" [details]="orders_detail" [action]="payType" [model]="edit_model" (change)="onOrdersDetailPanelChange($event)"
+        (splited)="onSplited($event)" (completed)="onCompleted($event)">
+      </restaurant-counter-orders-detail-panel>
+
+      <!-- 支払の場合 -->
+      <mat-toolbar *ngIf="payType==='pay'" color="accent" class="counter-toolbar">
+        <mat-toolbar-row >
+          <span style="margin-right: 20px;">金額合計:</span>
+          <!--
+          <span class="counter-toolbar-money">{{ orderDetailTotal | currency:'￥':'symbol':'1.0-0'}}</span><span>（税抜き）</span>
+          -->
+          
+          <span class="counter-toolbar-money">{{ orderDetailTotalTaxIn | currency:'￥':'symbol':'1.0-0'}}</span><span>（税込）</span>
+
+          <span class="toolbar-spacer"></span>
+
+          <button mat-raised-button color="primary" (click)="clickPay()" [disabled]="orderDetailTotal <= 0">
+            <mat-icon>attach_money</mat-icon>払う
+          </button>
+        </mat-toolbar-row>
+      </mat-toolbar>
+
+      <!-- 注文分割の場合 -->
+      <div class="split-div" *ngIf="payType==='split'" >
+        <mat-toolbar *ngIf="payType==='split'" color="accent" class="counter-toolbar">
+          <mat-toolbar-row>
+          <!--
+            <button mat-raised-button *ngIf="split_detail.length > 0" (click)="clearSplit()">
+              <mat-icon color="warn">cached</mat-icon>分割クリア
+            </button>
+          -->
+            <span>支払金額: </span><span class="counter-toolbar-money">{{ splitTotalTaxIn | currency:'￥':'symbol':'1.0-0'}}</span>
+            <!--
+            <span>（残額:{{ orderDetailTotalTaxIn | currency:'￥':'symbol':'1.0-0'}}）</span>
+            -->
+
+
+            <span class="toolbar-spacer"></span>
+            <button mat-raised-button color="primary" (click)="countTotal()" [disabled]="splitTotal <=0">
+              <mat-icon>attach_money</mat-icon>払う
+            </button>
+          </mat-toolbar-row>
+        </mat-toolbar>
+        <restaurant-counter-split-panel *ngIf="payType==='split'" style="min-height:30vh; width: 100%;overflow-y:auto;" (goup)="onGoup($event)" (change)="onOrdersDetailPanelChange($event)" [details]="split_detail">
+        </restaurant-counter-split-panel>
+      </div>
+
+
+      <!-- 平均分割の場合 -->
+      <mat-toolbar *ngIf="payType==='average'" color="accent">
+        <mat-toolbar-row>
+          <span>金額合計（税抜き）: {{ orderDetailTotal | currency:'￥':'symbol':'1.0-0'}}</span>
+          <span>（残額:{{ moneyBalance | currency:'￥':'symbol':'1.0-0'}}）</span>
+          <span class="toolbar-spacer"></span>
+          <button mat-raised-button *ngIf="average_detail.length > 0" (click)="clearAverage()" style="margin-right:25px" [disabled]="counter_detail.length > 0">
+            <mat-icon color="warn">cached</mat-icon>クリア
+          </button>
+          <button mat-mini-fab color="accent" (click)="onReduce()" [disabled]="average_detail.length < 2 || counter_detail.length > 0">
+            <mat-icon>arrow_downward</mat-icon>
+          </button>
+          <input matInput #average [value]="average_detail.length" style="width:30px; text-align:right">
+          <span style="margin-right:10px;margin-left:10px">人</span>
+          <button mat-mini-fab color="accent" (click)="onPlus()" [disabled]="average_detail.length > 99 || counter_detail.length > 0">
+            <mat-icon>arrow_upward</mat-icon>
+          </button>
+        </mat-toolbar-row>
+      </mat-toolbar>
+      <div *ngIf="payType==='average'" style="min-height:30vh; overflow-y:auto">
+        <mat-list>
+          <ng-container *ngFor="let item of average_detail; let i = index;">
+            <mat-list-item [ngClass]="{'pay-item': current_index === i}" style="margin-top:15px">
+              <span style="width:100px">{{ item.no }}</span>
+              <span style="width:300px">{{ item.price | currency:'￥':'symbol':'1.0-0' }}</span>
+              <span style="width:300px;text-align:right">{{ item.status ? "支払い済み" : "未支払い" }}</span>
+              <span class="toolbar-spacer"></span>
+              <button mat-raised-button color="primary" (click)="onAveragePay(i)" [disabled]="item.status || current_index === i">
+                <mat-icon>attach_money</mat-icon>払う
+              </button>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+          </ng-container>
+        </mat-list>
+      </div>
+
+      <!-- 手動分割の場合 -->
+      <mat-toolbar *ngIf="payType==='input'" color="accent">
+        <mat-toolbar-row>
+          <span>金額合計（税込）: {{ orderDetailTotal | currency:'￥':'symbol':'1.0-0'}}</span>
+          <span>（残額:{{ moneyBalance | currency:'￥':'symbol':'1.0-0'}}）</span>
+          <span class="toolbar-spacer"></span>
+          <input matInput #average [value]="input_detail.length" style="width:30px; text-align:right">
+          <span style="margin-right:10px;margin-left:10px">人</span>
+          <button mat-mini-fab color="accent" (click)="onAddMember()" [disabled]="moneyBalance <= 0 || input_detail.length > 99">
+            <mat-icon>exposure_plus_1</mat-icon>
+          </button>
+          <button mat-raised-button *ngIf="split_detail.length > 0" (click)="clearInput()" [disabled]="counter_detail.length > 0">
+            <mat-icon color="warn">cached</mat-icon>クリア
+          </button>
+        </mat-toolbar-row>
+      </mat-toolbar>
+      <div *ngIf="payType==='input'" style="min-height:30vh; overflow-y:auto">
+        <mat-list>
+          <ng-container *ngFor="let item of input_detail; let i = index;">
+            <mat-list-item [ngClass]="{'pay-item': current_index === i}" style="margin-top:15px">
+              <span style="width:100px">
+                <button [style.display]="item.status ? 'none' : ''" mat-mini-fab color="warn" (click)="onRemoveMember(i)">
+                  <mat-icon>clear</mat-icon>
+                </button>
+              </span>
+              <span style="width:100px">{{ item.no }}</span>
+
+              <!-- <mat-form-field style="width:300px">
+                <input matInput placeholder="分割金額" [ngModel]="item.price | currency:'￥':'symbol':'1.0-0'" (ngModelChange)="item.price=$event" name="inputField" type="text" />
+              </mat-form-field> -->
+              <span *ngIf="!(current_index === i || item.status)" style="width:200px;padding: 10px;border-radius: 5px;margin-bottom:5px" (click)="openInputPrice(item, i)" class="bgcolor-accent">
+                <span matPrefix>分割金額</span>
+                <span style="width:150px;">{{item.price | currency:'￥':'symbol':'1.0-0'}}</span>
+              </span>
+              <span *ngIf="current_index === i || item.status" style="width:200px;padding: 10px;border-radius: 5px;margin-bottom:5px">
+                <span matPrefix>分割金額</span>
+                <span style="width:150px;">{{item.price | currency:'￥':'symbol':'1.0-0'}}</span>
+              </span>
+
+              <span style="width:200px;text-align:right">{{ item.status ? "支払い済み" : "未支払い" }}</span>
+              <span class="toolbar-spacer"></span>
+              <button mat-raised-button color="primary" *ngIf="!item.status" (click)="onInputPay(i)" [disabled]="current_index === i">
+                <mat-icon>attach_money</mat-icon>払う
+              </button>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+          </ng-container>
+        </mat-list>
+      </div>
+
+    </div>
+    <!-- 数字パネル -->
+    <restaurant-counter-panel fxFlex="40" style="padding:20px;height:100%" [counterId]="counterId" [total]="moneyTotal" (pay)="onPay($event)" (action)="onAction($event)">
+    </restaurant-counter-panel>
+
+  </div>
+</div>

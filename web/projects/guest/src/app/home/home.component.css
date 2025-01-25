@@ -1,0 +1,9 @@
+.home-carousel {
+    text-align: 'center';
+    font-size: '30px';
+    color: '#fff';
+    position: 'absolute';
+    bottom: '40px';
+    left: 0;
+    right: 0;
+}

@@ -1,0 +1,17 @@
+.menu-page-row {
+  /* background-color: bisque; */
+  padding: 3px;
+  width: 100%;
+}
+
+.menu-image {
+  width: 48%;
+  height: 62%;
+}
+
+.page-button {
+  height: 90%;
+  min-width: 0px;
+  width: 45%;
+}
+

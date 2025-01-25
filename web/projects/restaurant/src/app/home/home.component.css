@@ -1,0 +1,28 @@
+.sidenav-container {
+    height: 100%;
+}
+
+.sidenav {
+    width: auto;
+    box-shadow: 3px 0 6px rgba(0, 0, 0, .24);
+}
+
+a span {
+    margin-left: 5px;
+    letter-spacing: 2px
+}
+
+.mat-nav-list {
+    margin-top: 10px;
+}
+
+.footer-panel {
+    padding: 5px;
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+}
+
+.mat-sidenav-content {
+    height: calc(100vh);
+}

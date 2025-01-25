@@ -1,0 +1,208 @@
+@import '~@angular/material/theming';
+@include mat-core();
+// .orange-theme {
+//   $orange-theme-primary: mat-palette($mat-deep-orange);
+//   $orange-theme-accent: mat-palette($mat-amber, A200, A100, A400);
+//   $orange-theme-warn: map-get($app-theme-1, accent);
+//   $orange-theme: mat-light-theme($orange-theme-primary, $orange-theme-accent);
+//   @include angular-material-theme($orange-theme);
+// }
+$app-primary-1: mat-palette($mat-deep-purple);
+$app-accent-1: mat-palette($mat-amber, A200, A100, A400);
+$app-theme-1: mat-light-theme($app-primary-1, $app-accent-1);
+@mixin mix-app-theme-1($app-theme-1) {
+    $primary: map-get($app-theme-1, primary);
+    $accent: map-get($app-theme-1, accent);
+    .deeppurple-amber .mat-button-toggle.ami-toggle-button {
+        background: #cc6600;
+        color: white;
+        border-radius: 10px;
+    }
+    .deeppurple-amber .mat-row:nth-child(odd) {
+        background-color: gainsboro
+    }
+    .deeppurple-amber .mat-button-toggle-checked.ami-toggle-button {
+        background: #ffcc99;
+        color: white;
+    }
+    .deeppurple-amber .mat-list-item.mat-list-item-focus {
+        background-color: mat-color($primary) !important;
+        color: mat-color($primary, default-contrast) !important;
+    }
+    .deeppurple-amber .bgcolor-primary {
+        background: #cc6600;
+        color: white;
+    }
+    .deeppurple-amber .bgcolor-accent {
+        background-color: mat-color($accent);
+        color: mat-color($accent, default-contrast);
+    }
+    .deeppurple-amber .mat-toolbar.mat-primary {
+        background: #cc6600;
+        color: white;
+    }
+    .deeppurple-amber .mat-fab.mat-primary,
+    .deeppurple-amber .mat-flat-button.mat-primary,
+    .deeppurple-amber .mat-mini-fab.mat-primary,
+    .deeppurple-amber .mat-raised-button.mat-primary {
+        background: #cc6600;
+        color: white;
+        font-weight: 600;
+    }
+    .deeppurple-amber .mat-fab.mat-accent,
+    .deeppurple-amber .mat-flat-button.mat-accent,
+    .deeppurple-amber .mat-mini-fab.mat-accent,
+    .deeppurple-amber .mat-raised-button.mat-accent {
+        background: #ffcc99;
+        color: white;
+        font-weight: 600;
+    }
+    .deeppurple-amber .mat-fab.mat-warn,
+    .deeppurple-amber .mat-flat-button.mat-warn,
+    .deeppurple-amber .mat-mini-fab.mat-warn,
+    .deeppurple-amber .mat-raised-button.mat-warn {
+        background: #cc9999;
+        color: white;
+        font-weight: 600;
+    }
+    .deeppurple-amber .kinoko.mat-raised-button.mat-accent {
+        // background-image: url('/assets/images/kinoko.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background: #2d81ff;
+    }
+    .deeppurple-amber .kinoko.mat-raised-button.mat-accent[disabled] {
+        // background-image: url('/assets/images/kinoko_disbale.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background: #2d81ff;
+    }
+    body,
+    span {
+        font-weight: 600;
+    }
+}
+
+$app-primary-2: mat-palette($mat-indigo);
+$app-accent-2: mat-palette($mat-pink, A200, A100, A400);
+$app-theme-2: mat-light-theme($app-primary-2, $app-accent-2);
+@mixin mix-app-theme-2($app-theme-2) {
+    $primary: map-get($app-theme-2, primary);
+    $accent: map-get($app-theme-2, accent);
+    .indigo-pink .mat-button-toggle.ami-toggle-button {
+        background-color: mat-color($primary);
+        color: mat-color($primary, default-contrast);
+        border-radius: 10px;
+    }
+    .indigo-pink .mat-button-toggle-checked.ami-toggle-button {
+        background-color: mat-color($accent);
+        color: mat-color($accent, default-contrast);
+    }
+    .indigo-pink .mat-row:nth-child(odd) {
+        background-color: gainsboro
+    }
+    .indigo-pink .mat-list-item.mat-list-item-focus {
+        background-color: mat-color($primary) !important;
+        color: mat-color($primary, default-contrast) !important;
+    }
+    .indigo-pink .bgcolor-primary {
+        background-color: mat-color($primary);
+        color: mat-color($primary, default-contrast);
+    }
+    .indigo-pink .bgcolor-accent {
+        background-color: mat-color($accent);
+        color: mat-color($accent, default-contrast);
+    }
+}
+
+$app-primary-3: mat-palette($mat-pink);
+$app-accent-3: mat-palette($mat-blue-grey, A200, A100, A400);
+$app-theme-3: mat-light-theme($app-primary-3, $app-accent-3);
+@mixin mix-app-theme-3($app-theme-3) {
+    $primary: map-get($app-theme-3, primary);
+    $accent: map-get($app-theme-3, accent);
+    .pink-bluegrey .mat-button-toggle.ami-toggle-button {
+        background-color: mat-color($primary);
+        color: mat-color($primary, default-contrast);
+        border-radius: 10px;
+    }
+    .pink-bluegrey .mat-button-toggle-checked.ami-toggle-button {
+        background-color: mat-color($accent);
+        color: mat-color($accent, default-contrast);
+    }
+    .pink-bluegrey .mat-row:nth-child(odd) {
+        background-color: gainsboro;
+    }
+    .pink-bluegrey .mat-row:nth-child(odd)>.mat-cell {
+        color: black !important;
+    }
+    .pink-bluegrey .mat-list-item.mat-list-item-focus {
+        background-color: mat-color($primary) !important;
+        color: mat-color($primary, default-contrast) !important;
+    }
+    .pink-bluegrey .bgcolor-primary {
+        background-color: mat-color($primary);
+        color: mat-color($primary, default-contrast);
+    }
+    .pink-bluegrey .bgcolor-accent {
+        background-color: mat-color($accent);
+        color: mat-color($accent, default-contrast);
+    }
+}
+
+$app-primary-4: mat-palette($mat-purple);
+$app-accent-4: mat-palette($mat-green, A200, A100, A400);
+$app-theme-4: mat-light-theme($app-primary-4, $app-accent-4);
+@mixin mix-app-theme-4($app-theme-4) {
+    $primary: map-get($app-theme-4, primary);
+    $accent: map-get($app-theme-4, accent);
+    .purple-green .mat-button-toggle.ami-toggle-button {
+        background-color: mat-color($primary);
+        color: mat-color($primary, default-contrast);
+        border-radius: 10px;
+    }
+    .purple-green .mat-button-toggle-checked.ami-toggle-button {
+        background-color: mat-color($accent);
+        color: mat-color($accent, default-contrast);
+    }
+    .purple-green .mat-row:nth-child(odd) {
+        background-color: gainsboro;
+    }
+    .purple-green .mat-row:nth-child(odd)>.mat-cell {
+        color: black !important;
+    }
+    .purple-green .mat-list-item.mat-list-item-focus {
+        background-color: mat-color($primary) !important;
+        color: mat-color($primary, default-contrast) !important;
+    }
+    .purple-green .bgcolor-primary {
+        background-color: mat-color($primary);
+        color: mat-color($primary, default-contrast);
+    }
+    .purple-green .bgcolor-accent {
+        background-color: mat-color($accent);
+        color: mat-color($accent, default-contrast);
+    }
+}
+
+@include mix-app-theme-1($app-theme-1);
+@include mix-app-theme-2($app-theme-2);
+@include mix-app-theme-3($app-theme-3);
+@include mix-app-theme-4($app-theme-4);
+.big-fab {
+    width: 20px;
+    height: 20px;
+    line-height: 14px;
+    font-size: 14px;
+    &::ng-deep .mat-button-wrapper {
+        line-height: 14px;
+        padding: 0;
+        .mat-icon {
+            font-size: 14px;
+            padding-right: 4px;
+            padding-top: 4px;
+        }
+    }
+}

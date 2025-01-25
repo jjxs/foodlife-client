@@ -1,0 +1,21 @@
+<ng-container *ngFor="let group of groups; let i = index">
+  <button *ngIf="i==0" class="seat-no" (click)="logout()">
+    {{toolbardisplay | language:menuSrv.lang}}
+  </button>
+<!--
+  <button *ngIf="i==0" class="seat-no"  [matMenuTriggerFor]="menu">
+    {{toolbardisplay | language:menuSrv.lang}}
+  </button>
+  <mat-menu #menu="matMenu" xPosition="before" yPosition="above">
+    <button mat-menu-item (click)="changeSeat()" >席を替える</button>
+    <button mat-menu-item (click)="logout()">ログアウト</button>
+  </mat-menu>
+-->
+  <button mat-raised-button fxFlex [disabled]="group.isDisabledGroup" class="group-button" [color]="group.selected ? 'accent' :'primary'" (click)="onSelect(group)">
+    <ng-container *ngIf="group.option && group.option.img">
+      <img [src]="group.option.img" style="width: 60%;height:45%;">
+      <br>
+    </ng-container>
+    {{group.display_name | language:menuSrv.lang}}
+  </button>
+</ng-container>

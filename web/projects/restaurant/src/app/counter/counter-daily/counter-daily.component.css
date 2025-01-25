@@ -1,0 +1,129 @@
+.rowstype {
+    width: 100%;
+    display: block !important;
+}
+
+.rowstype button {
+    margin-left: 20px;
+}
+
+.mat-form-field {
+    margin-right: 5%;
+    margin-left: 1%;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+    font-size: 120% !important;
+    text-align: right !important;
+}
+
+.title {
+    width: 100%;
+    line-height: 46px;
+    /* padding-left: 2%; */
+    padding-left: 10px;
+    background-color: #ffeb3bad;
+    margin: 0px 0 8px 0;
+}
+
+.total {
+    line-height: 36px;
+    text-align: right;
+}
+
+.total font {
+    color: red;
+    font-size: 140%;
+}
+
+.title2 {
+    line-height: 60px;
+    width: 70px;
+    text-align: right;
+    font-weight: 300;
+}
+
+.mat-input-element {
+    text-align: right;
+}
+
+.mat-form-field-label {
+    text-align: right !important;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+}
+
+table td,
+table th {
+    border: 1px solid #cad9ea;
+    color: #666;
+    height: 47px;
+}
+
+table thead th {
+    background-color: #CCE8EB;
+    width: 100px;
+}
+
+table tr:nth-child(odd) {
+    background: #fff;
+}
+
+table tr:nth-child(even) {
+    background: #F5FAFA;
+}
+
+.label {
+    line-height: 40px;
+    height: 40px;
+    width: 150px;
+    display: inline-block;
+}
+
+.total-tr {
+    background-color: #fafafa !important;
+}
+
+.total-tr td {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.showborder {
+    background-color: #fafafa;
+}
+
+.showborder div {
+    line-height: 40px;
+    height: 40px;
+}
+
+.showborder .label {
+    padding-left: 10px;
+}
+
+.counter-paylist {
+    width: 50%;
+    float: left;
+    border-bottom: solid 0.5px #cad9ea;
+    float: left;
+    display: block;
+    width: calc(32vw - 20px);
+}
+
+.charge-list span {
+    margin: 0 10px;
+}
+
+.charge-list {
+    margin: 0 20px 0 0;
+    border-bottom: solid 0.5px #cad9ea;
+    text-align: right;
+    float: left;
+    display: block;
+    width: calc(32vw - 20px);
+}

@@ -1,0 +1,79 @@
+@import "../../../styles/constants";
+@include mat-core();
+
+.container {
+  margin: 3px 10px 0px 8px;
+  font-weight: bolder;
+  width: 98%;
+
+  div {
+    input {
+      display: block;
+      height: 32px;
+      line-height: 32px;
+      background-color: #fff;
+      text-align: center;
+      text-decoration: none;
+      color: #252525;
+      // border-radius: 4px;
+      margin: 3px;
+      border: none;
+      box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.5);
+
+      &:hover {
+        color: #fff;
+        background-color: #80adbf;
+      }
+    }
+  }
+
+  .move {
+    margin-left: 15px;
+  }
+
+  .pagination {
+    margin: 0;
+
+    span {
+      display: block;
+      height: 30px;
+      line-height: 30px;
+      background-color: #fff;
+      text-align: center;
+      text-decoration: none;
+      color: #252525;
+      // border-radius: 4px;
+      margin: 3px;
+      box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.5);
+
+      // transition: all 0.3s ease;
+      &:hover,
+      &.active {
+        color: #fff;
+        background-color: mat-color($app-primary);
+        cursor: pointer;
+      }
+
+      &.mat-icon {
+        font-size: 16px;
+      }
+
+      &.unused {
+        cursor: no-drop;
+        color: #fff;
+        background-color: rgba(107, 101, 101, 0.5);
+        box-shadow: none;
+      }
+    }
+
+    :first-child {
+      // border-radius: 30px 0 0 30px;
+      margin-right: 5px;
+    }
+
+    :last-child {
+      // border-radius: 0 30px 30px 0;
+      margin-left: 5px;
+    }
+  }
+}

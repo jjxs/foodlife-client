@@ -1,0 +1,10 @@
+.content-container {
+  height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding: 5px;
+}
+
+.mat-expanded .order-header {
+  /* パネル　展開するタイミング*/
+  /*font-size: 120%*/
+}

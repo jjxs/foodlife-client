@@ -1,0 +1,8 @@
+<div class="container"
+     *ngIf="formGroup.invalid">
+    <div class="alert"
+         *ngFor="let error of getErrors()"
+         [@flyInOut]="'in'">
+        {{error}}
+    </div>
+</div>

@@ -1,0 +1,35 @@
+.content-container {
+    height: calc(100vh);
+}
+
+.table {
+    width: 100%;
+}
+
+.seat-form {
+    padding: 10px;
+    width: 100%;
+}
+
+.seat-full-width {
+    width: 100%;
+}
+
+.highlight {
+    background: #42A948;
+    /* green */
+}
+
+.label {
+    padding: 5px;
+    display: inline-block;
+    width: 120px;
+    margin: 5px;
+}
+
+.using-flg {
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: underline;
+    cursor: pointer;
+}

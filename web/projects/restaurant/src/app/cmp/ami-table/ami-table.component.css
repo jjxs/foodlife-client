@@ -1,0 +1,52 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  max-height: 500px;
+  padding: 20px;
+  overflow: auto;
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+th.mat-header-cell {
+  font-weight: bolder;
+  background-color: #eaeaea;
+  /* padding: 0 10px 0 10px; */
+}
+
+td.mat-cell:first-child, td.mat-footer-cell:first-child, th.mat-header-cell:first-child {
+  border-left: 1px solid #d4d4d4;
+  padding-left: 5px;
+}
+
+td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+  /* padding: 2px 25px 2px 25px; */
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 5px 10px 5px 10px;
+  border-right: 1px solid #d4d4d4;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+tr.mat-footer-row, tr.mat-row {
+  height: auto;
+}
+
+tr.mat-header-row {
+  height: auto;
+}
+
+::ng-deep div.mat-sort-header-container {
+  padding: 10px 0px 10px 0px;
+}

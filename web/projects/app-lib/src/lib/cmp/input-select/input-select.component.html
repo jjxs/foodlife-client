@@ -1,0 +1,57 @@
+<div [formGroup]="group">
+       <mat-form-field *ngIf="params.autoCompUrl; else noAutocomplete"
+                       class="example-full-width"
+                       style="width: 100%">
+              <input type="hidden"
+                     formControlName="returnValue">
+              <input matInput
+                     [errorStateMatcher]="matcher"
+                     [placeholder]="_placeholder"
+                     formControlName="inputValue"
+                     (input)="_handleInput(input)"
+                     [readonly]="selected || readonly"
+                     [matAutocomplete]="auto"
+                     #input>
+              <mat-autocomplete #auto="matAutocomplete"
+                                (optionSelected)="setRealValue($event)"
+                                [displayWith]="displayFn.bind(this)">
+                     <mat-option *ngFor="let option of filteredOptions | async"
+                                 [value]="option.VALUE">
+                            {{option.VIEW_VALUE}}
+                     </mat-option>
+              </mat-autocomplete>
+              <mat-icon style="cursor: pointer"
+                        (click)="clear()"
+                        aria-label="Clear"
+                        matSuffix
+                        *ngIf="input.value && !(group.disabled || readonly)">close</mat-icon>
+              <mat-icon class="swws-input-icon"
+                        (click)="openOrg()"
+                        matSuffix
+                        *ngIf="!selecting && !(group.disabled || readonly)">find_in_page</mat-icon>
+       </mat-form-field>
+       <ng-template #noAutocomplete>
+              <mat-form-field class="example-full-width"
+                              style="width: 100%">
+                     <input type="hidden"
+                            formControlName="returnValue">
+                     <input matInput
+                            [errorStateMatcher]="matcher"
+                            [placeholder]="_placeholder"
+                            formControlName="inputValue"
+                            (input)="_handleInput(input)"
+                            [readonly]="selected || readonly"
+                            #input>
+                     <mat-icon style="cursor: pointer"
+                               (click)="clear()"
+                               aria-label="Clear"
+                               matSuffix
+                               *ngIf="input.value && !(group.disabled || readonly)">close</mat-icon>
+                     <mat-icon class="swws-input-icon"
+                               (click)="openOrg()"
+                               matSuffix
+                               *ngIf="!selecting && !(group.disabled || readonly)">find_in_page</mat-icon>
+              </mat-form-field>
+       </ng-template>
+
+</div>

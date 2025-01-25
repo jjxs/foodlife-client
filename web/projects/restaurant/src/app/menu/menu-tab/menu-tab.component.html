@@ -1,0 +1,27 @@
+<ng-container *ngFor="let category of categorys; index as i;">
+  <ng-container *ngIf="categorys.length > 1">
+    <button mat-raised-button fxFlex class="category-button" [color]="category.id===categoryValue ? 'accent' :'primary'" (click)="clickCategory(category,  i)">{{category.display_name}}</button>
+  </ng-container>
+</ng-container>
+<!-- <div fxLayout="row" fxLayoutAlign="start center" style="padding:10px 0px 10px 0px">
+    <ng-container *ngFor="let group of master_group">
+      <button class="group-button" mat-raised-button color="primary" (click)="clickCategory(group)" [disabled]="group['selected'] === true">{{group.display_name}}</button>
+    </ng-container>
+  </div> -->
+<!-- <div fxLayout="row">
+    <div style="width:60px;padding-left:10px">
+      <mat-icon style="font-size:42px;padding: 10px" (click)="onGroupChange($event)">storage</mat-icon>
+    </div> 
+    <ng-container *ngFor="let group of master_group;">
+      <ng-container *ngIf="group.selected && group.master_data.length>0">
+        <mat-button-toggle-group [ngStyle]="{'display': group.master_data.length === 0 ? 'none': '' }" id="'btnTogG_' + group.id"
+          [value]="categoryValue">
+          <mat-button-toggle [id]="'btnTog_' + category.id" *ngFor="let category of group.master_data; index as index;"
+            class="ami-toggle-button menu-toggle-button" (click)="onCategoryClick($event, category, index)" value="{{category.id}}">
+            {{category.display_name}}
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+
+      </ng-container>
+    </ng-container>
+  </div> -->

@@ -1,0 +1,48 @@
+<mat-sidenav-container style="height:92%;background-color: #ffcc99;" [ngClass]="{'orange-theme':1, hidden: !show}">
+  <mat-sidenav-content>
+    <div fxFlex fxLayout="column" style="width:20%;height:100%;">
+      <div fxLayout="row" class="img" fxLayoutAlign="space-around center"
+        style="height:calc(60% - 4px);;overflow: hidden;" (click)="btnClick(101)">
+        <img src="{{site_image_host}}{{menu_top_data[101]['image']}}" />
+      </div>
+      <div fxLayout="row" class="img" fxLayoutAlign="space-around center"
+        style="height:calc(40% - 4px);overflow: hidden;" (click)="btnClick(102)">
+        <img src="{{site_image_host}}{{menu_top_data[102]['image']}}" />
+      </div>
+    </div>
+    <div style="width:60%;height:100%; padding: 0px; background-color: #ffcc99;">
+      <div fxLayout="column" style="float:left; width:50%;height:100%;">
+        <div fxLayout="row" class="img" fxLayoutAlign="space-around center"
+          style="height:calc(50% - 4px); overflow: hidden;" (click)="btnClick(103)">
+          <img src="{{site_image_host}}{{menu_top_data[103]['image']}}" />
+        </div>
+        <div fxLayout="row" class="img" fxLayoutAlign="space-around center"
+          style="height:calc(50% - 4px); overflow: hidden;" (click)="btnClick(104)">
+          <img src="{{site_image_host}}{{menu_top_data[104]['image']}}" />
+        </div>
+      </div>
+      <div fxLayout="column" style="float:left; width:50%;height:100%;">
+        <div fxLayout="row" class="img" fxLayoutAlign="space-around center"
+          style="height:calc(25% - 4px); overflow: hidden;" (click)="btnClick(105)">
+          <img src="{{site_image_host}}{{menu_top_data[105]['image']}}" />
+        </div>
+        <div fxLayout="row" class="img" fxLayoutAlign="space-around center"
+          style="height:calc(25% - 4px); overflow: hidden;" (click)="btnClick(106)">
+          <img src="{{site_image_host}}{{menu_top_data[106]['image']}}" />
+        </div>
+        <div fxLayout="row" class="img" fxLayoutAlign="space-around center"
+          style="height:calc(25% - 4px); overflow: hidden;" (click)="btnClick(107)">
+          <img src="{{site_image_host}}{{menu_top_data[107]['image']}}" />
+        </div>
+        <div fxLayout="row" class="img" fxLayoutAlign="space-around center"
+          style="height:calc(25% - 4px); overflow: hidden;" (click)="btnClick(108)">
+          <img src="{{site_image_host}}{{menu_top_data[108]['image']}}" />
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column" style="width:20%;height:100%;">
+      <restaurant-theme-menu-top-ranking fxLayout="column" [enableOrder]="!editMode" [reload]="reload_ranking" 
+        style="width:100%;height:100%; background-color: white;"></restaurant-theme-menu-top-ranking>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

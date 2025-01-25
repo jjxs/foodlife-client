@@ -1,0 +1,31 @@
+.content-container {
+  height: calc(100vh);
+  font-family: -apple-system, "BlinkMacSystemFont", "Helvetica Neue", Helvetica, "Arial", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.main-panel {
+  padding-top: 15vh;
+  letter-spacing: 10px;
+  text-align: center;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 200%;
+}
+
+.icon {
+  position: absolute;
+  right: 0;
+  top: 5vh;
+}
+
+.currency-panel {
+  border-style: inset;
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.12);
+}

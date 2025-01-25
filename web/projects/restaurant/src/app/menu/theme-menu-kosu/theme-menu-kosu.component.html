@@ -1,0 +1,18 @@
+<div fxFlex fxLayout="column" (swiperight)="preClick($event)" (swipeleft)="nextClick($event)" [@animationStatus]="animationStatus"
+  (@animationStatus.done)="animationDone($event)" style="width:100%;">
+  <div fxLayout="row" fxLayoutAlign="space-around center" style="width:100%; height:100%;">
+    <restaurant-menu-image [enableOrder]="enableOrder" [showIntro]=true [menu]="menuData[0] || {}" class="menu-image"></restaurant-menu-image>
+    <restaurant-menu-image [enableOrder]="enableOrder" [showIntro]=true [menu]="menuData[1] || {}" class="menu-image"></restaurant-menu-image>
+    <restaurant-menu-image [enableOrder]="enableOrder" [showIntro]=true [menu]="menuData[2] || {}" class="menu-image"></restaurant-menu-image>
+  </div>
+</div>
+<div fxFlex="50px" style="padding: 5px 0px 0px 0px;width:100%" fxLayout=" row" fxLayoutAlign="space-around center">
+  <button mat-raised-button color="primary" class="page-button" [disabled]="(currentPage>0) ? false : true" (click)="preClick($event)">
+    {{'前　へ' | language:menuSrv.lang}}
+  </button>
+  <div style="width:10%;text-align: center;">{{ currentPage + 1 }}　/　{{maxPage}}</div>
+  <button mat-raised-button color="primary" class="page-button" [disabled]="(currentPage<maxPage-1) ? false : true"
+    (click)="nextClick($event)">
+    {{'次　へ' | language:menuSrv.lang}}
+  </button>
+</div>

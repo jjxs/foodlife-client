@@ -1,0 +1,217 @@
+<div class="content-container" [formGroup]="editForm" >
+  <div fxLayout="column" fxLayoutAlign="start" fxFlex=68>
+    <div fxLayout="row" style="height: 46px;">
+      <div style="width: 90px;line-height:48px; text-align:right;">営業日：</div>
+      <input matInput [matDatepicker]="dp" placeholder="" formControlName="date" [min]="minDate()" (dateChange)="change($event)" style="text-align: center; width:120px;">
+      <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+      <mat-datepicker #dp
+                      panelClass="example-month-picker">
+      </mat-datepicker>
+    </div>
+    
+    <div fxLayout="row" class="title">
+      レジ開け
+    </div>
+    <div fxLayout="row" class="rowstype">
+      <mat-form-field fxFlex=20>
+        <mat-label>初期</mat-label>
+        <input maxlength="20" type="number" matInput placeholder="" autocomplete="off" formControlName="in_amount" readonly (click)="showInput('in_amount', '初期金額')">
+      </mat-form-field>
+    </div>
+    
+    <div fxLayout="row" class="title">
+      入金
+      <span class="toolbar-spacer"></span>
+      合計: <font style="margin: 0 10px;"> {{ getChargeAmount() }}</font>
+    </div>
+
+    <div fxLayout="row" class="rowstype">
+      <div fxFlex=48 class="charge-list"  *ngFor="let item of charges; let i = index">
+        <span >{{item.name}}</span><span>支払い分</span> <span>{{ format(item.amount) }}</span>
+        <button type="button" mat-icon-button color="warn" style="line-height: 60px;" (click)="del('charges', i)" >
+          <mat-icon>clear</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div fxLayout="row" class="rowstype">
+      <mat-form-field fxFlex=46 style="margin-right:2%;width:46%;">
+        <mat-label>支払う日</mat-label>
+        <input matInput [matDatepicker]="dp1" placeholder="" (dateChange)="changeChargeDate($event)"style="text-align: center; width:120px;">
+        <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
+        <mat-datepicker #dp1
+                        panelClass="example-month-picker">
+        </mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field fxFlex=19>
+        <mat-label>金額</mat-label>
+        <input type="number" matInput  autocomplete="off" formControlName="charge_amount" readonly (click)="showInput('charge_amount', '入金金額')">
+      </mat-form-field>
+      
+      <button type="button" mat-raised-button color="primary" (click)="addCharge()" style="height:40px; margin-top: 10px;">
+        追加
+      </button>
+    </div>
+
+  
+    <div fxLayout="row" class="title">
+      出金
+      <span class="toolbar-spacer"></span>
+      合計: <font style="margin: 0 10px;"> {{ getOutAmount() }}</font>
+    </div>
+
+    <div fxLayout="row" class="rowstype">
+      <div fxFlex=48 class="charge-list"  *ngFor="let item of orders; let i = index">
+        <span >{{item.name}}</span><span>{{ format(item.amount) }}</span>
+        <button type="button" mat-icon-button color="warn" style="line-height: 60px;" (click)="del('orders', i)" >
+          <mat-icon>clear</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div fxLayout="row" class="rowstype">
+      <mat-form-field fxFlex=46 style="margin-right:2%;width:46%;">
+        <mat-label>支払う先</mat-label>
+        <input type="text" matInput  autocomplete="off" formControlName="pay_name" *ngIf="supplie.length<1">
+        <mat-select *ngIf="supplie.length>0" formControlName="pay_name">
+          <ng-container *ngFor="let item of supplie">
+          <mat-option value="{{item.sup_name}}">{{item.sup_name}}</mat-option>
+          </ng-container>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field fxFlex=19>
+        <mat-label>金額</mat-label>
+        <input type="number" matInput  autocomplete="off" formControlName="pay_amount" readonly (click)="showInput('pay_amount', '支払う金額')" >
+      </mat-form-field>
+      
+      <button type="button" mat-raised-button color="primary" (click)="add()" style="height:40px; margin-top: 10px;">
+        追加
+      </button>
+    </div>
+
+    <div fxLayout="row" class="title" style="margin:0px;height: 46px; line-height: 46px;">
+      売り上げ種類
+      <span class="toolbar-spacer"></span>
+      合計: <font style="margin: 0 10px;"> {{ format(counter_amount) }}</font>
+    </div>
+    
+    <div fxLayout="row" class="rowstype showborder">
+      <div style="display: table; width: 100%;">
+        <div *ngFor="let item of counter_paylist" class="counter-paylist">
+          <div fxFlex=30 class="label">
+            {{item['name']}}
+          </div>
+          <div fxFlex=60>
+            {{ format(item['amount']) }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  <div fxLayout="column" fxLayoutAlign="start" fxFlex=2></div>
+  <div fxLayout="column" fxLayoutAlign="start" fxFlex=30>
+    <div fxLayout="row">　</div>
+    <div fxLayout="row" class="title" style="margin:0px;height: 46px; line-height: 46px;">
+      本締め
+    </div>
+
+    <div fxLayout="row" class="rowstype">
+      <table style="width: 100%;">
+        <thead>
+          <tr>
+            <th>金種</th>
+            <th>枚数</th>
+            <th>金額</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>一万円</td>
+            <td (click)="showInput('m10000', '枚数（一万円）')" ><input style="width:80px"  matInput readonly formControlName="m10000"></td>
+            <td>{{getAmount(10000)}}</td>
+          </tr>
+          <tr>
+            <td>五千円</td>
+            <td (click)="showInput('m5000', '枚数（五千円）')" ><input maxlength="20" style="width:80px" readonly type="number" matInput placeholder="" autocomplete="off" formControlName="m5000"></td>
+            <td>{{getAmount(5000)}}</td>
+          </tr>
+          <tr>
+            <td>一千円</td>
+            <td (click)="showInput('m1000', '枚数（一千円）')" ><input maxlength="20" style="width:80px" readonly type="number" matInput placeholder="" autocomplete="off" formControlName="m1000"></td>
+            <td>{{getAmount(1000)}}</td>
+          </tr>
+          <tr>
+            <td>五百円</td>
+            <td (click)="showInput('m500', '枚数（五百円）')" ><input maxlength="20" style="width:80px" readonly type="number" matInput placeholder="" autocomplete="off" formControlName="m500"></td>
+            <td>{{getAmount(500)}}</td>
+          </tr>
+          <tr>
+            <td>一百円</td>
+            <td (click)="showInput('m100', '枚数（一百円）')" ><input maxlength="20" style="width:80px" readonly type="number" matInput placeholder="" autocomplete="off" formControlName="m100"></td>
+            <td>{{getAmount(100)}}</td>
+          </tr>
+          <tr>
+            <td>五十円</td>
+            <td (click)="showInput('m50', '枚数（五十円）')" ><input maxlength="20" style="width:80px" readonly type="number" matInput placeholder="" autocomplete="off" formControlName="m50"></td>
+            <td>{{getAmount(50)}}</td>
+          </tr>
+          <tr>
+            <td>十円</td>
+            <td (click)="showInput('m10', '枚数（十円）')" ><input maxlength="20" style="width:80px" readonly type="number" matInput placeholder="" autocomplete="off" formControlName="m10"></td>
+            <td>{{getAmount(10)}}</td>
+          </tr>
+          <tr>
+            <td>五円</td>
+            <td (click)="showInput('m5', '枚数（五円）')" ><input maxlength="20" style="width:80px" readonly type="number" matInput placeholder="" autocomplete="off" formControlName="m5"></td>
+            <td>{{getAmount(5)}}</td>
+          </tr>
+          <tr>
+            <td>一円</td>
+            <td (click)="showInput('m1', '枚数（一円）')" ><input maxlength="20" style="width:80px" readonly type="number" matInput placeholder="" autocomplete="off" formControlName="m1"></td>
+            <td>{{getAmount(1)}}</td>
+          </tr>
+
+          <tr class="total-tr">
+            <td colspan="3">
+              <span class="label">計算現金残高</span>
+              <font>{{ format(getIn() + getCharge() - getOut()) }}</font>
+            </td>
+          </tr>
+          
+          <tr class="total-tr">
+            <td colspan="3">
+              <span class="label">実現金残高</span>
+              <font>{{ getBoxTotalAmount() }}</font>
+            </td>
+          </tr>
+          
+          <tr class="total-tr">
+            <td colspan="3">
+              <span class="label">過不足金</span>
+              <font>{{ getBalance() }}</font>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div fxLayout="row" class="rowstype" style="margin-top:20px;">
+      <span class="toolbar-spacer"></span>
+      <button type="button" mat-raised-button color="warn" (click)="back()">
+      クローズ
+      </button>
+      <button type="button" mat-raised-button color="basic" (click)="close()">
+      保存
+      </button>
+
+      <button type="button" mat-raised-button color="accent" (click)="close(1)">
+      営業終了
+      </button>
+    </div>
+
+  </div>
+</div>

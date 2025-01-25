@@ -1,0 +1,36 @@
+.number-div {
+    width: 120px;
+}
+
+.number-div {
+    width: 100px;
+}
+
+button {
+    height: 30px;
+    width: 30px;
+    font-size: 100%;
+}
+
+span {
+    font-size: 14px;
+}
+
+.mat-icon {
+    margin-top: -10px;
+}
+
+@media (max-width: 500px) {
+    button {
+        height: 20px;
+        width: 20px;
+        font-size: 100%;
+    }
+    .number-div {
+        width: 70px;
+    }
+    .mat-icon {
+        margin-top: -20px;
+        margin-left: -2px;
+    }
+}

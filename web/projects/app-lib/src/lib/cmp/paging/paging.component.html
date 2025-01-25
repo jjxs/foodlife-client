@@ -1,0 +1,56 @@
+<!-- <mat-paginator [length]="100"
+               [pageSize]="10"
+               [showFirstLastButtons]="true"
+               [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator> -->
+
+<div class="container"
+     fxLayout="row"
+     fxLayoutAlign="space-between center">
+      <div class="move"
+           *ngIf="hidePageSize"
+           fxLayout="row"
+           fxLayoutAlign="center center">
+            <mat-form-field>
+                  <mat-select [(ngModel)]="size"
+                              (selectionChange)="selectionChange($event)"
+                              placeholder='ページ毎表示件数'>
+                        <mat-option *ngFor="let o of options"
+                                    [value]="o">{{o}}</mat-option>
+                  </mat-select>
+
+            </mat-form-field>
+
+      </div>
+      <div class="move"
+           *ngIf="total>0"
+           fxLayout="row"
+           fxLayoutAlign="center center">
+            <span style="margin:3px 15px 0px 15px">ページ：</span>
+            <input style="width:48px;"
+                   type="number"
+                   matInput
+                   [min]="1"
+                   [max]="getTotal()"
+                   [value]="page"
+                   (change)="changePage($event)">
+            <span style="margin:3px 15px 0px 5px"> / {{ getTotal() }}</span>
+      </div>
+      <div class="pagination"
+           *ngIf="total>0"
+           fxLayout="row"
+           fxLayoutAlign="center center">
+            <span [ngClass]="{'unused': page<=1 }"
+                  style="width: 48px;"
+                  (click)="moveToFrist($event)">&lt;&lt;</span>
+            <span [ngClass]="{'unused': page<=1 }"
+                  style="width: 64px;"
+                  (click)="moveToPre($event)">&lt;</span>
+            <div style=" margin:3px 15px 0px 15px">{{ (page-1)*size + 1 }} - {{ math.min(page*size,total) }} of {{total}}</div>
+            <span [ngClass]="{'unused': page>= getTotal() }"
+                  style="width: 64px;"
+                  (click)="moveToNext($event)">&gt;</span>
+            <span [ngClass]="{'unused': page>= getTotal() }"
+                  style="width: 48px;"
+                  (click)="moveToLast($event)">&gt;&gt;</span>
+      </div>

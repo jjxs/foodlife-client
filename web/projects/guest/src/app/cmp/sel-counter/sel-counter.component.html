@@ -1,0 +1,17 @@
+<!-- <ul class="flex-ul">
+  <li>
+    <span>
+      <ons-icon class="primary-color" *ngIf="count>0" icon="md-minus-circle" size="32px" (click)="count = count > 0 ? count - 1 : 0 ">
+      </ons-icon>
+    </span>
+  </li>
+
+  <li *ngIf="count>0" class="alert alert-info" style="text-align: center;margin: 5px; height:100%;width:20px">{{count}}</li>
+  <li>
+    <ons-icon class="warn-color" icon="md-plus-circle" size="32px" (click)="count = count + 1 "></ons-icon>
+  </li>
+</ul> -->
+
+<ons-icon *ngIf="count > 0" class="primary-color" style="font-size:32px" icon="ion-minus-circled" (click)="count = count > 0 ? count - 1 : 0 "></ons-icon>
+<label *ngIf="count > 0" class="alert alert-info" style="margin: 0px 3px 0px 3px;padding:5px 10px;">{{count}}</label>
+<ons-icon class="primary-color" style="font-size:32px" icon="ion-plus-circled" (click)="count = count + 1 "></ons-icon>

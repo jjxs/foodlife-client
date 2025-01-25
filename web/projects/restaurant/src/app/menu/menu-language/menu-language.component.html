@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <span>{{'言語設定' | language:menuSrv.lang}}</span>
+  <span class="toolbar-spacer"></span>
+</mat-toolbar>
+<div theme fxLayout="column" style="padding:5px;width:100%">
+  <div fxLayout="row" fxLayoutAlign="space-between center" style="padding:15px;width:100%">
+    <div fxLayout="column">      
+      <div>{{'言語' | language:menuSrv.lang}}：</div>
+    </div>
+    <div flex style="width:60%;">
+      <mat-select class="select"
+        placeholder="言語" 
+          [(ngModel)]="language">
+          <mat-option *ngFor="let item of languageList"
+            [value]="item.id">
+              {{item.name}}
+        </mat-option>
+      </mat-select>
+    </div>
+  </div>
+</div>
+
+<mat-toolbar color="base">
+  <span class="toolbar-spacer"></span>
+  <button mat-raised-button color="primary" (click)="ok()" cdkFocusInitial>OK</button>
+</mat-toolbar>

@@ -1,0 +1,28 @@
+<div class="dialog-container dialog-container--material" style="width:100%;height: auto;text-align: center;padding:30px 5px ">
+  <div class="title primary-color">Welcome!</div>
+
+
+  <div style="text-align: center;margin-top:30px">
+    <ons-icon class="primary-color" style="font-size:32px;margin-right:20px" icon="md-account-circle"></ons-icon>
+    <ons-input modifier="underbar" placeholder="username" [(value)]="params.username"></ons-input>
+  </div>
+
+  <div style="text-align: center;margin-top:30px">
+    <ons-icon class="primary-color" style="font-size:32px;margin-right:20px" icon="md-key"></ons-icon>
+    <ons-input modifier="underbar" placeholder="password" [(value)]="params.password"></ons-input>
+  </div>
+  <div style="width:100%; margin-top:40px">
+    <ons-button class="primary-bgcolor" style="width:50%;" (click)="login()">Login</ons-button>
+  </div>
+  <div style="text-align: center;margin-top:40px">
+    <ons-fab style="margin:5px;background: #3b5998;" modifier="mini" (click)="login()">
+      <ons-icon icon="md-facebook"></ons-icon>
+    </ons-fab>
+    <ons-fab style="margin:5px;background: #dd4b39;" modifier="mini" (click)="login()">
+      <ons-icon icon="md-google-plus"></ons-icon>
+    </ons-fab>
+    <ons-fab style="margin:5px;" modifier="mini" (click)="login()">
+      <ons-icon icon="md-help-outline"></ons-icon>
+    </ons-fab>
+  </div>
+</div>

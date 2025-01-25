@@ -1,0 +1,59 @@
+<div theme style="height: 100%">
+  <mat-toolbar class="order-history-toolbar">
+    <span>{{ title }}</span>
+    <span class="toolbar-spacer"></span>
+    <div class="total">
+      合計:{{ countPrice | currency: '￥':'symbol':'1.0-0' }} (税込)
+    </div>
+    <button type="button" color="primary" mat-icon-button (click)="ngOnInit()">
+      <mat-icon>refresh</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div
+    *ngIf="display_model === 'time'"
+    fxLayout="column"
+    [ngClass]="{ 'auto-height': isGuest }"
+    [style.height.px]="myInnerHeight - 150"
+  >
+    <table class="order-history mat-elevation-z8" style="width: 100%">
+      <thead>
+        <tr>
+          <th>メユー</th>
+          <th>単価</th>
+          <th>数量</th>
+          <th>合計（税込）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let order of orders | keyvalue">
+          <ng-container *ngFor="let detail of order.value.details">
+            <tr>
+              <td>
+                {{ detail.menu_name }} 　　　<span *ngIf="detail.status_code == 999">【済】</span><br />
+                <ng-container
+                  *ngFor="let menu_option of detail.menu_option | keyvalue"
+                >
+                  {{ menu_option.value.select_name }}
+                </ng-container>
+                <br />
+                <ng-container *ngFor="let option of detail.option | keyvalue">
+                  {{ option.value.name }}
+                </ng-container>
+              </td>
+              <td>
+                {{
+                  appService.zekomi(detail.price, detail.menu_tax_in)
+                    | currency: '￥':'symbol':'1.0-0'
+                }}
+              </td>
+              <td>{{ detail.count }}</td>
+              <td>
+                {{ countDetail(detail) | currency: '￥':'symbol':'1.0-0' }}
+              </td>
+            </tr>
+          </ng-container>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

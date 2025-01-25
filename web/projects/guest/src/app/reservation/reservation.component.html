@@ -1,0 +1,133 @@
+<ons-toolbar>
+  <div class="center">予約</div>
+  <div class="right">
+    <app-pop-menu></app-pop-menu>
+  </div>
+</ons-toolbar>
+<div class="background"></div>
+<div class="content">
+
+  <ons-card *ngIf="!isEdit">
+    <div *ngIf="!shownext" class="flex-container flex-left">
+      <ons-toolbar-button style="font-size: 14px;margin-top:5px;" modifier="outline" (click)="shownext = true;">
+        <ons-icon icon="ion-plus-circled" style="font-size: 14px"></ons-icon>
+        <span style="padding-left: 5px;">新規</span>
+      </ons-toolbar-button>
+    </div>
+    <ng-container *ngIf="shownext">
+      <img src="http://www.kingenrou.jp/common-pic/menu_img.jpg" alt="Onsen UI" style="width: 100%">
+      <div class="content">
+        <ons-list>
+          <ons-list-header>現在のご予約　( 食べ放題120種)</ons-list-header>
+          <ons-list-item>2018年1月8日 19時～</ons-list-item>
+          <ons-list-item>Mr. 朱（5人）</ons-list-item>
+        </ons-list>
+      </div>
+      <div class="flex-container flex-right">
+        <ons-button style="font-size: 14px;margin-top:5px;">
+          <ons-icon icon="ion-edit" style="font-size: 14px"></ons-icon>
+          <span style="padding-left: 5px;">変更</span>
+        </ons-button>
+      </div>
+    </ng-container>
+  </ons-card>
+  <ons-card>
+    <div class="flex-container flex-right">
+
+      <ons-icon *ngIf="isEdit" class="warn-color" style="font-size:32px" icon="md-close-circle"></ons-icon>
+    </div>
+    <img *ngIf="!isEdit" src="http://shinsouen.jp/iidabashi/menu/image/menu_iidabashi_free50.jpg" alt="Onsen UI" style="width: 100%">
+    <div class="content">
+      <ons-list>
+        <ng-container *ngIf="!isEdit">
+          <ons-list-header>ご予約　( 食べ放題120種)</ons-list-header>
+          <ons-list-item>
+            <label>2018年1月8日 19時～</label>
+          </ons-list-item>
+          <ons-list-item>
+            <label>Mr. 朱（5人）</label>
+          </ons-list-item>
+        </ng-container>
+        <ng-container *ngIf="isEdit">
+          <ons-list-header>
+            <span style="font-size: 16px">予約名称(省略可能)</span>
+          </ons-list-header>
+          <ons-list-item>
+            <div class="center">
+              <ons-input placeholder="予約名称をここに入力(省略可能)" float [(ngModel)]="reservation_display_name">
+              </ons-input>
+            </div>
+          </ons-list-item>
+
+
+          <ons-list-header>
+            <span style="font-size: 16px">予約者(お店確認、連絡など利用)</span>
+          </ons-list-header>
+          <ons-list-item>
+            <div class="center">
+              <ons-input placeholder="予約者名をここに入力" float [(ngModel)]="reservation_name">
+              </ons-input>
+            </div>
+          </ons-list-item>
+
+          <ons-list-header>
+            <span style="font-size: 16px">電話番号(お店確認、連絡など利用)</span>
+          </ons-list-header>
+          <ons-list-item>
+            <div class="center">
+              <ons-input placeholder="電話番号をここに入力" float [(ngModel)]="reservation_phone">
+              </ons-input>
+            </div>
+          </ons-list-item>
+
+          <ons-list-header>
+            <span style="font-size: 16px">お店からの連絡ができますか？</span>
+          </ons-list-header>
+          <ons-list-item *ngFor="let vegetable of vegetables; let $index = index">
+            <label class="left">
+              <ons-radio [attr.input-id]="'radio-' + $index" [attr.value]="vegetable" [(ngModel)]="reservation_allow_access">
+              </ons-radio>
+            </label>
+            <label [attr.for]="'radio-' + $index" class="center">
+              {{ vegetable }}
+            </label>
+          </ons-list-item>
+
+          <ons-list-header>
+            <span style="font-size: 16px">来店日時</span>
+          </ons-list-header>
+          <ons-list-item>
+            <div class="center">
+              <ons-input placeholder="来店日時" float [(ngModel)]="reservation_datetime">
+              </ons-input>
+            </div>
+          </ons-list-item>
+
+          <ons-list-header>
+            <span style="font-size: 16px">来店人数</span>
+          </ons-list-header>
+          <ons-list-item>
+            <div class="center">
+              <ons-input placeholder="来店人数をここに入力(省略可能)" float [(ngModel)]="reservation_display_name">
+              </ons-input>
+            </div>
+          </ons-list-item>
+        </ng-container>
+
+
+
+
+
+      </ons-list>
+    </div>
+    <div class="flex-container flex-right">
+      <ons-button *ngIf="isEdit" style="font-size: 14px;margin-top:5px;" (click)="isEdit=false;" modifier="outline">
+        <span style="padding-left: 5px;">確定</span>
+      </ons-button>
+      <ons-button *ngIf="!isEdit" style="font-size: 14px;margin-top:5px;" (click)="isEdit=true;">
+        <ons-icon icon="ion-edit" style="font-size: 14px"></ons-icon>
+        <span style="padding-left: 5px;">変更</span>
+      </ons-button>
+    </div>
+  </ons-card>
+</div>

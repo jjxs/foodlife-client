@@ -1,0 +1,47 @@
+<div fxFlex fxLayout="column" (swiperight)="preClick($event)" (swipeleft)="nextClick($event)"
+  [@animationStatus]="animationStatus" (@animationStatus.done)="animationDone($event)" style="width:100%;">
+  <div fxLayout="row" fxLayoutAlign="space-around center" style="width:100%">
+    <restaurant-menu-image [order_list]="order_list" [enableOrder]="enableOrder" [menu]="menuData[0] || {}"
+      class="menu-image">
+    </restaurant-menu-image>
+    <restaurant-menu-image [order_list]="order_list" [enableOrder]="enableOrder" [menu]="menuData[1] || {}"
+      class="menu-image">
+    </restaurant-menu-image>
+    <restaurant-menu-image [order_list]="order_list" [enableOrder]="enableOrder" [menu]="menuData[2] || {}"
+      class="menu-image">
+    </restaurant-menu-image>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-around center" style="width:100%;margin-top: 10px;height:calc(33vh - 65px);">
+    <restaurant-menu-image [order_list]="order_list" [enableOrder]="enableOrder" [menu]="menuData[3] || {}"
+      class="menu-image">
+    </restaurant-menu-image>
+    <restaurant-menu-image [order_list]="order_list" [enableOrder]="enableOrder" [menu]="menuData[4] || {}"
+      class="menu-image">
+    </restaurant-menu-image>
+    <restaurant-menu-image [order_list]="order_list" [enableOrder]="enableOrder" [menu]="menuData[5] || {}"
+      class="menu-image">
+    </restaurant-menu-image>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-around center" style="width:100%;margin-top: 10px;height:calc(33vh - 65px);">
+    <restaurant-menu-image [order_list]="order_list" [enableOrder]="enableOrder" [menu]="menuData[6] || {}"
+      class="menu-image">
+    </restaurant-menu-image>
+    <restaurant-menu-image [order_list]="order_list" [enableOrder]="enableOrder" [menu]="menuData[7] || {}"
+      class="menu-image">
+    </restaurant-menu-image>
+    <restaurant-menu-image [order_list]="order_list" [enableOrder]="enableOrder" [menu]="menuData[8] || {}"
+      class="menu-image">
+    </restaurant-menu-image>
+  </div>
+</div>
+<div fxFlex="50px" style="padding: 5px 0px 0px 0px;width:100%" fxLayout=" row" fxLayoutAlign="space-around center">
+  <button mat-raised-button color="primary" class="page-button" [disabled]="(currentPage>0) ? false : true"
+    (click)="preClick($event)">
+    {{'前　へ' | language:menuSrv.lang}}
+  </button>
+  <div style="width:10%;text-align: center;">{{ currentPage + 1 }}　/　{{maxPage}}</div>
+  <button mat-raised-button color="primary" class="page-button" [disabled]="(currentPage<maxPage-1) ? false : true"
+    (click)="nextClick($event)">
+    {{'次　へ' | language:menuSrv.lang}}
+  </button>
+</div>

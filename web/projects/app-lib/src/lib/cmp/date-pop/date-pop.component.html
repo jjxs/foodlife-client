@@ -1,0 +1,9 @@
+<div fxLayout="row"
+     fxLayoutAlign="space-between center"
+     style="width: 100%">
+      <span>{{innerValue}}</span>
+
+      <mat-icon class="app-input-icon"
+                *ngIf="!readonly"
+                (click)="open()">calendar_today</mat-icon>
+</div>

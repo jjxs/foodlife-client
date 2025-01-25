@@ -1,0 +1,23 @@
+<div [ngClass]="{hide: 1, 'content-container-button':showButton==true}" (swiperight)="gotoMenu()" (swipeleft)="gotoSetting()">
+  <button mat-raised-button style="margin-right:25px" color="" (click)="clickPay()">
+    <mat-icon>add_shopping_cart</mat-icon>会 計
+  </button>
+
+  <button mat-raised-button style="margin-right:25px" color="" (click)="openHistory()">
+    <mat-icon class="example-icon">list_alt</mat-icon>
+    会計履歴
+  </button>
+  <button mat-raised-button style="margin-right:25px" color="" (click)="openCounterSearch()">
+    <mat-icon class="example-icon">exposure</mat-icon>
+    売上集計
+  </button>
+</div>
+
+<div [ngClass]="{hide: 1, 'content-container-counter':showCounter==true}" (swiperight)="gotoMenu()" (swipeleft)="gotoSetting()">
+  
+  <button mat-mini-fab style="position: absolute;right:5px; top:5px; background: #f1de01;" color="" (click)="gotoCounter()">
+    <mat-icon class="example-icon">exposure</mat-icon>
+  </button>
+  <app-counter [showHeader]="false" [showCounterSearch]="false" [showHistory]="false" >
+  </app-counter>
+</div>

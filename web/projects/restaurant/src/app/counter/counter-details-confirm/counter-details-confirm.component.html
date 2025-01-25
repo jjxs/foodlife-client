@@ -1,0 +1,67 @@
+<div theme class="content-container">
+
+  <mat-toolbar color="primary">
+    <button type="button" color="accent" mat-raised-button (click)="printDetail()">
+      <mat-icon>local_printshop</mat-icon>明細印刷
+    </button>
+    <span class="toolbar-spacer"></span>
+    <button type="button" mat-mini-fab (click)="closeEmpty()" style="margin-left: 30px;">
+      <mat-icon color="primary">close</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-toolbar>
+    <span>ーーーーーーーー 税抜メニュー合計： {{data.money.total | currency:'￥':'symbol':'1.0-0'}} (税込 {{data.money.price | currency:'￥':'symbol':'1.0-0'}})ーーーーーーーー</span>
+    <span class="toolbar-spacer"></span>
+  </mat-toolbar>
+  <ng-container *ngFor="let item of details | keyvalue">
+    <div fxLayout="row" fxLayoutAlign="space-between center" style="padding:10px;border-top:1px solid grey">
+      <div fxFlex="30%">
+        {{item.value.menu_name}}
+      </div>
+      <div fxFlex="5%" style="text-align: right">
+        [{{item.value.menu_no}}]
+      </div>
+      <div fxFlex="15%">
+        {{item.value.menu_note}}
+      </div>
+      <div fxFlex="10%">
+        <div>個数：{{item.value.count}}　</div>
+      </div>
+      <div fxFlex="15%">
+        単価：{{item.value.price | currency:'￥':'symbol':'1.0-0'}} (税抜）
+      </div>
+      <div fxFlex="15%">
+        合計：
+        <span *ngIf="!item.value.tax_in"> {{ item.value.total | currency:'￥':'symbol':'1.0-0'}} (税抜）</span>
+      </div>
+    </div>
+  </ng-container>
+
+  <mat-toolbar *ngIf="hasTax" style="margin-top: 15px;">
+    <span>ーーーーーーーー ☆ 税込メニュー合計：{{data.money.price_tax_in | currency:'￥':'symbol':'1.0-0'}}ーーーーーーーー</span>
+    <span class="toolbar-spacer"></span>
+  </mat-toolbar>
+  <ng-container *ngFor="let item of taxDetails | keyvalue">
+    <div fxLayout="row" fxLayoutAlign="space-between center" style="padding:10px;border-top:1px solid grey">
+      <div fxFlex="30%">
+        {{item.value.menu_name}}
+      </div>
+      <div fxFlex="5%" style="text-align: right">
+        [{{item.value.menu_no}}]
+      </div>
+      <div fxFlex="15%">
+        {{item.value.menu_note}}
+      </div>
+      <div fxFlex="10%">
+        <div>個数：{{item.value.count}}　</div>
+      </div>
+      <div fxFlex="15%">
+        単価：{{item.value.price_tax_in | currency:'￥':'symbol':'1.0-0'}}（税込）
+      </div>
+      <div fxFlex="15%">
+        合計：
+        <span *ngIf="item.value.tax_in"> {{ item.value.total | currency:'￥':'symbol':'1.0-0'}}（税込）</span>
+      </div>
+    </div>
+  </ng-container>
+</div>

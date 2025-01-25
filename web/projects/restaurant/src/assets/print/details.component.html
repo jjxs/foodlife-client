@@ -1,0 +1,200 @@
+<!--meta name="viewport" user-scalable=0 阻止双击放大事件-->
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<!--<!doctype html>-->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <style type="text/css">
+    /* sheet size */
+    @media print {
+      @page {
+        size: portrait;
+        margin: 0px;
+      }
+    }
+
+    .receipt {
+      width: 55mm;
+      font-size: 70%;
+      /*letter-spacing: 1px;*/
+    }
+
+    .wrapper {
+
+      margin: 0px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-right: 5mm;
+      /*横並び・左から右（デフォルト）*/
+    }
+
+    .img {
+      width: 45mm;
+      height: 18mm;
+    }
+
+    .img-code {
+      width: 20mm;
+      height: 20mm;
+    }
+
+    .element-left {
+      text-align: left;
+    }
+
+
+    .element-rigth {
+      text-align: right;
+      padding-right: 3mm;
+    }
+
+    .rows {
+      padding-right: 5mm;
+    }
+
+    .row-top {
+      overflow: hidden;
+      width: 50mm;
+      text-align: left;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .row-bottom {
+      text-align: right;
+    }
+
+
+    /* fix for Chrome */
+  </style>
+  <script src="./jquery-3.3.1.min.js"></script>
+  <script src="./jquery-barcode.js"></script>
+  <script src="./moment.js"></script>
+  <script src="./details.js"></script>
+</head>
+
+<body class="receipt">
+
+
+  <div class="element">
+    <div style="text-align:center">
+      <img class="img" src="title.png">
+    </div>
+
+    <div style="text-align: center;">☆毎度ありがとうございます。</div>
+    <div style="text-align: center;">営業時間　11:00 ～　23:00</div>
+    <div id="current" style="text-align: center;border-bottom: dotted 1px;"></div>
+    <div style="text-align: center;font-size:150%">領収書</div>
+
+    <!--小計明細-->
+    <div class="rows" id="detail-rows">
+    </div>
+    <!--小計-->
+    <div class="wrapper cls-tax-none" style="margin-top:10px">
+      <div class="element-left">
+        <span>小計(税抜）</span>
+      </div>
+      <div class="element-right">
+        ￥<span id="total"></span>
+      </div>
+    </div>
+    <div class="wrapper cls-tax-none">
+      <div class="element-left">
+        <span class="fax-show">消費税等(8.0%)</span>
+      </div>
+      <div class="element-right">
+        ￥<span id="tax"></span>
+      </div>
+    </div>
+
+    <div class="cls-tax" style="margin-top:15px">
+      ー　■ 税込メニュ　ー
+    </div>
+    <!--税抜きメニュ明細-->
+    <div class="rows" id="detail-tax-rows">
+    </div>
+    <div class="wrapper cls-tax" style="margin-top:15px;margin-bottom: 15px;">
+      <div class="element-left">
+        <span class="tax-count-show">小計 (8.0% 消費税込）</span>
+      </div>
+      <div class="element-right">
+        ￥<span id="total-tax"></span>
+      </div>
+    </div>
+    <!--割引、減額など-->
+    <div class="wrapper" id="sale1_div">
+      <div class="element-left">
+        <span id="sale1_title"></span>
+      </div>
+      <div class="element-right">
+        - ￥<span id="sale1"></span>
+      </div>
+    </div>
+    <div class="wrapper" id="sale2_div">
+      <div class="element-left">
+        <span>減額</span>
+      </div>
+      <div class="element-right">
+        - ￥<span id="sale2"></span>
+      </div>
+    </div>
+    <!--合計-->
+    <div class="wrapper">
+      <div class="element-left">
+        合計
+      </div>
+      <div class="element-right" style="font-size:120%">
+        ￥<span id="price"></span>
+      </div>
+    </div>
+    <div class="wrapper" style="">
+      <div class="element-left" id="no_pay">
+      </div>
+      <div class="element-right" id="pay_name">
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="element-left">
+        お預り
+      </div>
+      <div class="element-right">
+        ￥<span id="pay"></span>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="element-left">
+        お釣り
+      </div>
+      <div class="element-right" style="font-size:120%">
+        ￥<span id="change"></span>
+      </div>
+    </div>
+    <div style="text-align: center;border-top: dotted 1px;">何鮮菇（キノコ専門） 上野店</div>
+
+    <div style="display: flex;justify-content: center;">
+      <img class="img-code" src="1542806681.png">
+    </div>
+    <div style="text-align: center;">TEL: 03-6806-0583</div>
+    <div style="display: flex;justify-content: center;">
+      <div id="barcode" style=" "></div>
+    </div>
+    <div class="address" id="receipt_address" style="text-align:center;width:100%;font-size:80%;">
+      株式会社フードライフソリューションズ <br>
+      〒110-0005 <br>
+      東京都台東区上野4丁目4-5 <br>
+      上野C-Roadビル 3F<br>
+      TEL: 03-6284-2149 <br>
+      FAX: 03-6284-2149 <br>
+    </div>
+
+  </div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+@import "~@angular/material/theming";
+$small-breakpoint-width: 720px;
+
+/* For desktop, the content should be aligned with the page title. */
+$content-padding-side: 70px;
+$content-padding-side-xs: 15px;
+
+$app-primary: mat-palette($mat-blue, 900);
+$app-light-primary: mat-palette($mat-blue, 100);
+$app-accent: mat-palette($mat-blue, 400); /*A200, A100, A400);*/
+// The warn palette is optional (defaults to red).
+$app-warn: mat-palette($mat-red);

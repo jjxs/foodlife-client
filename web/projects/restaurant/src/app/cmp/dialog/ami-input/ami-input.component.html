@@ -1,0 +1,53 @@
+<div fxLayout="row" fxLayoutAlign="start center" style="font-size:20px; background-color: #ffd740;height: 40px; line-height: 40px; padding: 0px 10px; border-radius: 5px;">
+  {{data.title !== undefined ? data.title : '確認' }}
+  <span class="toolbar-spacer"></span>
+  <font>{{value}}</font>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center">
+  
+  <mat-grid-list fxFlex cols="3" rowHeight="fit" gutterSize="5" style="margin-top:10px;height:220px;">
+  
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('7')">7</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('8')">8</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('9')">9</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('4')">4</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('5')">5</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('6')">6</button>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('1')">1</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('2')">2</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('3')">3</button>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('0')">0</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button" mat-raised-button color="accent" (click)="clearInput()">C</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button" mat-raised-button color="warn" (click)="ok()">確定</button>
+    </mat-grid-tile>
+    
+
+  </mat-grid-list>
+  
+</div>

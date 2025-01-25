@@ -1,0 +1,68 @@
+<ons-tabbar #nav (postchange)="onPostchange($event)">
+
+  <div class="tabbar__content">
+  </div>
+  <div class="tabbar">
+    <ons-tab ami-id="home_tab" label="ホーム" icon="md-home" [page]="home_page" active></ons-tab>
+    <ons-tab ami-id="menu_tab" label="メニュー" icon="md-menu" [page]="menu_page" *ngIf="authSrv.Usable"></ons-tab>
+    <ons-tab ami-id="order_tab" label="注文" icon="cart-plus" [page]="order_page" *ngIf="authSrv.Usable"></ons-tab>
+    <ons-tab ami-id="reservation_tab" label="予約" icon="fa-bell" [page]="reservation_page" *ngIf="authSrv.Authenticated"></ons-tab>
+  </div>
+</ons-tabbar>
+
+<!-- must be located just under an outermost box such as body element -->
+<ons-dialog animation="default" #login>
+  <div class="dialog-mask "></div>
+  <div class="dialog dialog--material">
+    <app-login></app-login>
+  </div>
+</ons-dialog>
+
+<ons-dialog animation="default" cancelable #quickin>
+  <div class="dialog-mask "></div>
+  <div class="dialog dialog--material">
+    <app-quickin></app-quickin>
+  </div>
+</ons-dialog>
+
+<ons-popover direction="up down" cancelable #popover>
+  <div style="text-align: center; opacity: 0.7;">
+    <ons-list>
+      <ons-list-header>ユーザ</ons-list-header>
+      <ons-list-item *ngIf="authSrv.Authenticated">
+        <div class="left">
+          {{ authSrv.nickname}}
+        </div>
+        <div class="right">
+          <a class="primary-color" (click)="showLogin()">Logout</a>
+        </div>
+      </ons-list-item>
+      <ons-list-item *ngIf="!authSrv.Authenticated">
+        <div class="left">
+          <ons-icon icon="md-face" class="list-item__icon"></ons-icon>
+        </div>
+        <ons-button class="primary-bgcolor" (click)="showLogin()">Login</ons-button>
+      </ons-list-item>
+      <ons-list-header>選択</ons-list-header>
+      <ons-list-item>
+        <div class="center">
+          Turn it on
+        </div>
+        <div class="right">
+          <ons-switch></ons-switch>
+        </div>
+      </ons-list-item>
+      <ons-list-item>
+        <div class="left">
+          <ons-icon icon="md-face" class="list-item__icon"></ons-icon>
+        </div>
+        <div class="center">
+          Icon and switch
+        </div>
+        <div class="right">
+          <ons-switch></ons-switch>
+        </div>
+      </ons-list-item>
+    </ons-list>
+  </div>
+</ons-popover>

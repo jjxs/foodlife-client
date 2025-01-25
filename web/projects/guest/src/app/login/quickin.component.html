@@ -1,0 +1,19 @@
+<div class="dialog-container dialog-container--material" style="width:100%;height: auto;text-align: center;padding:30px 5px ">
+  <div class="title primary-color">Welcome!</div>
+  <div style="text-align: center;margin-top:30px">
+    <label>{{nickname}}</label>
+  </div>
+  <div style="text-align: center;margin-top:30px">
+    <label>スキャン</label>
+  </div>
+  <ami-scaner></ami-scaner>
+
+  <div style="text-align: center;margin-top:30px">
+    <ons-icon class="primary-color" style="font-size:32px;margin-right:20px" icon="md-mood"></ons-icon>
+    <ons-input modifier="underbar" placeholder="nickname" [(value)]="nickname"></ons-input>
+  </div>
+
+  <div style="width:100%; margin-top:40px">
+    <ons-button class="primary-bgcolor" style="width:50%;">利用開始</ons-button>
+  </div>
+</div>

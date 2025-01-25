@@ -1,0 +1,100 @@
+<mat-sidenav-container class="mat-sidenav-content">
+  <div fxLayout="row" style="height: 100%;" fxLayoutAlign="center none">
+    <div class="list" fxLayout="column" fxFlex=100>
+      <div>
+        <mat-toolbar color="basic">
+          <div>坐席管理</div>
+          <span class="toolbar-spacer"></span>
+          <button mat-raised-button color="primary" (click)="onAdd()">坐席追加</button>
+        </mat-toolbar>
+        <div class="componect-container">
+          <div class="search">
+            <div fxLayout="row" style="height: 60px;padding: 5px 0;" fxLayoutGap="15px"
+              fxLayoutAlign="start center">
+              <div fxFlex=5 style="padding-left: 28px;">
+                <button mat-icon-button matTooltip="更新" matTooltipPosition="below" (click)="onSearch()">
+                  <mat-icon class="mat-icon-edit">
+                    refresh
+                  </mat-icon>
+                </button>
+              </div>
+              <div style="margin-left: -670px">
+                <label>
+                  <mat-checkbox checked="true" class="checkbox" id="check_box" (change)="onCheckChange($event)"></mat-checkbox>
+                  是否显示外卖坐席
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="table-container" fxLayout="column" fxLayoutAlign="start center">
+            <table class="app-grid" style="width: 100%">
+              <tr>
+                <th style="font-weight: bold;width: 8%;">
+                  NO.
+                </th>
+                <th style="font-weight: bold;width: 13%;">
+                  名称
+                </th>
+                <th style="font-weight: bold;width: 13%;">
+                  エリア名称
+                </th>
+                <th style="font-weight: bold;width: 14%;">
+                  タイプ
+                </th>
+                <th style="font-weight: bold;width: 14%;">
+                  禁煙
+                </th>
+                <th style="font-weight: bold;width: 14%;">
+                  人数
+                </th>
+                <th style="font-weight: bold;width: 14%;">
+                  外卖坐席
+                </th>
+                <th></th>
+              </tr>
+              <ng-container *ngFor="let item of dataSource.data">
+                <tr>
+                  <td>
+                    {{item.seat_no}}
+                  </td>
+                  <td>
+                    {{item.name}}
+                  </td>
+                  <td>
+                    {{item.group_name}}
+                  </td>
+                  <td>
+                    {{item.seat_type}}
+                  </td>
+                  <td>
+                    {{item.seat_smoke_type}}
+                  </td>
+                  <td>
+                    {{item.number}}
+                  </td>
+                  <td *ngIf="item.takeout_type == 1;else elseBlock">
+                    是
+                  </td>
+                  <ng-template #elseBlock><td>否</td></ng-template>
+                  <td>
+                    <button mat-icon-button matTooltip="編集" matTooltipPosition="before" (click)="onEdit(item)">
+                      <mat-icon class="mat-icon-edit">
+                        edit_outline
+                      </mat-icon>
+                    </button>
+                    <button mat-icon-button matTooltip="削除" matTooltipPosition="after" (click)="onDelete(item)">
+                      <mat-icon class="mat-icon-edit">
+                        delete
+                      </mat-icon>
+                    </button>
+                  </td>
+                </tr>
+              </ng-container>
+            </table>
+            <!-- <app-table-empty-message [dataSource]="dataSource" #empty></app-table-empty-message> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-sidenav-container>

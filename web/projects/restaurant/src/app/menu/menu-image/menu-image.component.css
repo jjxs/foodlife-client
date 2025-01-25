@@ -1,0 +1,96 @@
+.image {
+  position: relative;
+  height: 100%;
+  width: 98%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  padding-top: 3px;
+}
+
+.image-free {
+  /*
+    position: relative;
+    height: 95%;
+    width: 95%;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px 3px rgba(233, 30, 99, 0.7);
+    text-align: center;
+    padding-top: 3px;
+     */
+  position: relative;
+  height: 100%;
+  width: 98%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(233, 30, 99, 0.7);
+  text-align: center;
+  padding-top: 3px;
+}
+
+.image-button {
+  height: auto;
+  width: 56px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.image-img {
+  /* max-height: 140px; */
+  max-height: calc(18vh);
+  height: calc(33vh - 118px);
+  /* height: auto; */
+  width: 100%;
+  border-radius: 5px;
+}
+
+.image-title {
+  text-align: left;
+  position: absolute;
+  width: 100%;
+  color: #fff;
+  top: 0;
+  left: 0;
+  /* text-shadow: 1px 1px 1px rgba(51, 51, 51, 0.5);
+  background-color: rgba(51, 51, 51, 0.55);
+  box-shadow: 1px 1px 3px rgba(51, 51, 51, 0.5);
+  -webkit-box-shadow: 1px 1px 3px rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 1px 1px 3px rgba(51, 51, 51, 0.5); */
+}
+
+.image-text {
+  /* position: absolute;
+  bottom: 0;
+  left: 0; */
+  /* color: #fff;
+  background-color: rgba(51, 51, 51, 0.55); */
+  text-align: center;
+  margin: 0px 5px 3px 5px;
+  padding: 0px 3px 2px 3px;
+  text-shadow: 1px 1px 1px rgba(51, 51, 51, 0.5);
+  /* box-shadow: 1px 1px 3px rgba(51, 51, 51, 0.5);
+  -webkit-box-shadow: 1px 1px 3px rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 1px 1px 3px rgba(51, 51, 51, 0.5); */
+}
+
+.hanzi-font {
+  font-family: 'Arial', 'Microsoft YaHei', '黑体', '宋体', sans-serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sale {
+  background-color: #cdd73a;
+}
+
+.sale img {
+  max-height: 120px;
+}
+
+.bottom10 {
+  margin-bottom: 10px;
+}
+.gray-style {
+  opacity: 0.3;
+  filter: contrast(0.8);
+}

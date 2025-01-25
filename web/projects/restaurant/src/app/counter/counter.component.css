@@ -1,0 +1,125 @@
+.content-container {
+    /* padding: 5px; */
+    height: 100%;
+    width: 100vw;
+}
+
+.content-container-showheader {
+    padding: 5px;
+    height: calc(100vh - 10px);
+    width: auto;
+}
+
+.main-panel {
+    margin: 5px;
+    overflow-x: auto;
+    overflow-y: scroll;
+}
+
+.pay-button {
+    width: 100%;
+    height: 100%;
+}
+
+.mat-toolbar-row button {
+    margin-right: 10px;
+}
+
+.counter-toggle-button {
+    padding: 5px;
+    font-size: 14px;
+    border: solid 1px;
+}
+
+.input-selected {
+    border: 1px;
+    border-radius: 2px;
+    box-shadow: 0 5px 10px rgba(27, 31, 35, 0.7) !important
+}
+
+.mat-form-field {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.input-disabled {
+    border: 1px;
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.26);
+    background-color: rgba(0, 0, 0, 0.12);
+    ;
+}
+
+
+/*mat-button-toggle-checked*/
+
+.ami-toggle-button.mat-button-toggle-disabled:not([class*="mat-button-toggle-checked"]) {
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.pay-item {
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.counter-toolbar-money {
+    margin-left: 5px;
+    font-size: 120%;
+}
+
+.split-div {
+    background-color: #ff4081;
+    padding: 10px;
+    margin-top: 5px;
+    /* border-radius: 15px; */
+}
+
+.takeout {
+    font-size: 75%;
+    border-radius: 10px;
+    height: 40px;
+    background-color: #3f51b5;
+    margin-left: 10px;
+    padding: 0 10px;
+    font-weight: 100;
+}
+
+.selected-paytype {
+    background-color: #ff4081 !important;
+    color: white;
+}
+
+.ptype {
+    font-size: 100%;
+}
+
+.mat-menu-item .mat-icon {
+    margin-right: 2px !important;
+}
+
+@media (max-height: 800px) {
+    div,
+    span,
+    td {
+        font-size: 14px;
+    }
+    .counter-toolbar {
+        max-height: 50px;
+        min-height: 50px;
+    }
+    .counter-toolbar-money {
+        /* margin-left: 20px; */
+        font-size: 24px;
+    }
+}
+
+@media (max-height: 600px) {
+    div,
+    span,
+    td {
+        font-size: 12px;
+    }
+    .counter-toolbar-money {
+        /* margin-left: 20px; */
+        font-size: 20px;
+    }
+}

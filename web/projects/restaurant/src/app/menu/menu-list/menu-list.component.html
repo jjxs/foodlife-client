@@ -1,0 +1,86 @@
+<mat-sidenav-container style="height:92%;" [ngClass]="{'orange-theme': 1, hidden:!show}">
+  <mat-sidenav #sidenav mode="side" *ngIf="show_order_theme || show_ranking_theme" [opened]="'true'" style="width:23%"
+    class="example-sidenav" [fixedInViewport]="false" [position]="'end'">
+    <div *ngIf="show_order_theme" style="height: 100%;width:100%;overflow-y: hidden;">
+
+      <div class="menu-list-container">
+        <ng-container *ngFor="let item of list">
+          <div fxLayout="row" fxLayoutAlign="space-between center"
+            [ngClass]="{'order-item-free': item.menu.is_free, 'order-item': !item.menu.is_free}" [@flyInOut]="'in'">
+            <div fxLayout="column">
+              <span style="padding:5px">
+                <span class="bgcolor-accent" *ngIf="item.menu.is_free">{{'放題' | language:menuSrv.lang}}</span>
+                <span style="margin-left:5px"> {{item.menu.name | language:menuSrv.lang}}</span>
+              </span>
+              <number-selecter [(count)]="item.count"></number-selecter>
+            </div>
+            <div fxLayout="row">
+              <button mat-mini-fab color="warn" (click)="clear($event, item)">
+                <mat-icon class="example-icon">clear</mat-icon>
+              </button>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <div style="" fxLayout="row">
+
+        <div fxLayout="column" style="height:120px;padding:5px;width:100%">
+          <button [ngClass]="{'kinoko': 1, 'hidden': list.length === 0 || is_sending}" style="font-size: 200%;" fxFill
+            mat-raised-button color="accent" (click)="onOrder($event)">
+            注文確定
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <restaurant-theme-menu-top-ranking *ngIf="show_ranking_theme" fxLayout="column"
+      style="width:100%;height:100%; background-color: white;"></restaurant-theme-menu-top-ranking>
+
+  </mat-sidenav>
+  <mat-sidenav-content [ngClass]="{'show-right': show_order_theme || show_ranking_theme}">
+    <div fxLayout="row" style="height: 100%;width:100%;">
+      <restaurant-menu-group fxFlex="90px;" fxLayout="column" style="overflow-y:auto;" style="height: 100%;">
+      </restaurant-menu-group>
+      <div fxFlex fxLayout="column" style="height: 100%;padding:0 0px 5px 5px;">
+        <div [ngClass]="{hidden: disabledTab}">
+          <restaurant-menu-tab name="restaurantmenutab" fxLayout="row" [categoryValue]="category_value"
+            [catetegoryList]="menu_page_category" style="width:100%;"></restaurant-menu-tab>
+        </div>
+        <restaurant-menu-page *ngIf="theme_id=='default'" [viewData]="viewData" [maxPage]="maxPage" [order_list]="list"
+          [currentPage]="currentPage" fxFlex [enableOrder]="enableOrder" (pageChanged)="onPageChanged($event)"
+          fxLayout="column" fxLayoutAlign="center center" style="padding-top:10px;width:100%;">
+        </restaurant-menu-page>
+
+        <restaurant-theme-menu-top *ngIf="theme_id=='menu-top'" fxFlex [enableOrder]="enableOrder"
+          (pageChanged)="onPageChanged($event)" style="height: 100%;;width:100%;">
+        </restaurant-theme-menu-top>
+
+
+        <restaurant-theme-menu-top2 *ngIf="theme_id=='menu-top2'" fxFlex [enableOrder]="enableOrder"
+          (pageChanged)="onPageChanged($event)" style="height: 100%;;width:100%;">
+        </restaurant-theme-menu-top2>
+
+        <restaurant-theme-menu-kosu *ngIf="theme_id=='kosu'" [viewData]="viewData" [maxPage]="maxPage"
+          [currentPage]="currentPage" fxFlex [enableOrder]="enableOrder" (pageChanged)="onPageChanged($event)"
+          fxLayout="column" fxLayoutAlign="center center" style="padding-top:10px;width:100%;">
+        </restaurant-theme-menu-kosu>
+
+        <restaurant-theme-menu-double *ngIf="theme_id=='double'" [viewData]="viewData" [maxPage]="maxPage"
+          [currentPage]="currentPage" fxFlex [enableOrder]="enableOrder" (pageChanged)="onPageChanged($event)"
+          fxLayout="column" fxLayoutAlign="center center" style="padding-top:10px;width:100%;">
+        </restaurant-theme-menu-double>
+
+        <restaurant-theme-menu-third *ngIf="theme_id=='third'" [viewData]="viewData" [maxPage]="maxPage"
+          [currentPage]="currentPage" fxFlex [enableOrder]="enableOrder" (pageChanged)="onPageChanged($event)"
+          fxLayout="column" fxLayoutAlign="center center" style="padding-top:10px;width:100%;">
+        </restaurant-theme-menu-third>
+
+        <restaurant-theme-menu-twocolumn *ngIf="theme_id=='twocolumn'" [viewData]="viewData"
+          [category]="currentCategory" [maxPage]="maxPage" [currentPage]="currentPage" fxFlex
+          [enableOrder]="enableOrder" (pageChanged)="onPageChanged($event)" fxLayout="column"
+          fxLayoutAlign="center center" style="padding-top:10px;width:100%;height: calc(100vh - 65px);">
+        </restaurant-theme-menu-twocolumn>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

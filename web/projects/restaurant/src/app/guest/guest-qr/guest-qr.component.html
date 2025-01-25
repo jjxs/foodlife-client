@@ -1,0 +1,4 @@
+<restaurant-guest-menu *ngIf="canQrCode()" [seat]="selectedSeat" [autoStartSeat]="autoStartSeat"></restaurant-guest-menu>
+<div *ngIf="!canQrCode()" style="height: calc(100vh - 20px)">
+    処理中．．．
+</div>

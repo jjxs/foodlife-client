@@ -1,0 +1,58 @@
+<button mat-mini-fab color="accent" (click)="close($event)">
+  <mat-icon class="example-icon">clear</mat-icon>
+</button>
+<div style="padding:0px 5px 5px 5px;height:50vh" fxLayout="column">
+  <mat-form-field style="width:100%;text-align:right">
+    <input matInput style="font-size:150%" type="number" [value]="value" [readonly]="true">
+    <span matPrefix>入力&nbsp;</span>
+    <span matSuffix></span>
+  </mat-form-field>
+  <mat-grid-list fxFlex cols="4" rowHeight="fit" gutterSize="2" style="width:100%">
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('7')">7</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('8')">8</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('9')">9</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button" mat-raised-button color="accent" (click)="backspaceInput()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('4')">4</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('5')">5</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('6')">6</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button" mat-raised-button color="accent" (click)="clearInput()">C</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('1')">1</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('2')">2</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('3')">3</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2">
+      <button class="count-button" mat-raised-button color="warn" (click)="confrim()">確<br>定</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <button class="count-button number" mat-raised-button color="primary" (click)="onInput('0')">0</button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <button class="count-button" mat-raised-button color="primary" (click)="onInput('00')">00</button>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>

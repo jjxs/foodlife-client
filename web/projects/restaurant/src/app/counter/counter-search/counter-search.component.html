@@ -1,0 +1,107 @@
+<div theme style="overflow-y: auto">
+  <div fxLayout="column" style="height:100%">
+    <mat-toolbar>
+      <button type="button" mat-icon-button (click)="ngOnInit()">
+        <mat-icon color="primary">refresh</mat-icon>
+      </button>
+      <span>売上</span>
+      
+      <span class="toolbar-spacer"></span>
+
+      <button type="button" mat-raised-button color="accent" style="margin-right: 20px;" (click)="daily()" *ngIf="showCounterReport()">
+        営業報告
+      </button>
+
+      <mat-form-field>
+        <input matInput [matDatepicker]="dp" placeholder="" [formControl]="date" style="text-align: center;">
+        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp
+                        startView="multi-year"
+                        (yearSelected)="chosenYearHandler($event)"
+                        (monthSelected)="chosenMonthHandler($event, dp)"
+                        panelClass="example-month-picker">
+        </mat-datepicker>
+      </mat-form-field>
+      <span style="margin-left:10px; min-width: 190px;">合計：{{ month_amounts_actually | currency:'￥':'symbol':'1.0-0'}}</span>
+      
+      <button color="primary" *ngIf="counterSrv.isPad()" mat-mini-fab (click)="printAccountingMonth()" style="margin-left:10px;">
+        <mat-icon>print</mat-icon>
+      </button>
+      
+    </mat-toolbar>
+    <mat-accordion>
+      <ng-container *ngFor="let day of days;let iCounter = index;">
+        <mat-expansion-panel hideToggle style="margin:10px;" [expanded]="iCounter === 0">
+          <mat-expansion-panel-header [expandedHeight]="'auto'" [collapsedHeight]="'auto'">
+            <mat-panel-title class="bgcolor-primary" fxLayout="row" fxLayoutAlign="start center" style="padding:5px 5px;width:100% ;margin: 5px 0 5px 0;border-radius: 4px;">
+              <div style="margin-left: 5px">［日付：{{day["day"]}}］</div>
+              <div fxFlex fxLayoutAlign="center">
+                来客数：{{day["number"]}}
+              </div>
+              <div fxFlex fxLayoutAlign="center">
+                計算金額： {{day["amounts_payable"] | currency:'￥':'symbol':'1.0-0'}}
+              </div>
+              <div fxFlex  fxLayoutAlign="end" style="line-height: 40px;">
+                実際支払金額：{{day["amounts_actually"] | currency:'￥':'symbol':'1.0-0'}}
+                
+              <button color="primary" *ngIf="counterSrv.isPad()" mat-mini-fab (click)="printAccountingDay(day)" style="margin-left:10px;">
+                <mat-icon>print</mat-icon>
+              </button>
+              </div>
+            </mat-panel-title>
+            
+          </mat-expansion-panel-header>
+          <ng-container>
+              <div fxLayout="row" fxLayoutAlign="end" style="margin-top: 10px;margin-bottom: 15px;">
+                  <div fxLayout="column" style="text-align: left;width:60%" fxLayoutAlign="center end">
+                    <div> </div>
+                  </div>
+                  <div fxLayout="column" style="text-align: right;width:150px" fxLayoutAlign="center end">
+                    <div>昼: {{day["lunch"] | currency:'￥':'symbol':'1.0-0'}}</div>
+                  </div>
+                  <div fxLayout="column" style="text-align: right;width:150px" fxLayoutAlign="center end">
+                    <div>夜: {{day["dinner"] | currency:'￥':'symbol':'1.0-0'}}</div>
+                  </div>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="end" style="margin-top: 10px;margin-bottom: 15px;">
+                  <div *ngFor="let pays of day['pays']; let display_name = index;" style="text-align: right; width:150px">
+                    <div>{{pays['display_name']}}: {{pays['amounts_actually'] | currency:'￥':'symbol':'1.0-0'}}</div>
+                  </div>
+                </div>
+            <table style="width: 100%;border: solid;">
+              <thead>
+                <tr style="text-align: center;">
+                    <th style="width:3%;"></th>
+                    <th style="width:8%;">支払方法</th>
+                    <th style="">実際支払金額（税込）</th>
+                    <th style="width:15%;">割引</th>
+                    <th style="width:8%;">減額</th>
+                    <th style="width:20%;">計算金額（減額前、税込）</th>
+                    <th style="width:10%;">預り</th>
+                    <th style="width:8%;">お釣</th>
+                    <th style="width:6%;">客数</th>
+                    <th style="width:6%;">時間</th>
+                </tr>
+              </thead>
+              <tbody style="text-align: end;">
+                <tr *ngFor="let detail of day.details;let i = index;" [ngClass]="{'td-blue':i%2==0}">
+                  <td style="text-align: center;">{{i+1}}</td>
+                  <td style="text-align: center;">[{{detail.pay_name}}]</td>
+                  <td style="">{{detail.amounts_actually | currency:'￥':'symbol':'1.0-0'}}</td>
+                  <td style="">({{detail.cut}}%)　{{detail.cut_value | currency:'￥':'symbol':'1.0-0'}}</td>
+                  <td style="">{{ detail.reduce | currency:'￥':'symbol':'1.0-0'}}</td>
+                  <td style="">{{ detail.amounts_payable | currency:'￥':'symbol':'1.0-0'}}</td>
+                  <td style="">{{detail.pay | currency:'￥':'symbol':'1.0-0'}}</td>
+                  <td style="">{{ detail.change | currency:'￥':'symbol':'1.0-0'}}</td>
+                  <td style="text-align: center;">{{ detail.number }}</td>
+                  <td style="text-align: center;">{{ detail.create_time | date:'HH:mm'}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </ng-container>
+        </mat-expansion-panel>
+      </ng-container>
+    </mat-accordion>
+  </div>
+
+</div>

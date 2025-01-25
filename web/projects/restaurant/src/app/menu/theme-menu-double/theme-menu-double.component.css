@@ -1,0 +1,11 @@
+.menu-image {
+    width: calc(50% - 3px);
+    height: 100%;
+    margin: 0 3px;
+}
+
+.page-button {
+    height: 90%;
+    min-width: 0px;
+    width: 45%;
+}

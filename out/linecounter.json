@@ -1,0 +1,3570 @@
+{
+    "extension": "linecounter",
+    "version": "0.2.2",
+    "workspace": "c:\\skydesk\\git_client",
+    "linecount": [
+        {
+            "version": "0.2.2",
+            "counttime": "2018-10-09 13:02:24",
+            "filesum": 558,
+            "codesum": 155668,
+            "commentsum": 57658,
+            "blanksum": 16568,
+            "statistics": {
+                ".md": {
+                    "code": 70,
+                    "comment": 16,
+                    "blank": 55
+                },
+                "": {
+                    "code": 140,
+                    "comment": 69,
+                    "blank": 18
+                },
+                ".json": {
+                    "code": 34024,
+                    "comment": 0,
+                    "blank": 113
+                },
+                ".js": {
+                    "code": 110867,
+                    "comment": 56345,
+                    "blank": 14002
+                },
+                ".html": {
+                    "code": 1845,
+                    "comment": 131,
+                    "blank": 152
+                },
+                ".ts": {
+                    "code": 5133,
+                    "comment": 900,
+                    "blank": 1298
+                },
+                ".css": {
+                    "code": 2675,
+                    "comment": 193,
+                    "blank": 778
+                },
+                ".txt": {
+                    "code": 465,
+                    "comment": 4,
+                    "blank": 115
+                },
+                ".map": {
+                    "code": 18,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".xlf": {
+                    "code": 284,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".scss": {
+                    "code": 147,
+                    "comment": 0,
+                    "blank": 37
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": ".gitignore"
+                },
+                {
+                    "blank": 2,
+                    "code": 11,
+                    "comment": 1,
+                    "filename": "customer-app\\.editorconfig"
+                },
+                {
+                    "blank": 4,
+                    "code": 17,
+                    "comment": 20,
+                    "filename": "customer-app\\.gitignore"
+                },
+                {
+                    "blank": 7,
+                    "code": 115,
+                    "comment": 0,
+                    "filename": "customer-app\\angular.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 23,
+                    "comment": 2,
+                    "filename": "customer-app\\e2e\\protractor.conf.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "customer-app\\e2e\\src\\app.e2e-spec.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "customer-app\\e2e\\src\\app.po.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "customer-app\\e2e\\tsconfig.e2e.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 10601,
+                    "comment": 0,
+                    "filename": "customer-app\\package-lock.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 48,
+                    "comment": 0,
+                    "filename": "customer-app\\package.json"
+                },
+                {
+                    "blank": 13,
+                    "code": 14,
+                    "comment": 5,
+                    "filename": "customer-app\\README.md"
+                },
+                {
+                    "blank": 2,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\app\\app-routing.module.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\app\\app.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\app\\app.component.html"
+                },
+                {
+                    "blank": 1,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\app\\app.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\app\\app.module.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\app\\customers\\customer-list\\customer-list.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\app\\customers\\customer-list\\customer-list.component.html"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\app\\customers\\customer-list\\customer-list.component.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\app\\customers\\customers-routing.module.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\app\\customers\\customers.module.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\app\\orders\\order-list\\order-list.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\app\\orders\\order-list\\order-list.component.html"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\app\\orders\\order-list\\order-list.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\app\\orders\\orders-routing.module.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\app\\orders\\orders.module.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\assets\\.gitkeep"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 1,
+                    "filename": "customer-app\\src\\browserslist"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\environments\\environment.prod.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 3,
+                    "comment": 10,
+                    "filename": "customer-app\\src\\environments\\environment.ts"
+                },
+                {
+                    "filename": "customer-app\\src\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 1,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\index.html"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 3,
+                    "filename": "customer-app\\src\\karma.conf.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\main.ts"
+                },
+                {
+                    "blank": 15,
+                    "code": 2,
+                    "comment": 64,
+                    "filename": "customer-app\\src\\polyfills.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 1,
+                    "filename": "customer-app\\src\\styles.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\sub\\orders\\order-list\\order-list.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\sub\\orders\\order-list\\order-list.component.html"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\sub\\orders\\order-list\\order-list.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\sub\\orders\\orders-routing.module.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\sub\\orders\\orders.module.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 13,
+                    "comment": 4,
+                    "filename": "customer-app\\src\\test.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\tsconfig.app.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\tsconfig.spec.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "customer-app\\src\\tslint.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "customer-app\\tsconfig.json"
+                },
+                {
+                    "blank": 12,
+                    "code": 118,
+                    "comment": 0,
+                    "filename": "customer-app\\tslint.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 11,
+                    "comment": 1,
+                    "filename": "groupbuy\\.editorconfig"
+                },
+                {
+                    "blank": 4,
+                    "code": 17,
+                    "comment": 20,
+                    "filename": "groupbuy\\.gitignore"
+                },
+                {
+                    "blank": 7,
+                    "code": 115,
+                    "comment": 0,
+                    "filename": "groupbuy\\angular.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 23,
+                    "comment": 2,
+                    "filename": "groupbuy\\e2e\\protractor.conf.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "groupbuy\\e2e\\src\\app.e2e-spec.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "groupbuy\\e2e\\src\\app.po.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "groupbuy\\e2e\\tsconfig.e2e.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 10335,
+                    "comment": 0,
+                    "filename": "groupbuy\\package-lock.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 48,
+                    "comment": 0,
+                    "filename": "groupbuy\\package.json"
+                },
+                {
+                    "blank": 13,
+                    "code": 14,
+                    "comment": 5,
+                    "filename": "groupbuy\\README.md"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "groupbuy\\src\\app\\app.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 18,
+                    "comment": 1,
+                    "filename": "groupbuy\\src\\app\\app.component.html"
+                },
+                {
+                    "blank": 1,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "groupbuy\\src\\app\\app.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "groupbuy\\src\\app\\app.module.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "groupbuy\\src\\assets\\.gitkeep"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 1,
+                    "filename": "groupbuy\\src\\browserslist"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "groupbuy\\src\\environments\\environment.prod.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 3,
+                    "comment": 10,
+                    "filename": "groupbuy\\src\\environments\\environment.ts"
+                },
+                {
+                    "filename": "groupbuy\\src\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 1,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "groupbuy\\src\\index.html"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 3,
+                    "filename": "groupbuy\\src\\karma.conf.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "groupbuy\\src\\main.ts"
+                },
+                {
+                    "blank": 15,
+                    "code": 2,
+                    "comment": 64,
+                    "filename": "groupbuy\\src\\polyfills.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 1,
+                    "filename": "groupbuy\\src\\styles.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 13,
+                    "comment": 4,
+                    "filename": "groupbuy\\src\\test.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "groupbuy\\src\\tsconfig.app.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "groupbuy\\src\\tsconfig.spec.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "groupbuy\\src\\tslint.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "groupbuy\\tsconfig.json"
+                },
+                {
+                    "blank": 12,
+                    "code": 118,
+                    "comment": 0,
+                    "filename": "groupbuy\\tslint.json"
+                },
+                {
+                    "blank": 11,
+                    "code": 15,
+                    "comment": 1,
+                    "filename": "README.cmp.md"
+                },
+                {
+                    "blank": 4,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "README.demo.md"
+                },
+                {
+                    "blank": 1,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 2,
+                    "code": 11,
+                    "comment": 1,
+                    "filename": "web\\.editorconfig"
+                },
+                {
+                    "blank": 4,
+                    "code": 17,
+                    "comment": 20,
+                    "filename": "web\\.gitignore"
+                },
+                {
+                    "blank": 14,
+                    "code": 235,
+                    "comment": 0,
+                    "filename": "web\\angular.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "web\\dist\\ami\\ami.component.d.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 3,
+                    "filename": "web\\dist\\ami\\ami.d.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\ami\\ami.metadata.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "web\\dist\\ami\\ami.module.d.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "web\\dist\\ami\\ami.service.d.ts"
+                },
+                {
+                    "blank": 13,
+                    "code": 474,
+                    "comment": 278,
+                    "filename": "web\\dist\\ami\\bundles\\ami.umd.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\ami\\bundles\\ami.umd.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 1,
+                    "filename": "web\\dist\\ami\\bundles\\ami.umd.min.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\ami\\bundles\\ami.umd.min.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "web\\dist\\ami\\cmp\\scaner.component.d.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 18,
+                    "comment": 9,
+                    "filename": "web\\dist\\ami\\esm2015\\ami.component.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 1,
+                    "comment": 8,
+                    "filename": "web\\dist\\ami\\esm2015\\ami.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 15,
+                    "comment": 6,
+                    "filename": "web\\dist\\ami\\esm2015\\ami.module.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 15,
+                    "comment": 10,
+                    "filename": "web\\dist\\ami\\esm2015\\ami.service.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 54,
+                    "comment": 43,
+                    "filename": "web\\dist\\ami\\esm2015\\cmp\\scaner.component.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 18,
+                    "comment": 9,
+                    "filename": "web\\dist\\ami\\esm2015\\lib\\ami.component.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 14,
+                    "comment": 5,
+                    "filename": "web\\dist\\ami\\esm2015\\lib\\ami.module.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 15,
+                    "comment": 10,
+                    "filename": "web\\dist\\ami\\esm2015\\lib\\ami.service.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 15,
+                    "comment": 10,
+                    "filename": "web\\dist\\ami\\esm2015\\lib\\authentication.service.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 178,
+                    "comment": 94,
+                    "filename": "web\\dist\\ami\\esm2015\\lib\\authentication\\authentication.service.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 60,
+                    "comment": 8,
+                    "filename": "web\\dist\\ami\\esm2015\\lib\\common\\util.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 11,
+                    "filename": "web\\dist\\ami\\esm2015\\lib\\http\\http.interface.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 110,
+                    "comment": 75,
+                    "filename": "web\\dist\\ami\\esm2015\\lib\\http\\json.service.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 8,
+                    "filename": "web\\dist\\ami\\esm2015\\public_api.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 18,
+                    "comment": 11,
+                    "filename": "web\\dist\\ami\\esm5\\ami.component.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 1,
+                    "comment": 8,
+                    "filename": "web\\dist\\ami\\esm5\\ami.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 19,
+                    "comment": 6,
+                    "filename": "web\\dist\\ami\\esm5\\ami.module.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 19,
+                    "comment": 12,
+                    "filename": "web\\dist\\ami\\esm5\\ami.service.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 56,
+                    "comment": 48,
+                    "filename": "web\\dist\\ami\\esm5\\cmp\\scaner.component.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 18,
+                    "comment": 11,
+                    "filename": "web\\dist\\ami\\esm5\\lib\\ami.component.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 18,
+                    "comment": 5,
+                    "filename": "web\\dist\\ami\\esm5\\lib\\ami.module.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 19,
+                    "comment": 12,
+                    "filename": "web\\dist\\ami\\esm5\\lib\\ami.service.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 19,
+                    "comment": 12,
+                    "filename": "web\\dist\\ami\\esm5\\lib\\authentication.service.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 228,
+                    "comment": 114,
+                    "filename": "web\\dist\\ami\\esm5\\lib\\authentication\\authentication.service.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 61,
+                    "comment": 8,
+                    "filename": "web\\dist\\ami\\esm5\\lib\\common\\util.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 11,
+                    "filename": "web\\dist\\ami\\esm5\\lib\\http\\http.interface.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 123,
+                    "comment": 113,
+                    "filename": "web\\dist\\ami\\esm5\\lib\\http\\json.service.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 8,
+                    "filename": "web\\dist\\ami\\esm5\\public_api.js"
+                },
+                {
+                    "blank": 11,
+                    "code": 390,
+                    "comment": 211,
+                    "filename": "web\\dist\\ami\\fesm2015\\ami.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\ami\\fesm2015\\ami.js.map"
+                },
+                {
+                    "blank": 11,
+                    "code": 453,
+                    "comment": 278,
+                    "filename": "web\\dist\\ami\\fesm5\\ami.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\ami\\fesm5\\ami.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "web\\dist\\ami\\jsQR.d.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "web\\dist\\ami\\lib\\ami.component.d.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "web\\dist\\ami\\lib\\ami.module.d.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "web\\dist\\ami\\lib\\ami.service.d.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 59,
+                    "comment": 0,
+                    "filename": "web\\dist\\ami\\lib\\authentication\\authentication.service.d.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 3,
+                    "filename": "web\\dist\\ami\\lib\\common\\util.d.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "web\\dist\\ami\\lib\\http\\http.interface.d.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 17,
+                    "comment": 6,
+                    "filename": "web\\dist\\ami\\lib\\http\\json.service.d.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "web\\dist\\ami\\package.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "web\\dist\\ami\\public_api.d.ts"
+                },
+                {
+                    "blank": 69,
+                    "code": 238,
+                    "comment": 3,
+                    "filename": "web\\dist\\restaurant\\3rdpartylicenses.txt"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\restaurant\\assets\\css\\deeppurple-amber.css"
+                },
+                {
+                    "blank": 343,
+                    "code": 1080,
+                    "comment": 73,
+                    "filename": "web\\dist\\restaurant\\assets\\css\\indigo-pink.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\restaurant\\assets\\css\\indigo-pink.min.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\restaurant\\assets\\css\\pink-bluegrey.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\restaurant\\assets\\css\\purple-green.css"
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\alipay.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\barcode.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\cred.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\en.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\ja.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\000001.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\000002.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\000003.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\000004.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\000006.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\000007.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\000008.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\000009.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\000010.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\000011.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\000012.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\000013.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\000014.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\000015.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\000016.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\000017.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\000018.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\tab1.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\tab2.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\tab3.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\tab4.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\menu\\tab5.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\suica.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\wechatpay.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\yinlian.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\assets\\images\\zh.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 45,
+                    "code": 189,
+                    "comment": 128,
+                    "filename": "web\\dist\\restaurant\\assets\\js\\pixijs\\pixi-extra-filters.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\restaurant\\assets\\js\\pixijs\\pixi-extra-filters.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 8,
+                    "filename": "web\\dist\\restaurant\\assets\\js\\pixijs\\pixi-extra-filters.min.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\restaurant\\assets\\js\\pixijs\\pixi-extra-filters.min.js.map"
+                },
+                {
+                    "blank": 4609,
+                    "code": 10792,
+                    "comment": 6589,
+                    "filename": "web\\dist\\restaurant\\assets\\js\\pixijs\\pixi.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 9,
+                    "filename": "web\\dist\\restaurant\\assets\\js\\pixijs\\pixi.min.js"
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 4,
+                    "code": 13,
+                    "comment": 3,
+                    "filename": "web\\dist\\restaurant\\index.html"
+                },
+                {
+                    "blank": 18,
+                    "code": 261,
+                    "comment": 120,
+                    "filename": "web\\dist\\restaurant\\main.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\restaurant\\main.js.map"
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\MaterialIcons-Regular.eot",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\MaterialIcons-Regular.ttf",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\MaterialIcons-Regular.woff",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\dist\\restaurant\\MaterialIcons-Regular.woff2",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 4,
+                    "code": 13,
+                    "comment": 4,
+                    "filename": "web\\dist\\restaurant\\polyfills.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\restaurant\\polyfills.js.map"
+                },
+                {
+                    "blank": 9,
+                    "code": 44,
+                    "comment": 58,
+                    "filename": "web\\dist\\restaurant\\runtime.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\restaurant\\runtime.js.map"
+                },
+                {
+                    "blank": 44,
+                    "code": 129,
+                    "comment": 55,
+                    "filename": "web\\dist\\restaurant\\styles.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\restaurant\\styles.js.map"
+                },
+                {
+                    "blank": 4226,
+                    "code": 53724,
+                    "comment": 32833,
+                    "filename": "web\\dist\\restaurant\\vendor.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\restaurant\\vendor.js.map"
+                },
+                {
+                    "blank": 46,
+                    "code": 227,
+                    "comment": 1,
+                    "filename": "web\\dist\\web\\3rdpartylicenses.txt"
+                },
+                {
+                    "filename": "web\\dist\\web\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 1,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "web\\dist\\web\\index.html"
+                },
+                {
+                    "blank": 3,
+                    "code": 4,
+                    "comment": 3,
+                    "filename": "web\\dist\\web\\main.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\web\\main.js.map"
+                },
+                {
+                    "blank": 4,
+                    "code": 13,
+                    "comment": 4,
+                    "filename": "web\\dist\\web\\polyfills.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\web\\polyfills.js.map"
+                },
+                {
+                    "blank": 9,
+                    "code": 44,
+                    "comment": 58,
+                    "filename": "web\\dist\\web\\runtime.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\web\\runtime.js.map"
+                },
+                {
+                    "blank": 40,
+                    "code": 125,
+                    "comment": 51,
+                    "filename": "web\\dist\\web\\styles.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\web\\styles.js.map"
+                },
+                {
+                    "blank": 261,
+                    "code": 31833,
+                    "comment": 8207,
+                    "filename": "web\\dist\\web\\vendor.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\dist\\web\\vendor.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 11708,
+                    "comment": 0,
+                    "filename": "web\\package-lock.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 62,
+                    "comment": 0,
+                    "filename": "web\\package.json"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 3,
+                    "filename": "web\\projects\\ami\\karma.conf.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "web\\projects\\ami\\ng-package.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "web\\projects\\ami\\ng-package.prod.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "web\\projects\\ami\\package.json"
+                },
+                {
+                    "blank": 4,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "web\\projects\\ami\\src\\ami.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 1,
+                    "filename": "web\\projects\\ami\\src\\ami.module.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "web\\projects\\ami\\src\\ami.service.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "web\\projects\\ami\\src\\cmp\\jsQR.d.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\ami\\src\\cmp\\scaner.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 1,
+                    "filename": "web\\projects\\ami\\src\\cmp\\scaner.component.html"
+                },
+                {
+                    "blank": 12,
+                    "code": 36,
+                    "comment": 18,
+                    "filename": "web\\projects\\ami\\src\\cmp\\scaner.component.ts"
+                },
+                {
+                    "blank": 35,
+                    "code": 138,
+                    "comment": 10,
+                    "filename": "web\\projects\\ami\\src\\lib\\authentication\\authentication.service.ts"
+                },
+                {
+                    "blank": 20,
+                    "code": 58,
+                    "comment": 3,
+                    "filename": "web\\projects\\ami\\src\\lib\\common\\util.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "web\\projects\\ami\\src\\lib\\http\\http.interface.ts"
+                },
+                {
+                    "blank": 23,
+                    "code": 111,
+                    "comment": 33,
+                    "filename": "web\\projects\\ami\\src\\lib\\http\\json.service.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 3,
+                    "filename": "web\\projects\\ami\\src\\public_api.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 15,
+                    "comment": 4,
+                    "filename": "web\\projects\\ami\\src\\test.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 31,
+                    "comment": 0,
+                    "filename": "web\\projects\\ami\\tsconfig.lib.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "web\\projects\\ami\\tsconfig.spec.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "web\\projects\\ami\\tslint.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 1,
+                    "filename": "web\\projects\\guest\\browserslist"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 3,
+                    "filename": "web\\projects\\guest\\karma.conf.js"
+                },
+                {
+                    "blank": 26,
+                    "code": 82,
+                    "comment": 9,
+                    "filename": "web\\projects\\guest\\src\\app\\ami\\authentication.service.ts"
+                },
+                {
+                    "blank": 17,
+                    "code": 65,
+                    "comment": 20,
+                    "filename": "web\\projects\\guest\\src\\app\\ami\\json.service.ts"
+                },
+                {
+                    "blank": 20,
+                    "code": 48,
+                    "comment": 3,
+                    "filename": "web\\projects\\guest\\src\\app\\ami\\util.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\app.component.css"
+                },
+                {
+                    "blank": 4,
+                    "code": 63,
+                    "comment": 1,
+                    "filename": "web\\projects\\guest\\src\\app\\app.component.html"
+                },
+                {
+                    "blank": 12,
+                    "code": 55,
+                    "comment": 1,
+                    "filename": "web\\projects\\guest\\src\\app\\app.component.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 57,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\app.module.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\cmp\\pop-menu\\pop-menu.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\cmp\\pop-menu\\pop-menu.component.html"
+                },
+                {
+                    "blank": 6,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\cmp\\pop-menu\\pop-menu.component.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 1,
+                    "filename": "web\\projects\\guest\\src\\app\\cmp\\pop-menu\\pop-menu.service.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\cmp\\sel-counter\\sel-counter.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 3,
+                    "comment": 13,
+                    "filename": "web\\projects\\guest\\src\\app\\cmp\\sel-counter\\sel-counter.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\cmp\\sel-counter\\sel-counter.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\home\\home.component.css"
+                },
+                {
+                    "blank": 4,
+                    "code": 33,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\home\\home.component.html"
+                },
+                {
+                    "blank": 11,
+                    "code": 56,
+                    "comment": 1,
+                    "filename": "web\\projects\\guest\\src\\app\\home\\home.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\login\\login.component.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\login\\login.component.html"
+                },
+                {
+                    "blank": 7,
+                    "code": 19,
+                    "comment": 4,
+                    "filename": "web\\projects\\guest\\src\\app\\login\\login.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\login\\quickin.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\login\\quickin.component.html"
+                },
+                {
+                    "blank": 7,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\login\\quickin.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\menu\\detail\\detail.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\menu\\detail\\detail.component.html"
+                },
+                {
+                    "blank": 11,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\menu\\detail\\detail.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\menu\\menu.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 55,
+                    "comment": 2,
+                    "filename": "web\\projects\\guest\\src\\app\\menu\\menu.component.html"
+                },
+                {
+                    "blank": 7,
+                    "code": 54,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\menu\\menu.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\order\\order.component.css"
+                },
+                {
+                    "blank": 5,
+                    "code": 87,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\order\\order.component.html"
+                },
+                {
+                    "blank": 9,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\order\\order.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\order\\order.service.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\reservation\\reservation.component.css"
+                },
+                {
+                    "blank": 13,
+                    "code": 120,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\reservation\\reservation.component.html"
+                },
+                {
+                    "blank": 6,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\reservation\\reservation.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\setting\\setting.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\setting\\setting.component.html"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\app\\setting\\setting.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\assets\\.gitkeep"
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\barcode.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\000001.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\000002.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\000003.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\000004.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\000006.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\000007.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\000008.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\000009.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\000010.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\000011.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\000012.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\000013.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\000014.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\000015.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\000016.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\000017.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\000018.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\tab1.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\tab2.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\tab3.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\tab4.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\assets\\images\\menu\\tab5.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 1,
+                    "filename": "web\\projects\\guest\\src\\browserslist"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\environments\\environment.prod.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 4,
+                    "comment": 10,
+                    "filename": "web\\projects\\guest\\src\\environments\\environment.ts"
+                },
+                {
+                    "filename": "web\\projects\\guest\\src\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 4,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\index.html"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 3,
+                    "filename": "web\\projects\\guest\\src\\karma.conf.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\main.ts"
+                },
+                {
+                    "blank": 15,
+                    "code": 2,
+                    "comment": 64,
+                    "filename": "web\\projects\\guest\\src\\polyfills.ts"
+                },
+                {
+                    "blank": 9,
+                    "code": 47,
+                    "comment": 1,
+                    "filename": "web\\projects\\guest\\src\\styles.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 13,
+                    "comment": 4,
+                    "filename": "web\\projects\\guest\\src\\test.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\tsconfig.app.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\tsconfig.spec.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\src\\tslint.json"
+                },
+                {
+                    "blank": 1,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\tsconfig.app.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\tsconfig.spec.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "web\\projects\\guest\\tslint.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 1,
+                    "filename": "web\\projects\\restaurant\\browserslist"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 3,
+                    "filename": "web\\projects\\restaurant\\karma.conf.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\app.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\app.component.html"
+                },
+                {
+                    "blank": 12,
+                    "code": 55,
+                    "comment": 9,
+                    "filename": "web\\projects\\restaurant\\src\\app\\app.component.ts"
+                },
+                {
+                    "blank": 12,
+                    "code": 200,
+                    "comment": 11,
+                    "filename": "web\\projects\\restaurant\\src\\app\\app.module.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 39,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\app.routing.ts"
+                },
+                {
+                    "blank": 22,
+                    "code": 89,
+                    "comment": 13,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\ami-table\\ami-header.directive.ts"
+                },
+                {
+                    "blank": 8,
+                    "code": 42,
+                    "comment": 2,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\ami-table\\ami-table.component.css"
+                },
+                {
+                    "blank": 9,
+                    "code": 36,
+                    "comment": 4,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\ami-table\\ami-table.component.html"
+                },
+                {
+                    "blank": 31,
+                    "code": 97,
+                    "comment": 76,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\ami-table\\ami-table.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 13,
+                    "comment": 1,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\ami-theme-select\\ami-theme-select.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\ami-theme-select\\ami-theme-select.component.html"
+                },
+                {
+                    "blank": 11,
+                    "code": 57,
+                    "comment": 2,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\ami-theme-select\\ami-theme-select.component.ts"
+                },
+                {
+                    "blank": 10,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\ami-theme-select\\theme.directive.ts"
+                },
+                {
+                    "blank": 8,
+                    "code": 17,
+                    "comment": 5,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\ami-theme-select\\theme.service.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\animation\\toggle-bar\\toggle-bar.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\animation\\toggle-bar\\toggle-bar.component.html"
+                },
+                {
+                    "blank": 12,
+                    "code": 68,
+                    "comment": 1,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\animation\\toggle-bar\\toggle-bar.component.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 126,
+                    "comment": 2,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\cmp.module.ts"
+                },
+                {
+                    "blank": 18,
+                    "code": 56,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\cmp.service.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\dialog\\ami-confirm.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\dialog\\ami-confirm.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\dialog\\ami-confirm.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\dialog\\ami-loading.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\dialog\\ami-loading.component.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\dialog\\ami-loading.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\dialog\\ami-pop.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\dialog\\ami-pop.component.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\dialog\\ami-pop.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\dialog\\ami-selecter.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\dialog\\ami-selecter.component.html"
+                },
+                {
+                    "blank": 12,
+                    "code": 31,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\dialog\\ami-selecter.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\input\\number-selecter\\number-selecter.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\input\\number-selecter\\number-selecter.component.html"
+                },
+                {
+                    "blank": 11,
+                    "code": 43,
+                    "comment": 2,
+                    "filename": "web\\projects\\restaurant\\src\\app\\cmp\\input\\number-selecter\\number-selecter.component.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\counter\\counter.component.css"
+                },
+                {
+                    "blank": 21,
+                    "code": 243,
+                    "comment": 9,
+                    "filename": "web\\projects\\restaurant\\src\\app\\counter\\counter.component.html"
+                },
+                {
+                    "blank": 31,
+                    "code": 136,
+                    "comment": 17,
+                    "filename": "web\\projects\\restaurant\\src\\app\\counter\\counter.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\counter\\monitor\\monitor.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\counter\\monitor\\monitor.component.html"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\counter\\monitor\\monitor.component.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\home\\home.component.css"
+                },
+                {
+                    "blank": 6,
+                    "code": 61,
+                    "comment": 11,
+                    "filename": "web\\projects\\restaurant\\src\\app\\home\\home.component.html"
+                },
+                {
+                    "blank": 32,
+                    "code": 103,
+                    "comment": 15,
+                    "filename": "web\\projects\\restaurant\\src\\app\\home\\home.component.ts"
+                },
+                {
+                    "blank": 6,
+                    "code": 22,
+                    "comment": 6,
+                    "filename": "web\\projects\\restaurant\\src\\app\\home\\home.service.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\home\\login\\login.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\home\\login\\login.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 31,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\home\\login\\login.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\kitchen\\kitchen-setting\\kitchen-setting.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\kitchen\\kitchen-setting\\kitchen-setting.component.html"
+                },
+                {
+                    "blank": 12,
+                    "code": 62,
+                    "comment": 2,
+                    "filename": "web\\projects\\restaurant\\src\\app\\kitchen\\kitchen-setting\\kitchen-setting.component.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 34,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\kitchen\\kitchen.component.css"
+                },
+                {
+                    "blank": 5,
+                    "code": 131,
+                    "comment": 6,
+                    "filename": "web\\projects\\restaurant\\src\\app\\kitchen\\kitchen.component.html"
+                },
+                {
+                    "blank": 47,
+                    "code": 236,
+                    "comment": 10,
+                    "filename": "web\\projects\\restaurant\\src\\app\\kitchen\\kitchen.component.ts"
+                },
+                {
+                    "blank": 12,
+                    "code": 63,
+                    "comment": 6,
+                    "filename": "web\\projects\\restaurant\\src\\app\\kitchen\\kitchen.interface.ts"
+                },
+                {
+                    "blank": 23,
+                    "code": 74,
+                    "comment": 11,
+                    "filename": "web\\projects\\restaurant\\src\\app\\kitchen\\kitchen.service.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\kitchen\\task\\task.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 18,
+                    "comment": 10,
+                    "filename": "web\\projects\\restaurant\\src\\app\\kitchen\\task\\task.component.html"
+                },
+                {
+                    "blank": 10,
+                    "code": 33,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\kitchen\\task\\task.component.ts"
+                },
+                {
+                    "blank": 15,
+                    "code": 44,
+                    "comment": 11,
+                    "filename": "web\\projects\\restaurant\\src\\app\\manager\\manager.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 33,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\manager\\manager.component.html"
+                },
+                {
+                    "blank": 12,
+                    "code": 51,
+                    "comment": 4,
+                    "filename": "web\\projects\\restaurant\\src\\app\\manager\\manager.component.ts"
+                },
+                {
+                    "blank": 9,
+                    "code": 22,
+                    "comment": 6,
+                    "filename": "web\\projects\\restaurant\\src\\app\\manager\\manager.service.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\manager\\menu-category\\menu-category.component.css"
+                },
+                {
+                    "blank": 6,
+                    "code": 81,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\manager\\menu-category\\menu-category.component.html"
+                },
+                {
+                    "blank": 70,
+                    "code": 194,
+                    "comment": 8,
+                    "filename": "web\\projects\\restaurant\\src\\app\\manager\\menu-category\\menu-category.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\manager\\menu-preview\\menu-preview.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\manager\\menu-preview\\menu-preview.component.html"
+                },
+                {
+                    "blank": 14,
+                    "code": 31,
+                    "comment": 4,
+                    "filename": "web\\projects\\restaurant\\src\\app\\manager\\menu-preview\\menu-preview.component.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 30,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu-image\\menu-image.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 15,
+                    "comment": 1,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu-image\\menu-image.component.html"
+                },
+                {
+                    "blank": 13,
+                    "code": 41,
+                    "comment": 1,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu-image\\menu-image.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu-list\\menu-list.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu-list\\menu-list.component.html"
+                },
+                {
+                    "blank": 47,
+                    "code": 150,
+                    "comment": 29,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu-list\\menu-list.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 1,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu-page\\menu-page.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 30,
+                    "comment": 8,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu-page\\menu-page.component.html"
+                },
+                {
+                    "blank": 18,
+                    "code": 89,
+                    "comment": 6,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu-page\\menu-page.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu-tab\\menu-tab.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu-tab\\menu-tab.component.html"
+                },
+                {
+                    "blank": 22,
+                    "code": 79,
+                    "comment": 3,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu-tab\\menu-tab.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu-view\\menu-view.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 29,
+                    "comment": 1,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu-view\\menu-view.component.html"
+                },
+                {
+                    "blank": 7,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu-view\\menu-view.component.ts"
+                },
+                {
+                    "blank": 13,
+                    "code": 58,
+                    "comment": 11,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 77,
+                    "comment": 3,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu.component.html"
+                },
+                {
+                    "blank": 42,
+                    "code": 156,
+                    "comment": 20,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu.component.ts"
+                },
+                {
+                    "blank": 15,
+                    "code": 76,
+                    "comment": 11,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu.interface.ts"
+                },
+                {
+                    "blank": 30,
+                    "code": 87,
+                    "comment": 31,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menu.service.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menufree\\menufree.component.css"
+                },
+                {
+                    "blank": 4,
+                    "code": 29,
+                    "comment": 2,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menufree\\menufree.component.html"
+                },
+                {
+                    "blank": 20,
+                    "code": 95,
+                    "comment": 8,
+                    "filename": "web\\projects\\restaurant\\src\\app\\menu\\menufree\\menufree.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\order\\order-card-menufree\\order-card-menufree.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 27,
+                    "comment": 4,
+                    "filename": "web\\projects\\restaurant\\src\\app\\order\\order-card-menufree\\order-card-menufree.component.html"
+                },
+                {
+                    "blank": 9,
+                    "code": 38,
+                    "comment": 7,
+                    "filename": "web\\projects\\restaurant\\src\\app\\order\\order-card-menufree\\order-card-menufree.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\order\\order-card\\order-card.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 24,
+                    "comment": 4,
+                    "filename": "web\\projects\\restaurant\\src\\app\\order\\order-card\\order-card.component.html"
+                },
+                {
+                    "blank": 14,
+                    "code": 42,
+                    "comment": 13,
+                    "filename": "web\\projects\\restaurant\\src\\app\\order\\order-card\\order-card.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 2,
+                    "filename": "web\\projects\\restaurant\\src\\app\\order\\order-history\\order-history.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\order\\order-history\\order-history.component.html"
+                },
+                {
+                    "blank": 12,
+                    "code": 49,
+                    "comment": 11,
+                    "filename": "web\\projects\\restaurant\\src\\app\\order\\order-history\\order-history.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 2,
+                    "filename": "web\\projects\\restaurant\\src\\app\\order\\order.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 40,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\order\\order.component.html"
+                },
+                {
+                    "blank": 23,
+                    "code": 64,
+                    "comment": 24,
+                    "filename": "web\\projects\\restaurant\\src\\app\\order\\order.component.ts"
+                },
+                {
+                    "blank": 12,
+                    "code": 64,
+                    "comment": 11,
+                    "filename": "web\\projects\\restaurant\\src\\app\\order\\order.interface.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\reservation\\reservation.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\reservation\\reservation.component.html"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\reservation\\reservation.component.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\seat-view\\seat-view.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 20,
+                    "filename": "web\\projects\\restaurant\\src\\app\\seat-view\\seat-view.component.html"
+                },
+                {
+                    "blank": 9,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\seat-view\\seat-view.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\seats\\seat-list.component.css"
+                },
+                {
+                    "blank": 9,
+                    "code": 50,
+                    "comment": 6,
+                    "filename": "web\\projects\\restaurant\\src\\app\\seats\\seat-list.component.html"
+                },
+                {
+                    "blank": 19,
+                    "code": 71,
+                    "comment": 5,
+                    "filename": "web\\projects\\restaurant\\src\\app\\seats\\seat-list.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\seats\\seat.interface.ts"
+                },
+                {
+                    "blank": 24,
+                    "code": 65,
+                    "comment": 8,
+                    "filename": "web\\projects\\restaurant\\src\\app\\seats\\seat.service.ts"
+                },
+                {
+                    "blank": 6,
+                    "code": 28,
+                    "comment": 1,
+                    "filename": "web\\projects\\restaurant\\src\\app\\seats\\seats.component.css"
+                },
+                {
+                    "blank": 16,
+                    "code": 143,
+                    "comment": 15,
+                    "filename": "web\\projects\\restaurant\\src\\app\\seats\\seats.component.html"
+                },
+                {
+                    "blank": 51,
+                    "code": 214,
+                    "comment": 34,
+                    "filename": "web\\projects\\restaurant\\src\\app\\seats\\seats.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\settings\\settings.component.css"
+                },
+                {
+                    "blank": 4,
+                    "code": 58,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\settings\\settings.component.html"
+                },
+                {
+                    "blank": 13,
+                    "code": 46,
+                    "comment": 3,
+                    "filename": "web\\projects\\restaurant\\src\\app\\settings\\settings.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\shared\\master.interface.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 29,
+                    "comment": 12,
+                    "filename": "web\\projects\\restaurant\\src\\app\\shared\\style.manager.ts"
+                },
+                {
+                    "blank": 6,
+                    "code": 31,
+                    "comment": 3,
+                    "filename": "web\\projects\\restaurant\\src\\app\\shared\\web.interceptor.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\temp\\dialog-overview-example-dialog.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\app\\temp\\dialog-overview-example.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 3,
+                    "filename": "web\\projects\\restaurant\\src\\app\\temp\\dialog-overview-example.html"
+                },
+                {
+                    "blank": 12,
+                    "code": 33,
+                    "comment": 7,
+                    "filename": "web\\projects\\restaurant\\src\\app\\temp\\dialog-overview-example.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\assets\\.gitkeep"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\assets\\css\\deeppurple-amber.css"
+                },
+                {
+                    "blank": 343,
+                    "code": 1080,
+                    "comment": 73,
+                    "filename": "web\\projects\\restaurant\\src\\assets\\css\\indigo-pink.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\assets\\css\\indigo-pink.min.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\assets\\css\\pink-bluegrey.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\assets\\css\\purple-green.css"
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\alipay.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\barcode.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\cred.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\en.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\ja.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\0.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\000001.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\000002.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\000003.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\000004.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\000006.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\000007.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\000008.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\000009.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\000010.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\000011.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\000012.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\000013.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\000014.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\000015.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\000016.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\000017.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\000018.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\10.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\101.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\102.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\103.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\104.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\105.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\106.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\107.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\108.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\109.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\11.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\110.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\111.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\112.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\113.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\114.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\115.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\116.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\117.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\118.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\12.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\13.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\14.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\15.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\16.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\17.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\18.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\19.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\2.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\20.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\201.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\202.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\203.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\204.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\205.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\206.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\207.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\208.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\209.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\21.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\210.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\211.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\212.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\213.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\214.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\3.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\4.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\5.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\6.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\7.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\8.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\9.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\tab1.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\tab2.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\tab3.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\tab4.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\menu\\tab5.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\suica.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\wechatpay.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\yinlian.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\assets\\images\\zh.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 6,
+                    "filename": "web\\projects\\restaurant\\src\\assets\\js\\hammer.min.js"
+                },
+                {
+                    "blank": 45,
+                    "code": 189,
+                    "comment": 128,
+                    "filename": "web\\projects\\restaurant\\src\\assets\\js\\pixijs\\pixi-extra-filters.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\assets\\js\\pixijs\\pixi-extra-filters.js.map"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 8,
+                    "filename": "web\\projects\\restaurant\\src\\assets\\js\\pixijs\\pixi-extra-filters.min.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\assets\\js\\pixijs\\pixi-extra-filters.min.js.map"
+                },
+                {
+                    "blank": 4609,
+                    "code": 10792,
+                    "comment": 6589,
+                    "filename": "web\\projects\\restaurant\\src\\assets\\js\\pixijs\\pixi.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 9,
+                    "filename": "web\\projects\\restaurant\\src\\assets\\js\\pixijs\\pixi.min.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 1,
+                    "filename": "web\\projects\\restaurant\\src\\browserslist"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 4,
+                    "filename": "web\\projects\\restaurant\\src\\environments\\environment.prod.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 14,
+                    "filename": "web\\projects\\restaurant\\src\\environments\\environment.ts"
+                },
+                {
+                    "filename": "web\\projects\\restaurant\\src\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 4,
+                    "code": 13,
+                    "comment": 3,
+                    "filename": "web\\projects\\restaurant\\src\\index.html"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 3,
+                    "filename": "web\\projects\\restaurant\\src\\karma.conf.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 73,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\locale\\messages.en.xlf"
+                },
+                {
+                    "blank": 0,
+                    "code": 73,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\locale\\messages.ja.xlf"
+                },
+                {
+                    "blank": 0,
+                    "code": 73,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\locale\\messages.zh.xlf"
+                },
+                {
+                    "blank": 5,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\main.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 65,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\messages.xlf"
+                },
+                {
+                    "blank": 15,
+                    "code": 2,
+                    "comment": 64,
+                    "filename": "web\\projects\\restaurant\\src\\polyfills.ts"
+                },
+                {
+                    "blank": 8,
+                    "code": 32,
+                    "comment": 13,
+                    "filename": "web\\projects\\restaurant\\src\\styles.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 13,
+                    "comment": 4,
+                    "filename": "web\\projects\\restaurant\\src\\test.ts"
+                },
+                {
+                    "blank": 37,
+                    "code": 147,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\src\\theme.scss"
+                },
+                {
+                    "blank": 1,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\tsconfig.app.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\tsconfig.spec.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "web\\projects\\restaurant\\tslint.json"
+                },
+                {
+                    "blank": 13,
+                    "code": 14,
+                    "comment": 5,
+                    "filename": "web\\README.md"
+                },
+                {
+                    "blank": 6,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "web\\tsconfig.json"
+                },
+                {
+                    "blank": 12,
+                    "code": 118,
+                    "comment": 0,
+                    "filename": "web\\tslint.json"
+                }
+            ]
+        }
+    ]
+}

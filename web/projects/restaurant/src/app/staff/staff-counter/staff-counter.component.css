@@ -1,0 +1,21 @@
+.hide {
+    height: 0px;
+    display: none;
+}
+
+.content-container-button {
+    height: calc(100vh);
+    width: calc(100vw);
+    text-align: center;
+    overflow-y: auto;
+    padding: 5px;
+    padding-top: calc(40vh);
+    display: block;
+}
+
+.content-container-counter {
+    height: calc(100vh);
+    width: calc(100vw);
+    padding: 0px;
+    display: block;
+}

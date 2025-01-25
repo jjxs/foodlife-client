@@ -1,0 +1,11 @@
+<div fxLayout="row" fxLayoutAlign="start center" style="font-size:20px; background-color: #ffd740;height: 40px; line-height: 40px; padding: 0px 10px; border-radius: 5px;">
+  {{data.title !== undefined ? data.title : '確認' }}
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center" style="font-size:20px; margin: 20px 0px; height: 40px;">
+  <input type="text" matInput placeholder="入力してください。" [(ngModel)]="password" style="border: solid 0.5px;">
+</div>
+
+<div fxLayout="row" fxLayoutAlign="space-between center" style="width:100%">
+  <button mat-raised-button color="primary" (click)="ok()" cdkFocusInitial style="margin-left:100px;">Ok</button>
+</div>

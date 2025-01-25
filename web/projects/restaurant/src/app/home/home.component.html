@@ -1,0 +1,78 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" [fixedInViewport]="true" mode="side" opened="true" [position]="'start'">
+    <mat-toolbar color="primary">
+      <ng-container i18n="@@top">トップ</ng-container>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a *ngIf="authSrv.Authenticated && authSrv.isShow('/counter')" mat-list-item routerLink="/counter" class="ami-list-item">
+        <mat-icon>home</mat-icon>
+        <span>レジ</span>
+      </a>
+
+      <a *ngIf="authSrv.Authenticated && authSrv.isShow('/menu/')" mat-list-item routerLink="/menu" class="ami-list-item">
+          <mat-icon>menu</mat-icon>
+          <span i18n="@@menu-menu">メニュー</span>
+      </a>
+
+      <a *ngIf="authSrv.Authenticated && authSrv.isShow('/seats')" mat-list-item routerLink="/seats" class="ami-list-item">
+        <mat-icon>event_seat</mat-icon>
+        <span i18n="@@menu-seats">坐席</span>
+      </a>
+
+      <a *ngIf="authSrv.Authenticated && authSrv.isShow('/order')" mat-list-item routerLink="/order" class="ami-list-item">
+        <mat-icon>shopping_cart</mat-icon>
+        <span i18n="@@menu-order">注文</span>
+      </a>
+
+      <a *ngIf="authSrv.Authenticated && authSrv.isShow('/kitchen')" mat-list-item routerLink="/kitchen" class="ami-list-item">
+        <mat-icon>local_dining</mat-icon>
+        <span i18n="@@menu-kichen">キッチン</span>
+      </a>
+
+      <a *ngIf="authSrv.Authenticated && authSrv.isShow('/reserve') && app.showReserve()" mat-list-item routerLink="/reserve" class="ami-list-item">
+        <mat-icon>local_dining</mat-icon>
+        <span i18n="@@menu-reserve">予約</span>
+      </a>
+      
+      <a *ngIf="authSrv.Authenticated && authSrv.isShow('/settings')" mat-list-item routerLink="/settings" class="ami-list-item">
+        <mat-icon>settings</mat-icon>
+        <span i18n="@@menu-settings">設定</span>
+      </a>
+    </mat-nav-list>
+
+
+    <div class="footer-panel">
+      <div style="margin-top:5px">
+        <ami-theme-select class="ami-theme-select"></ami-theme-select>
+      </div>
+    </div>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <ng-container *ngIf="headStyle ">
+      <mat-toolbar color="primary" style="padding-top: 3px; font-size:18px;" *ngIf="authSrv.showMenu == true" >
+        <button *ngIf="showMenuStyle" type="button" aria-label="Toggle sidenav"
+          mat-icon-button (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+
+        <span style="padding-left:10px;">{{toolbardisplay}}</span>
+        <span class="toolbar-spacer"></span>
+        <span style="padding-right:20px;">
+          {{authSrv.nickname}}（{{authSrv.role_name}}）
+        </span>
+        
+        <button *ngIf="authSrv.Authenticated===false" mat-mini-fab (click)="login()">
+          <mat-icon class="example-icon">account_circle</mat-icon>
+        </button>
+        
+        <button *ngIf="authSrv.Authenticated===true" mat-mini-fab (click)="logout()">
+          <mat-icon class="example-icon">exit_to_app</mat-icon>
+        </button>
+      </mat-toolbar>
+    </ng-container>
+    <router-outlet></router-outlet>
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

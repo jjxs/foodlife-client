@@ -1,0 +1,285 @@
+<div [ngClass]="{
+    'staff-menu container': !doing,
+    'container-full': doing,
+    theme3: qrThemeId == 'theme3',
+    theme2: qrThemeId == 'theme2',
+    theme4: qrThemeId == 'theme4'
+  }" fxLayout="column" style="width: 100vw; padding: 0px">
+  <span *ngIf="seat" style="
+      height: 30px;
+      padding-left: 10px;
+      font-size: 25px;
+      text-align: center;
+      background-color: rgb(255, 152, 0) !important;
+      color: #ffff;
+    ">No.{{ seat.seat_no }}</span>
+  <div fxFlex fxLayout="row" [ngClass]="{ hide: !show_menu }" [style.height.px]="myInnerHeight - 75">
+    <div class="menu-tab">
+      <!--class=menu-tab-btn-->
+      <div class="menu-tab-btn2">
+        <ng-container *ngFor="let group of staffSrv.menuMasterGroup">
+          <div [ngClass]="{
+              'selected-group': group === select_group,
+              menu_free: menu_free
+            }" mat-raised-button color="accent" *ngIf="canShow(group)" (click)="cCategory(group)">
+            {{ group.display_name }}
+          </div>
+        </ng-container>
+      </div>
+
+      <div fxFlex *ngIf="select_menus" class="menu-list" [style.height.px]="myInnerHeight - 150">
+        <mat-card-content>
+          <div *ngFor="let master of select_group.master_data">
+            <div class="category">{{ master.display_name }}</div>
+            <ng-container *ngFor="let menu of staffSrv.categoryMenus[master.id]">
+              <ng-container *ngIf="canShowMenu(menu)">
+                <div fxLayout="row" fxLayoutAlign="space-between center" style="padding: 6px"
+                  [ngClass]="{ lazydiv: 1, free: menu.is_free, 'sale': menu.ori_price>0 }">
+                  <div fxLayout="column" class="menu-image" (click)="toAddCart(menu, 1)">
+                    <img *ngIf="menu.id" lazyLoad="{{ site_image_host }}{{ menu.image }}" />
+                  </div>
+                  <div fxFlex fxLayout="column" style="padding-left: 10px; height: 19vw">
+                    <span fxFlex class="menu" (click)="toAddCart(menu, 1)">
+                      {{ menu.name }}
+                    </span>
+                    <div *ngIf="menu.ori_price" style="text-align: left;color: red;font-size:small;">★<span
+                        *ngIf="menu.ori_price/2==menu.price">{{'半額' | language:menuSrv.lang}}</span>セール★ </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                      <span *ngIf="menu.ori_price"
+                        style="text-decoration: line-through;font-weight: 600;font-size:small;">
+                        {{ appService.zekomi(menu.ori_price, menu.tax_in) | currency:'￥':'symbol':'1.0-0'}}
+                      </span>
+                      <span [ngClass]="{ 'del-line': menu.is_free, price: 1 }" (click)="toAddCart(menu, 1)">
+                        {{
+                        appService.zekomi(menu.price, menu.tax_in)
+                        | currency: '￥':'symbol':'1.0-0'
+                        }}
+                        <span class="zekomi">(税込)</span>
+                      </span>
+
+                      <div class="number" *ngIf="menu.stock_status != no_store">
+                        <div *ngIf="menu.count" class="remove-btn" (click)="remove(menu)">
+                          －
+                        </div>
+                        <div *ngIf="menu.count" style="font-size: 120%; margin: 0 10px" [@changecount]="menu.count">
+                          {{ menu.count }}
+                        </div>
+                        <div class="add-btn" (click)="toAddCart(menu)">＋</div>
+                      </div>
+                      <div *ngIf="menu.stock_status == no_store" style="width: 60px; display: inline-table">
+                        売り切れ
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <mat-divider></mat-divider>
+              </ng-container>
+            </ng-container>
+          </div>
+        </mat-card-content>
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex fxLayout="row" [ngClass]="{ hide: !show_cart }" [style.height.px]="myInnerHeight - 75">
+    <div fxFlex class="cart-list" *ngIf="show_cart" [style.height.px]="myInnerHeight - 60">
+      <mat-card-content>
+        <div [style.height.px]="myInnerHeight - 140" style="overflow-y: auto">
+          <ng-container *ngFor="let key of objectKeys(staffSrv.carts)">
+            <div *ngIf="staffSrv.carts[key].count > 0" fxLayout="row" class="menu" fxLayoutAlign="space-between center"
+              style="
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-bottom: solid 0.5px;
+              ">
+              <button mat-icon-button class="remove" color="primary" (click)="removeCart(staffSrv.carts[key])">
+                <mat-icon>clear</mat-icon>
+              </button>
+              <span fxFlex> {{ staffSrv.carts[key].name }}</span>
+              <span fxFlex="15" [ngClass]="{ 'del-line': staffSrv.carts[key].is_free }">
+                {{
+                showPrice(staffSrv.carts[key])
+                | currency: '￥':'symbol':'1.0-0'
+                }}</span>
+              <span fxFlex="15"> {{ staffSrv.carts[key].count }} 個</span>
+            </div>
+          </ng-container>
+          <div fxLayout="row" class="menu" fxLayoutAlign="space-between center"
+            style="padding-top: 10px; padding-bottom: 10px"></div>
+        </div>
+
+        <div fxLayout="row" class="order-btn">
+          <div class="cart-count">
+            合計
+            <span [@changecount]="cartCount()">{{ cartCount() }}</span>
+            個
+          </div>
+          <button [disabled]="cartCount() == 0" mat-raised-button color="primary" (click)="order()">
+            注文確定
+          </button>
+        </div>
+      </mat-card-content>
+    </div>
+  </div>
+
+  <div fxFlex fxLayout="row" [ngClass]="{ hide: !show_history }" [style.height.px]="myInnerHeight - 75"
+    style="overflow-y: hidden">
+    <restaurant-guest-order-history *ngIf="seat" [seatId]="seat.id" style="width: 100vw" [seat]="seat"
+      [display_model]="'time'" [refreashTime]="refreashTime" [show]="true" [isGuest]="true">
+    </restaurant-guest-order-history>
+  </div>
+  <div fxFlex fxLayout="row" [ngClass]="{ hide: !show_ranking }" [style.height.px]="myInnerHeight - 75"
+    style="overflow-y: hidden">
+    <div style="
+        background-color: white;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      ">
+      <div class="ranking-top">人気ランキング</div>
+      <div class="ranking-item-group">
+        <div class="ranking-item" *ngFor="let menu of rankMenuData; let i = index" style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          ">
+          <div *ngIf="i < 3" class="trangle trangle-{{ i + 1 }}"></div>
+          <div *ngIf="i > 2" style="width: 55px"></div>
+          <div class="title" (click)="onClickRank(menu, 1)">
+            {{ menu.menu_name | language: menuSrv.lang }}
+          </div>
+          <div class="number">
+            <div *ngIf="menu.count" class="remove-btn" (click)="remove(menu)">
+              －
+            </div>
+            <div *ngIf="menu.count" style="font-size: 120%; margin: 0 10px" [@changecount]="menu.count">
+              {{ menu.count }}
+            </div>
+            <div class="add-btn" (click)="onClickRank(menu)">＋</div>
+          </div>
+          <!-- <img *ngIf="menu.menu_id" class="image-img" [src]="'/assets/images/menu/'+ menu.menu_no +'.jpg'" alt="Norway" (error)="srcError($event)"> -->
+        </div>
+      </div>
+    </div>
+    <!-- <restaurant-theme-menu-top-ranking
+      *ngIf="show_ranking"
+      fxLayout="column"
+      style="width: 100%; height: 100%; background-color: white"
+    ></restaurant-theme-menu-top-ranking> -->
+  </div>
+  <!-- <div
+    [style.top.px]="myInnerHeight - 60"
+    style="
+      padding-top: 5px;
+      color: rgb(255, 255, 255);
+      position: fixed;
+      width: 100vw;
+      display: flex;
+      flex-flow: row nowrap;
+      place-content: center space-evenly;
+      height: 60px;
+      font-size: 13px;
+      background-color: rgb(255, 152, 0) !important;
+      top: 784px;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: flex-start;
+      justify-content: space-around;
+      align-items: stretch;
+    "
+  >
+    <div
+      [ngClass]="{ active: show_menu == 1 }"
+      *ngIf="seat"
+      [style.top.px]="myInnerHeight - 60"
+      (click)="showMenu()"
+      style="
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+      "
+    >
+      <mat-icon> import_contacts</mat-icon>
+      <span style="position: absolute; top: 28px">メニュー</span><br />
+    </div>
+    <div
+      [ngClass]="{ 'tab-button': 1, active: show_ranking == true }"
+      (click)="showRanking()"
+      [style.top.px]="myInnerHeight - 60"
+      style="
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+      "
+    >
+      <mat-icon>whatshot</mat-icon>
+      <span style="position: absolute; top: 28px"> ランキング</span>
+    </div>
+
+    <div
+      [ngClass]="{ 'tab-button': 1 }"
+      style="
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+      "
+      (click)="order_bar(rankMenuData)"
+    >
+      <div style="display: flex; width: 25px; height: 22px">
+        <mat-icon>{{ icon }}</mat-icon>
+        <span *ngIf="cartCount() > 0" [@changecount]="cartCount()">{{
+          cartCount()
+        }}</span>
+      </div>
+      <span style="position: absolute; top: 28px"> 注文確定</span>
+    </div>
+    <div
+      [ngClass]="{ 'tab-button': 1, active: show_history == true }"
+      (click)="showHistory()"
+      [style.top.px]="myInnerHeight - 60"
+      style="
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+      "
+    >
+      <mat-icon>list_alt</mat-icon>
+      <span style="position: absolute; top: 28px"> 履歴</span>
+    </div>
+  </div> -->
+  <div [ngClass]="{ 'button-list': 1 }" [style.top.px]="myInnerHeight - 60" style="
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: stretch;
+      align-items: center;
+      justify-content: space-evenly;
+      white-space: nowrap;
+    ">
+    <div style="margin-bottom: 10px" [ngClass]="{ 'tab-button': 1, active: show_menu == 1 }" *ngIf="seat"
+      [style.top.px]="myInnerHeight - 60" (click)="showMenu()">
+      <mat-icon> import_contacts</mat-icon><br />メニュー
+    </div>
+    <div style="margin-bottom: 10px" [ngClass]="{ 'tab-button': 1, active: show_menu == 1 }" *ngIf="seat"
+      [style.top.px]="myInnerHeight - 60" (click)="showRanking()">
+      <mat-icon>whatshot</mat-icon><br />ランキング
+    </div>
+    <div style="margin-bottom: 10px" [ngClass]="{ 'tab-button': 1, active: show_menu == 1 }" *ngIf="seat"
+      [style.top.px]="myInnerHeight - 60" (click)="showCart()">
+      <mat-icon>{{ icon }}</mat-icon><span *ngIf="cartCount() > 0" [@changecount]="cartCount()"
+        style="position: fixed">{{ cartCount() }}</span><br />注文確定
+    </div>
+    <div style="margin-bottom: 10px" [ngClass]="{ 'tab-button': 1, active: show_menu == 1 }" *ngIf="seat"
+      [style.top.px]="myInnerHeight - 60" (click)="showHistory()">
+      <mat-icon>list_alt</mat-icon><br />履歴
+    </div>
+    <div style="margin-bottom: 10px" [ngClass]="{ 'tab-button': 1, active: show_menu == 1 }" *ngIf="seat && show_call_staff"
+      [style.top.px]="myInnerHeight - 60" (click)="callStaff()">
+      <mat-icon>list_alt</mat-icon><br />店員呼出
+    </div>
+  </div>
+</div>

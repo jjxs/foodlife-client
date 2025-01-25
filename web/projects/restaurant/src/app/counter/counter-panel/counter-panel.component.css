@@ -1,0 +1,50 @@
+.count-button {
+    width: 100%;
+    height: 100%;
+    font-size: 130%;
+    text-align: center;
+}
+
+.number {
+    font-size: 150%;
+}
+
+.input-item {
+    text-align: right;
+    font-size: 150%;
+}
+
+.counter-panel {
+    padding: 20px;
+    height: 100%;
+    position: relative;
+}
+
+.pay-count {
+    font-size: 90%;
+}
+
+.pay-amount {
+    font-size: 150%;
+}
+
+@media (max-height: 640px) {
+    .counter-panel {
+        padding: 5px;
+    }
+    .pay-count {
+        display: none;
+    }
+    .input-model {
+        height: 50px;
+    }
+    .pay-amount {
+        font-size: 100%;
+    }
+    .pay-amount span {
+        font-size: 180%;
+        /* color: white; */
+        color: red;
+        padding: 0 5px;
+    }
+}

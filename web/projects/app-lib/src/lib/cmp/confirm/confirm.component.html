@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+    <mat-icon style="padding-right:10px">insert_comment</mat-icon>
+    <span>{{data.title !== undefined ? data.title : '確認' }}</span>
+</mat-toolbar>
+<div fxLayout="row" fxLayoutAlign="start center" style="padding:30px">
+    <p>{{data.msg}}</p>
+</div>
+
+<mat-toolbar color="">
+    <button mat-raised-button color="primary" (click)="ok()" cdkFocusInitial>はい</button>
+    <span class="toolbar-spacer"></span>
+    <button mat-raised-button color="warn" (click)="close()">いいえ</button>
+    <!-- <button style="margin-left:2rem" mat-raised-button color="warn" (click)="close()">閉じる</button> -->
+</mat-toolbar>

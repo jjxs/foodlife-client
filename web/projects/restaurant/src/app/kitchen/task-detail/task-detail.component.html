@@ -1,0 +1,25 @@
+<div class="items">
+  <div class="title" > 処理待ち </div>
+  <ng-container *ngFor="let item of items; let i = index">
+    <div fxLayout="row" class="item" fxLayoutAlign="space-between center" *ngIf="item.status==0">
+      <div fxLayout="row">
+        {{ item['name'] }} 
+      </div>
+      <button *ngIf="item['status']==0" mat-raised-button color="primary" (click)="ok(item, i)">完成</button>
+    </div>
+  </ng-container>
+</div>
+
+<div class="finished">
+  <div class="title" > 調理済み </div>
+  
+  <ng-container *ngFor="let item of items; let i = index">
+    <div fxLayout="row" class="item" fxLayoutAlign="space-between center" *ngIf="item.status==1">
+      <div fxLayout="row">
+        {{ item['name'] }} 
+      </div>
+      
+      <button *ngIf="item['status']==1" mat-raised-button color="warn" (click)="back(item, i)">戻</button>
+    </div>
+  </ng-container>
+</div>

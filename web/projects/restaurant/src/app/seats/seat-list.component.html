@@ -1,0 +1,66 @@
+<mat-toolbar color="primary">
+  <mat-icon style="padding-right:10px">event_seat</mat-icon>
+  <span>席選択</span>
+  <span *ngIf="!data.sample" style="padding-left:15px;text-overflow:ellipsis;white-space: nowrap;overflow: hidden;">{{selections_table}}</span>
+</mat-toolbar>
+<div theme fxLayout="row" fxLayoutAlign="start center" style="padding:5px">
+  <div style="overflow-y:auto;height:300px;width:100%; ">
+    <table mat-table [dataSource]="dataSource" matSort class="table" style="width:100%;">
+      <!-- Position Column -->
+      <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 25%;"> 選択 </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-icon *ngIf="selection.isSelected(row)" color="primary">check_circle</mat-icon>
+        </td>
+      </ng-container>
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="no">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 27px;"> {{element.seat_no}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> 名称 </th>
+        <td mat-cell *matCellDef="let element" style="font-size: 27px;"> {{element.name}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> タイプ </th>
+        <td mat-cell *matCellDef="let element"> {{element.seat_type}} </td>
+      </ng-container>
+
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="tobacco">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> 禁煙 </th>
+        <td mat-cell *matCellDef="let element"> {{element.seat_smoke_type}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="counts">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> 人数 </th>
+        <td mat-cell *matCellDef="let element"> {{element.number}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsWithSelect"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumnsWithSelect;" (click)="rowClick(row)"></tr>
+    </table>
+  </div>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="space-between center" style="width:100%">
+  <button *ngIf="!data.sample" mat-raised-button color="warn" (click)="clear()" style="margin-left:20px">クリア</button>
+  <div style="margin-left: -175px" *ngIf="enabled_takeout">
+    <label>
+      <mat-checkbox class="checkbox" id="check_box" (change)="onCheckChange($event)"></mat-checkbox>
+      外卖坐席
+    </label>
+  </div>
+  <div>
+    <button mat-raised-button *ngIf="this.selection.selected.length > 0" color="primary" (click)="ok()" cdkFocusInitial>OK</button>
+    <button mat-raised-button color="primary" (click)="close()" style="margin-left:20px">閉じる</button>
+  </div>
+</div>

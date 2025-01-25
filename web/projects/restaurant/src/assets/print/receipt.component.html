@@ -1,0 +1,116 @@
+<!--meta name="viewport" user-scalable=0 阻止双击放大事件-->
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<!--<!doctype html>-->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <style type="text/css">
+    /* sheet size */
+    @media print {
+      @page {
+        size: landscape;
+        margin: 1mm 1mm;
+        page-break-after:unset;
+      }
+    }
+
+
+    html {
+      width: 130mm;
+      height: 48mm;
+      margin: 0;
+      padding: 0;
+      /*letter-spacing: 1px;*/
+    }
+    .receipt {
+      width: 100%;
+      height: 100%;
+      font-size: 60%;
+      margin: 0px;
+    }
+    .wrapper {
+      padding: 8px 0 0 8px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      page-break-after: auto;
+      /*横並び・左から右（デフォルト）*/
+    }
+
+    .img {
+      width: 18mm;
+      height: 8mm;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .tax {
+      width: 33%; 
+      text-align: center;
+      display: inline-block;
+    }
+
+    /* fix for Chrome */
+  </style>
+  <script src="./jquery-3.3.1.min.js"></script>
+  <script src="./moment.js"></script>
+  <script src="./receipt.js"></script>
+</head>
+
+<body class="receipt">
+  <img class="img" src="title.png">
+  <div class="wrapper">
+    <div class="element">
+      <div style="text-align: center;font-size:150%">領収書</div>
+      <div style="text-align: right;border-bottom: solid 1.2px;width:90mm;font-size:150%">（様）</div>
+      <div style=" text-align: right;border-bottom: solid 1.2px;font-size:150%">￥　<span id="price"></span>ー</div>
+      <div style="text-align: center;width:90mm">但し飲食代どして、上記正に領収いたました。</div>
+      <p>内訳</p>
+      <div style="width: 55%; border-top: solid 0.5px; border-width: 0.4px;">
+        <div>
+          <span class="tax">税率</span>
+          <span class="tax" style="width: 50px;">税抜金額</span>
+          <span id="eatin" class="tax"></span>
+        </div>
+        <div style="border-bottom: solid 0.5px; border-width: 0.4px;">
+          <span class="tax">10%</span>
+          <span class="tax" style="width: 50px">消費金額</span>
+          <span id="eatin_tax" class="tax"></span>
+        </div>
+        <div>
+          <span class="tax">税率</span>
+          <span class="tax" style="width: 50px">税抜金額</span>
+          <span id="takeout" class="tax"></span>
+        </div>
+        <div style="border-bottom: solid 0.5px;border-width: 0.4px;">
+          <span class="tax">8%</span>
+          <span class="tax" style="width: 50px">消費金額</span>
+          <span id="takeout_tax" class="tax"></span>
+        </div>
+
+      </div>
+      <!-- <div style="text-align: center;width:90mm">（内、消費税等　<span id="tax"></span>円含みます）</div> -->
+      <div class="address" id="receipt_address" style="width:100%;font-size:80%;">
+        <span id="login_no"></span> <br>
+        株式会社フードライフソリューションズ <br>
+        〒110-0005 東京都台東区上野4丁目4-5 上野C-Roadビル 3F<br>
+        TEL: 03-6284-2149 FAX: 03-6284-2149 <br>
+      </div>
+    </div>
+
+    <div class="element" style="margin-left:10px;">
+      <div>No.<span id="no"></span></div>
+      <div><span id="current"></span></div>
+      <div>　　　　</div>
+      <div style=" display: flex;flex-direction: row-reverse; letter-spacing: 3px;">取扱者印</div>
+      <div style=" display: flex;flex-direction: row-reverse; ">
+        <div style=" width:15mm;height:15mm;border:solid 1px;">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;font-size:80%"> ＊保管上のお願い 財布等保管載く場合は、印刷面を内側にって保管お願いします。</div>
+</body>
+
+</html>
