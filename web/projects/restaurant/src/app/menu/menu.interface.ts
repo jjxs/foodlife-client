@@ -75,6 +75,7 @@ export interface MenuCategory {
     introduction: string;
     tax_in: boolean;
     mincount: number;
+    level: number;
 }
 
 export interface Menufree {

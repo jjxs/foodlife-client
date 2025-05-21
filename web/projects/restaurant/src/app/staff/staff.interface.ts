@@ -28,6 +28,7 @@ export class StaffMenu {
     usable: false;
     stock_status: number;
     mincount: number;
+    level: number;
 
     constructor(data?: MenuCategory) {
         this.count = 0;
@@ -46,6 +47,7 @@ export class StaffMenu {
             this.introduction = data.introduction;
             this.tax_in = data.tax_in;
             this.mincount = data.mincount;
+            this.level = data.level;
         }
     }
 }

@@ -170,6 +170,10 @@ export class StaffService {
                 if (menu.menu_options==undefined) {
                     menu.menu_options = [];
                 }
+                // コースの場合
+                if (menu.level == 1) {
+                    menu.course.map(item => {item["selected"] = true})
+                }
                 array.push({
                     menu: {
                         id: menu.id,
@@ -186,7 +190,8 @@ export class StaffService {
                         is_free: menu.is_free,
                         menu_options: menu.menu_options,
                         course: menu.course,
-                        option: {}
+                        option: {},
+                        level: menu.level,
                     },
                     count: menu.count,
                     isFromOrderButton: false,
