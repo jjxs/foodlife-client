@@ -201,7 +201,7 @@ export class CounterComponent implements OnInit {
     this.isReserveConnecting = true;
     let ws_host = environment.socket_ip;
     ws_host = ws_host.replace("{{saas}}", Util.getSaasID());
-    this.reserveConnecting = new WebSocket("ws://" + ws_host + "/ws/reserve/");
+    this.reserveConnecting = new WebSocket("wss://" + ws_host + "/ws/reserve/");
 
     this.reserveConnecting.onmessage = (result) => {
       if (!Util.isEmpty(result) && !Util.isEmpty(result["data"])) {

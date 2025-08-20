@@ -49,7 +49,7 @@ export class KitchenService {
       ws_host = ws_host.replace('{{saas}}', Util.getSaasID())
 
       this.connecting = new WebSocket(
-        'ws://' + ws_host + '/ws/kitchen/' + Util.encode(watch_list) + '/'
+        'wss://' + ws_host + '/ws/kitchen/' + Util.encode(watch_list) + '/'
       )
 
       clearInterval(this.__timezone_ws)

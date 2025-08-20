@@ -225,7 +225,7 @@ export class StaffService {
         let ws_host = environment.socket_ip;
         ws_host = ws_host.replace('{{saas}}', Util.getSaasID());
         this.connecting = new WebSocket(
-            'ws://' + ws_host +
+            'wss://' + ws_host +
             '/ws/staff/');
 
         this.connecting.onmessage = ((result) => {

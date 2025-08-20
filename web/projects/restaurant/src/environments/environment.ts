@@ -7,10 +7,10 @@ export const environment = {
   // socket_ip: "127.0.0.1:4202",
   top_path: "/staff/top", //"/menu"
 
-  api_ip: "http://localhost:8000",
-  socket_ip: "192.168.0.117:8001",
-  host: "localhost:4200/",
-  theme_url: "http://192.168.0.117:4200/assets/css", // TODO: =》リリース後、自分のサーバURLへ変更,
+  api_ip: "http://192.168.0.185:8000",
+  socket_ip: "192.168.0.185:8001",
+  host: "http://192.168.0.185:4200/",
+  theme_url: "http://192.168.0.185:4200/assets/css", // TODO: =》リリース後、自分のサーバURLへ変更,
 
   // api_ip: "http://{{saas}}.localhost:8000",
   // socket_ip: "{{saas}}.localhost:8001",

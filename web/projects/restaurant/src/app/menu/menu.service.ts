@@ -238,7 +238,7 @@ export class MenuService {
     //     //     this.orderConfirmSocket.close();
     //     // }
     //     let orderConfirmSocket = new WebSocket(
-    //         'ws://' + environment.socket_ip +
+    //         'wss://' + environment.socket_ip +
     //         '/ws/orderconfirm/' + seat_id + '/');
 
     //     orderConfirmSocket.onmessage = ((result) => {

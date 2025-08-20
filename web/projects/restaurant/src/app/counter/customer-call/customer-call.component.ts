@@ -124,7 +124,7 @@ export class CustomerCallComponent implements OnInit, OnDestroy {
     this.isConnecting = true;
     let ws_host = environment.socket_ip;
     ws_host = ws_host.replace("{{saas}}", Util.getSaasID());
-    this.connecting = new WebSocket("ws://" + ws_host + "/ws/staff/");
+    this.connecting = new WebSocket("wss://" + ws_host + "/ws/staff/");
 
     this.connecting.onmessage = (result) => {
       if (!Util.isEmpty(result) && !Util.isEmpty(result["data"])) {

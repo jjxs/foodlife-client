@@ -73,7 +73,7 @@ export class SeatService implements OnDestroy {
         let ws_host = environment.socket_ip;
         ws_host = ws_host.replace('{{saas}}', Util.getSaasID());
         this.connecting = new WebSocket(
-            'ws://' + ws_host +
+            'wss://' + ws_host +
             '/ws/seat/' + this.SeatId + '/');
         this.isConnecting = true;
 
