@@ -27,7 +27,9 @@
           </span>
           <span *ngIf="menu.ori_price"
             style="color: red;font-size:large;">{{ zekomi(menu.price, menu.tax_in) | currency:'￥':'symbol':'1.0-0'}}</span>
-          <span *ngIf="!menu.ori_price">{{ zekomi(menu.price, menu.tax_in) | currency:'￥':'symbol':'1.0-0'}}</span>
+          <span *ngIf="!menu.ori_price">
+            <span style="font-size: large;">{{ zenuki(menu.price, menu.tax_in) | currency:'￥':'symbol':'1.0-0'}} (税抜)</span>
+            {{ zekomi(menu.price, menu.tax_in) | currency:'￥':'symbol':'1.0-0'}}</span>
           (税込)
           <!-- <ng-container *ngIf="!menu.tax_in"> (税抜)</ng-container> -->
         </ng-container>

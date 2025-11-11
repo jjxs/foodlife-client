@@ -159,6 +159,15 @@ export class AppService {
           return Math.floor(price * ( 1 + (this.Fax/100) ));
       }
   }
+  //税抜金額   
+  zenuki(price, tax_in) {
+      if ( tax_in ) {
+          return price/(1 + (this.Fax/100));
+      } else {
+          return price;
+      }
+  }
+
   getQrThemeId() {
       return this.__qrtheme;
   }

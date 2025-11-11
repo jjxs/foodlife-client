@@ -53,12 +53,17 @@ export class MenuImageComponent implements OnInit {
   zekomi(price, tax_in) {
     return this.appService.zekomi(price, tax_in);
   }
+  
+  //税抜金額  
+  zenuki(price, tax_in) {
+    return this.appService.zenuki(price, tax_in);
+  }
 
   onClick(event) {
     if (this.menu.stock_status == this.no_store) {
       return
     }
-    let currentHour = new Date().getHours()
+    let currentHour = Util.getCurrentFractionalHour()
     if (this.menuSrv.currentGroup.masterGroup && this.menuSrv.currentGroup.masterGroup["option"]["show_time"] instanceof Array &&
         this.menuSrv.currentGroup.masterGroup["option"]["show_time"].length == 2) {
       if (currentHour < this.menuSrv.currentGroup.masterGroup["option"]["show_time"][0] || currentHour >= this.menuSrv.currentGroup["masterGroup"]["option"]["show_time"][1]) {

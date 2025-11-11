@@ -44,17 +44,20 @@
                     </span>
                     <div *ngIf="menu.ori_price" style="text-align: left;color: red;font-size:small;">★<span
                         *ngIf="menu.ori_price/2==menu.price">{{'半額' | language:menuSrv.lang}}</span>セール★ </div>
-                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <div fxLayout="row" fxLayoutAlign="space-between baseline">
                       <span *ngIf="menu.ori_price"
                         style="text-decoration: line-through;font-weight: 600;font-size:small;">
                         {{ appService.zekomi(menu.ori_price, menu.tax_in) | currency:'￥':'symbol':'1.0-0'}}
                       </span>
+                      <span *ngIf="!menu.ori_price" [ngClass]="{ 'del-line': menu.is_free, price: 1 }" style="font-size: 120%;">{{ appService.zenuki(menu.price, menu.tax_in) | currency:'￥':'symbol':'1.0-0'}} <span style="font-size: 71%;" class="zekomi">(税抜)</span></span>
                       <span [ngClass]="{ 'del-line': menu.is_free, price: 1 }" (click)="toAddCart(menu, 1)">
-                        {{
-                        appService.zekomi(menu.price, menu.tax_in)
-                        | currency: '￥':'symbol':'1.0-0'
-                        }}
-                        <span class="zekomi">(税込)</span>
+                        <span>
+                          {{
+                          appService.zekomi(menu.price, menu.tax_in)
+                          | currency: '￥':'symbol':'1.0-0'
+                          }}
+                          <span class="zekomi">(税込)</span>
+                        </span>
                       </span>
 
                       <div class="number" *ngIf="menu.stock_status != no_store">
