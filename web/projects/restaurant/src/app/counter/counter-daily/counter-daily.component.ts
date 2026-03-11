@@ -96,6 +96,7 @@ export class CounterDailyComponent implements OnInit {
       charge_date: [''],
       in_amount: [''],
       date: [date],
+      tax: [''],
     });
     this.orders = [];
     this.charges = [];
@@ -363,11 +364,13 @@ export class CounterDailyComponent implements OnInit {
     this.orders.push(
       {
         'name': this.editForm.value.pay_name,
-        'amount': this.editForm.value.pay_amount
+        'amount': this.editForm.value.pay_amount,
+        'tax': this.editForm.value.tax
       }
     );
     this.editForm.get('pay_name').setValue('');
     this.editForm.get('pay_amount').setValue('');
+    this.editForm.get('tax').setValue('');
   }
 
   del(key, index) {

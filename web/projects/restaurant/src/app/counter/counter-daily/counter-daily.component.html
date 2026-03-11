@@ -63,7 +63,7 @@
 
     <div fxLayout="row" class="rowstype">
       <div fxFlex=48 class="charge-list"  *ngFor="let item of orders; let i = index">
-        <span >{{item.name}}</span><span>{{ format(item.amount) }}</span>
+        <span >{{item.name}}</span><span>{{ format(item.amount) }}</span><span>{{ item.tax }}</span>
         <button type="button" mat-icon-button color="warn" style="line-height: 60px;" (click)="del('orders', i)" >
           <mat-icon>clear</mat-icon>
         </button>
@@ -84,6 +84,11 @@
       <mat-form-field fxFlex=19>
         <mat-label>金額</mat-label>
         <input type="number" matInput  autocomplete="off" formControlName="pay_amount" readonly (click)="showInput('pay_amount', '支払う金額')" >
+      </mat-form-field>
+
+      <mat-form-field fxFlex=19>
+        <mat-label>税率</mat-label>
+        <input type="number" matInput  autocomplete="off" formControlName="tax" readonly (click)="showInput('tax', '税率')" >
       </mat-form-field>
       
       <button type="button" mat-raised-button color="primary" (click)="add()" style="height:40px; margin-top: 10px;">
