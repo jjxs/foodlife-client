@@ -280,8 +280,19 @@ export class GuestMenuComponent
     return count;
   }
 
+  getCurrentFractionalHour(date: Date = new Date()): number {
+      // 1. 获取小时数 (0-23)
+      const hour: number = date.getHours();
+
+      // 2. 获取分钟数 (0-59)
+      const minutes: number = date.getMinutes();
+  
+
+      return hour + (minutes / 60);
+  }
+
   preClick(event) {
-    const hour = new Date().getHours();
+    const hour = this.getCurrentFractionalHour()
     let temp = [];
     temp = this.staffSrv.menuMasterGroup.filter((e) => {
       return (
@@ -310,7 +321,7 @@ export class GuestMenuComponent
     }
   }
   nextClick(event) {
-    const hour = new Date().getHours();
+    const hour = this.getCurrentFractionalHour();
     let go = false;
     let temp = [];
     temp = this.staffSrv.menuMasterGroup.filter((e) => {
@@ -356,7 +367,7 @@ export class GuestMenuComponent
     }
     if (!Util.isEmpty(group.option)) {
       if (!Util.isEmpty(group.option["show_time"])) {
-        const hour = new Date().getHours();
+        const hour = this.getCurrentFractionalHour();
         if (group.option["show_time"] instanceof Array) {
           if (group.option["show_time"].length != 2) {
             return true;

@@ -68,4 +68,17 @@ export class Util {
     }());
 
 
+
+    static getCurrentFractionalHour(date: Date = new Date()): number {
+        // 1. 获取小时数 (0-23)
+        const hour: number = date.getHours();
+
+        // 2. 获取分钟数 (0-59)
+        const minutes: number = date.getMinutes();
+     
+
+        return hour + (minutes / 60);
+    }
+
+
 }

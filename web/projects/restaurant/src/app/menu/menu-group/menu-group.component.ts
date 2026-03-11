@@ -44,7 +44,7 @@ export class MenuGroupComponent implements OnInit {
     this.jsonSrv.get('master/master/?domain__in=menu_category', {}).subscribe((response?: any[]) => {
       if (!Util.isEmpty(response) && response[0]) {
 
-        const hour = new Date().getHours();
+        const hour = this.getCurrentFractionalHour();
         // console.log(hour, response);
         response.forEach((group: any) => {
           if (group.option && !Util.isEmpty(group.option.display) && !group.option.display) {
@@ -83,8 +83,19 @@ export class MenuGroupComponent implements OnInit {
     });
   }
 
+  getCurrentFractionalHour(date: Date = new Date()): number {
+    // 1. 获取小时数 (0-23)
+    const hour: number = date.getHours();
+
+    // 2. 获取分钟数 (0-59)
+    const minutes: number = date.getMinutes();
+ 
+
+    return hour + (minutes / 60);
+  }
+
   onSelect(group) {
-    let currentHour = new Date().getHours()
+    let currentHour = this.getCurrentFractionalHour()
     this.groups.forEach((element) => {
       element.selected = (element === group);
       if (element.option['show_time'] &&

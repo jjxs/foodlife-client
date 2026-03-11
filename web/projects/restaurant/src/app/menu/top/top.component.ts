@@ -132,8 +132,18 @@ export class TopComponent implements OnInit, OnChanges {
     });
   }
 
+  getCurrentFractionalHour(date: Date = new Date()): number {
+      // 1. 获取小时数 (0-23)
+      const hour: number = date.getHours();
+
+      // 2. 获取分钟数 (0-59)
+      const minutes: number = date.getMinutes();
+
+      return hour + (minutes / 60);
+  }
+
   goto(item) {
-    let currentHour = new Date().getHours();
+    let currentHour = this.getCurrentFractionalHour();
     console.log("********currentHour=",currentHour)
     let arr = item.link.split(':');
     if( arr.length<2 ) return;
