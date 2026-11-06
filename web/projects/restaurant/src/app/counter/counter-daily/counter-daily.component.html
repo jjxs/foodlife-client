@@ -71,7 +71,7 @@
     </div>
 
     <div fxLayout="row" class="rowstype">
-      <mat-form-field fxFlex=46 style="margin-right:2%;width:46%;">
+      <mat-form-field fxFlex=35 style="margin-right:2%;width:46%;">
         <mat-label>支払う先</mat-label>
         <input type="text" matInput  autocomplete="off" formControlName="pay_name" *ngIf="supplie.length<1">
         <mat-select *ngIf="supplie.length>0" formControlName="pay_name">
@@ -86,9 +86,15 @@
         <input type="number" matInput  autocomplete="off" formControlName="pay_amount" readonly (click)="showInput('pay_amount', '支払う金額')" >
       </mat-form-field>
 
-      <mat-form-field fxFlex=19>
+      <mat-form-field fxFlex=8>
         <mat-label>税率</mat-label>
-        <input type="number" matInput  autocomplete="off" formControlName="tax" readonly (click)="showInput('tax', '税率')" >
+        <!-- <input type="number" matInput  autocomplete="off" formControlName="tax" readonly (click)="showInput('tax', '税率')" > -->
+        <!-- <input type="text" matInput  autocomplete="off" formControlName="pay_name" *ngIf="supplie.length<1"> -->
+        <mat-select formControlName="tax">
+          <ng-container *ngFor="let item of taxList">
+          <mat-option value="{{item.tax}}">{{item.name}}</mat-option>
+          </ng-container>
+        </mat-select>
       </mat-form-field>
       
       <button type="button" mat-raised-button color="primary" (click)="add()" style="height:40px; margin-top: 10px;">

@@ -47,6 +47,10 @@ export class CounterDailyComponent implements OnInit {
   counter_paylist = [];
   counter_amount = 0;
   supplie = [];
+  taxList = [
+    {tax: '8%', name: '8%'},
+    {tax: '10%', name: '10%'},
+  ];
 
   constructor(
     private auth: AuthenticationService,
